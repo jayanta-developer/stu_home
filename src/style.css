@@ -1,7 +1,16 @@
-/* @font-face {
-  font-family: "Lato";
-  src: url("./Assets/Fonts/Lato/Lato-Regular.ttf") format("truetype");
-} */
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("./Assets/Fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./Assets/Fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("./Assets/Fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf")
+    format("truetype");
+}
 * {
   box-sizing: border-box;
   margin: 0;
