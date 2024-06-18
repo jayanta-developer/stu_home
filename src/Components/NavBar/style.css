@@ -1,0 +1,45 @@
+/* nav bar */
+.navBar {
+  width: 100%;
+  height: 100px;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navRBox {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.navRBox p {
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.navRBox p:hover {
+  color: #fcaf17;
+}
+.logInBox {
+  width: 185px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background: #01071552;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.navBar .navCLogo {
+  width: 93px;
+  height: 62px;
+}
+.navBar p {
+  font-family: "Satoshi";
+  color: #fff;
+  font-weight: 500 !important;
+}

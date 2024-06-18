@@ -21,3 +21,38 @@
 .pointer {
   cursor: pointer;
 }
+/* Target the scrollbar thumb and track in WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+/* Set the color of the scrollbar thumb in WebKit-based browsers */
+::-webkit-scrollbar-thumb {
+  background-color: #49494973;
+  /* Color of the scrollbar thumb */
+}
+
+/* Set the color of the scrollbar track in WebKit-based browsers */
+::-webkit-scrollbar-track {
+  background-color: #4d4d4d6b;
+  /* Color of the scrollbar track */
+}
+
+/* Target the scrollbar thumb and track in Mozilla-based browsers (Firefox) */
+::-moz-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+/* Set the color of the scrollbar thumb in Mozilla-based browsers */
+::-moz-scrollbar-thumb {
+  background-color: #55555541;
+  /* Color of the scrollbar thumb */
+}
+
+/* Set the color of the scrollbar track in Mozilla-based browsers */
+::-moz-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Color of the scrollbar track */
+}
