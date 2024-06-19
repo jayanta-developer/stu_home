@@ -8,13 +8,24 @@ import locationIcon from "../../Assets/Images/locationIcon.png";
 import DropIcon from "../../Assets/Images/grayDropIcon.png";
 
 import light from "../../Assets/Images/light.svg";
-import bankSvg from "../../Assets/Images/bankSvg.svg"
-import personSvg from "../../Assets/Images/personSvg.svg"
-import awordSvg from "../../Assets/Images/awardSvg.svg"
+import bankSvg from "../../Assets/Images/bankSvg.svg";
+import personSvg from "../../Assets/Images/personSvg.svg";
+import awordSvg from "../../Assets/Images/awardSvg.svg";
+import propertyImg1 from "../../Assets/Images/propertieImg1.png";
+import propertyImg2 from "../../Assets/Images/propertiImg2.png";
+import propertyImg3 from "../../Assets/Images/PropertieImg3.png";
+import star from "../../Assets/Images/star.png";
+import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png"
+import badIcon from "../../Assets/Images/badIcon.png"
+import bathIcon from "../../Assets/Images/bathIcon.png"
+import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png"
+import LoveIcon from "../../Assets/Images/loveIcon.png"
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
+// import CircularDemo from '../../Components/Carousel'
+import { YellowBtn } from "../../Components/ButtonBox"
 
 export default function Home() {
   const [searchSelector, setSearchSelecotr] = useState(0);
@@ -29,7 +40,49 @@ export default function Home() {
     "Mumbai",
     "Pune",
     "Thane",
-  ]
+  ];
+
+
+  const PropertiesCard = ({ img, btnText, title, location }) => {
+    return (
+      <Box className="propertiesCard">
+        <Box className="coverImg">
+          <img src={img} />
+          <Box className='loveIcon'>
+            <img src={LoveIcon} />
+          </Box>
+        </Box>
+        <Box className="propCardTextBox">
+          <Box className="startBox">
+            <Box className="starInBox">
+              <img src={star} />
+              <Typography>4.8 <span>(73)</span></Typography>
+            </Box>
+            <Box className="cardBtn">
+              <Typography>{btnText}</Typography>
+            </Box>
+          </Box>
+          <Typography className='proCardTitle'>{title}</Typography>
+          <Box className="CardlocationBox">
+            <img src={locationOutIcon} />
+            <Typography>{location}</Typography>
+          </Box>
+          <Box className="proDetails">
+            <img src={badIcon} />
+            <Typography>3 Rooms</Typography>
+            <img src={bathIcon} />
+            <Typography>3 Bath</Typography>
+            <img src={roomAreaIcon} />
+            <Typography>673 m2</Typography>
+          </Box>
+          <Box className="priceBox">
+            <span>$526 / month</span>
+            <Typography>$420 <samp>/ month</samp></Typography>
+          </Box>
+        </Box>
+      </Box>
+    )
+  }
 
   return (
     <>
@@ -91,14 +144,11 @@ export default function Home() {
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
 
-
-
             <Box className="hasselInnerBox">
               <img src={bankSvg} />
               <Typography className='label'>Local & Authentic</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
-
 
           </Box>
           <Box className="hessleInputBox">
@@ -112,6 +162,40 @@ export default function Home() {
               <Typography className='label'>Best selection of hostels</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
+          </Box>
+        </Box>
+
+
+        <Box className="PropertiesSection">
+          <Typography className='hasselHeader'>Our Properties</Typography>
+          <Box className="proertiseBox">
+            {
+              PropertiesCard({
+                img: propertyImg1,
+                btnText: "Popular",
+                title: "Entire Sea view Cabin near Juhu Beach",
+                location: "Juhu, Mumbai"
+              })
+            }
+            {
+              PropertiesCard({
+                img: propertyImg2,
+                btnText: "Featured",
+                title: "Entire Sea view Cabin near Juhu Beach",
+                location: "Juhu, Mumbai"
+              })
+            }
+            {
+              PropertiesCard({
+                img: propertyImg3,
+                btnText: "Featured",
+                title: "Entire Sea view Cabin near Juhu Beach",
+                location: "Juhu, Mumbai"
+              })
+            }
+          </Box>
+          <Box className="btnBox">
+            <YellowBtn btnText="VIEW ALL" />
           </Box>
 
 

@@ -23,6 +23,8 @@
 }
 .homeLabel {
   width: 49%;
+  max-width: 671px;
+  min-width: 671px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,6 +197,7 @@
   flex-direction: column;
   align-items: center;
   background: #232122;
+  padding-top: 30px;
 }
 .hessleInputBox {
   width: 65%;
@@ -233,4 +236,157 @@
 }
 .hasselInnerBox img {
   width: 40px;
+}
+.PropertiesSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #232122;
+  padding: 60px 0;
+}
+.proertiseBox {
+  width: 78%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.propertiesCard {
+  width: 33%;
+  /* height: 345px; */
+  border-radius: 10px;
+  background: #2e2b2b;
+  padding: 15px;
+}
+.coverImg {
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  position: relative;
+}
+.coverImg img {
+  width: 100%;
+  height: 100%;
+}
+.propCardTextBox {
+  /* border: 1px solid red; */
+  margin-top: 20px;
+}
+.startBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cardBtn {
+  width: 87px;
+  height: 27px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fdaf17;
+  cursor: pointer;
+}
+.cardBtn p {
+  font-family: "Satoshi";
+  font-size: 14px !important;
+  font-weight: 500;
+  color: #ffffffd8;
+}
+.starInBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.starInBox p {
+  font-size: 15px !important;
+  color: #ffffffd8;
+}
+.starInBox p span {
+  font-size: 15px !important;
+  color: #9e9e9e;
+}
+.proCardTitle {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  font-family: "Satoshi" !important;
+  color: #ffffffd8;
+}
+.CardlocationBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 0;
+  gap: 10px;
+}
+.CardlocationBox p {
+  font-family: "Satoshi" !important;
+  font-size: 16px !important;
+  color: #ffffffd8;
+}
+.proDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.proDetails img {
+  width: 20px;
+  height: 20px;
+}
+.proDetails p {
+  font-size: 14px !important;
+  color: #9e9e9e;
+  font-family: "Satoshi" !important;
+}
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.priceBox span {
+  font-family: "Satoshi" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #858585;
+}
+.priceBox p {
+  font-family: "Satoshi" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #fff;
+}
+.priceBox p samp {
+  font-family: "Satoshi" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #fdaf17;
+}
+.propertiesCard .loveIcon {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.propertiesCard .loveIcon img {
+  width: 14px;
+  height: 13px;
+}
+.btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
