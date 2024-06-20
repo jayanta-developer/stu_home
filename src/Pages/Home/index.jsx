@@ -20,12 +20,19 @@ import badIcon from "../../Assets/Images/badIcon.png"
 import bathIcon from "../../Assets/Images/bathIcon.png"
 import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png"
 import LoveIcon from "../../Assets/Images/loveIcon.png"
+import paperTop from "../../Assets/Images/paperTop.png"
+import paperBottom from "../../Assets/Images/paperBottom.png"
+import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg"
+import HomeIcon from "../../Assets/Images/homeIcon.svg"
+import calenderIcon from "../../Assets/Images/calenderIcon.svg";
+import BlackBackground from "../../Assets/Images/blackBg.jpg";
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 // import CircularDemo from '../../Components/Carousel'
-import { YellowBtn } from "../../Components/ButtonBox"
+import { AppBtn } from "../../Components/ButtonBox";
+import Footer from "../../Components/Footer"
 
 export default function Home() {
   const [searchSelector, setSearchSelecotr] = useState(0);
@@ -80,6 +87,17 @@ export default function Home() {
             <Typography>$420 <samp>/ month</samp></Typography>
           </Box>
         </Box>
+      </Box>
+    )
+  }
+
+  const WorkCard = ({ img, title, subTitle, BtnText }) => {
+    return (
+      <Box className="propertiesCard">
+        <img src={img} />
+        <Typography className='workCardTitle'>{title}</Typography>
+        <Typography className='workCardSubTitle'>{subTitle}</Typography>
+        <AppBtn btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" />
       </Box>
     )
   }
@@ -195,12 +213,40 @@ export default function Home() {
             }
           </Box>
           <Box className="btnBox">
-            <YellowBtn btnText="VIEW ALL" />
+            <AppBtn btnText="VIEW ALL" />
           </Box>
-
-
         </Box>
 
+        <Box className="workSection">
+          <img src={paperTop} className='paperTop' />
+          <img src={paperBottom} className='paperBottom' />
+          <Typography className='hasselHeader'>How it works?</Typography>
+          <Typography className='HCNText'>Find furnished rooms for rent and off campus housing options near more than 5,000 colleges and universities</Typography>
+          <Box className="proertiseBox">
+
+            {WorkCard({
+              img: searchHomeIcon,
+              title: "Search",
+              subTitle: "You can easily search for hundreds of listings around your school, metro station and city.",
+              BtnText: "SEARCH NOW"
+            })}
+            {WorkCard({
+              img: HomeIcon,
+              title: "Match",
+              subTitle: "Review the listings and profiles of the hosts or guests and match based on your housing needs.",
+              BtnText: "EXPLORE NOW"
+            })}
+            {WorkCard({
+              img: calenderIcon,
+              title: "Move in",
+              subTitle: "Once the booking is approved you can simply move in to your new home.",
+              BtnText: "REQUEST NOW"
+            })}
+          </Box>
+        </Box>
+
+
+        <Footer />
       </Box>
     </>
   )

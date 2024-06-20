@@ -37,7 +37,7 @@
   width: 98px;
 }
 .homeBoldText {
-  font-family: "PoppinsBold";
+  font-family: "PoppinsBold" !important;
   font-size: 50px !important;
   font-weight: 700 !important;
   text-align: center;
@@ -45,7 +45,7 @@
   text-shadow: 0px 3px 3px #4e4e4e;
 }
 .HCNText {
-  font-family: "Satoshi";
+  font-family: "Satoshi" !important;
   font-size: 17px !important;
   text-align: center;
   color: #fffae6;
@@ -105,7 +105,7 @@
 }
 .locDropText {
   font-size: 14px !important;
-  font-family: "Satoshi";
+  font-family: "Satoshi" !important;
   color: #939393;
 }
 .dropIcon {
@@ -132,7 +132,7 @@
   background: #fdb017ce;
 }
 .searchBtn p {
-  font-family: "Satoshi";
+  font-family: "Satoshi" !important;
   color: #fff;
 }
 .selectorBox {
@@ -159,7 +159,7 @@
   background: #ffe3ab;
 }
 .sltIBox p {
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
   color: #393534;
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -223,14 +223,14 @@
   background: #292826;
 }
 .hessleInputBox .label {
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
   font-size: 20px !important;
   font-weight: 600 !important;
   color: #ffffffd8;
   margin: 10px 0 !important;
 }
 .hessleInputBox .subSabel {
-  font-family: "Satoshi";
+  font-family: "Satoshi" !important;
   font-size: 15px !important;
   color: #ffffffd7;
 }
@@ -245,6 +245,7 @@
   align-items: center;
   background: #232122;
   padding: 60px 0;
+  padding-bottom: 100px;
 }
 .proertiseBox {
   width: 78%;
@@ -292,7 +293,7 @@
   cursor: pointer;
 }
 .cardBtn p {
-  font-family: "Satoshi";
+  font-family: "Satoshi" !important;
   font-size: 14px !important;
   font-weight: 500;
   color: #ffffffd8;
@@ -389,4 +390,54 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+.workSection {
+  width: 100%;
+  position: relative;
+  background: #fdaf17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  margin-bottom: 100px;
+}
+.workSection .hasselHeader {
+  margin: 20px 0 !important;
+}
+.workSection .HCNText {
+  width: 45%;
+}
+.workSection .propertiesCard {
+  display: flex;
+  height: 396px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  background: #fff;
+}
+.workCardTitle {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #000;
+  font-family: "Poppins" !important;
+}
+.workCardSubTitle {
+  font-size: 16px !important;
+  font-family: "Satoshi" !important;
+  color: #000;
+  text-align: center;
+}
+.workSection .proertiseBox {
+  margin-top: 50px;
+}
+.workSection .paperTop {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+}
+.workSection .paperBottom {
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
 }

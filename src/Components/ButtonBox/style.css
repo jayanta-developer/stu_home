@@ -1,18 +1,12 @@
-.yellowBtn {
-  width: 207px;
-  height: 50px;
+.appBtn {
   border-radius: 8px;
-  background: #fdaf17;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.5s;
 }
-.yellowBtn:hover {
-  background: #cc8e13;
-}
-.yellowBtn p {
+.appBtn p {
   font-family: "Satoshi" !important;
   font-size: 16px !important;
   font-weight: 700 !important;
