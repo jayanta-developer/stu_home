@@ -82,7 +82,7 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  padding-left: 20px;
+  padding-left: 14px;
   gap: 10px;
 }
 .sechInputBox {
@@ -110,7 +110,7 @@
 }
 .dropIcon {
   position: absolute;
-  top: 28px;
+  top: 30px;
   right: 10px;
   transition: all 0.5s;
 }
@@ -220,7 +220,13 @@
   height: 100%;
   border-radius: 19px;
   padding: 30px 20px;
-  background: #292826;
+  position: relative;
+}
+.hasselInnerBox .hasselIcon {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 212px !important;
 }
 .hessleInputBox .label {
   font-family: "Poppins" !important;
@@ -399,7 +405,7 @@
   flex-direction: column;
   align-items: center;
   padding: 100px 0;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 .workSection .hasselHeader {
   margin: 20px 0 !important;
@@ -440,4 +446,102 @@
   width: 100%;
   position: absolute;
   bottom: -1px;
+}
+.apartmentBox {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../Assets/Images/blackBg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0;
+}
+.apartmentInnerBox {
+  width: 70%;
+  /* height: 283px; */
+  background: #fdaf17;
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.aptHeaderText {
+  font-family: "PoppinsBold" !important;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  color: #000;
+}
+.aptSubHeaderText {
+  width: 52%;
+  font-size: 15px !important;
+  color: #00000098;
+  font-family: "Satoshi" !important;
+  margin: 15px 0 !important;
+}
+.apartmentInnerBox .apartMentImg {
+  width: 52%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.aparEmailBox {
+  width: 100%;
+  height: 300px;
+  background: #fdaf17;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aparEmailBox .paperTop {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.aparMailBox {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.mailSendBox {
+  width: 30%;
+  min-width: 318px;
+  height: 60px;
+  border-radius: 10px;
+  background: #ffff;
+  position: relative;
+}
+.sendMailBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 45px;
+  height: 45px;
+  background: #fdaf17;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.aparEmailBox .aptHeaderText {
+  font-size: 30px !important;
+}
+.mailSendBox input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  padding-left: 40px;
+}
+.mailSendBox .mailIcon {
+  position: absolute;
+  top: 22px;
+  left: 15px;
 }

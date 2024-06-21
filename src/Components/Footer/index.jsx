@@ -8,7 +8,7 @@ import twitter from "../../Assets/Images/TwitterIcon.png";
 import instaIcon from "../../Assets/Images/instaIcon.png";
 import lingkdinIcon from "../../Assets/Images/lingkdinIcon.png";
 
-import blackBg from "../../Assets/Images/blackBg.jpg"
+import blackBg from "../../Assets/Images/blackBg.jpg";
 import { Typography, Box } from '@mui/material';
 
 export default function Footer() {

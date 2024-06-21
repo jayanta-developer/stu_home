@@ -6,7 +6,6 @@ import HomeBG from "../../Assets/Images/homeBackgRound.png";
 import HomeYIcon from "../../Assets/Images/HomeYIcom.png";
 import locationIcon from "../../Assets/Images/locationIcon.png";
 import DropIcon from "../../Assets/Images/grayDropIcon.png";
-
 import light from "../../Assets/Images/light.svg";
 import bankSvg from "../../Assets/Images/bankSvg.svg";
 import personSvg from "../../Assets/Images/personSvg.svg";
@@ -20,17 +19,21 @@ import badIcon from "../../Assets/Images/badIcon.png"
 import bathIcon from "../../Assets/Images/bathIcon.png"
 import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png"
 import LoveIcon from "../../Assets/Images/loveIcon.png"
-import paperTop from "../../Assets/Images/paperTop.png"
-import paperBottom from "../../Assets/Images/paperBottom.png"
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg"
 import HomeIcon from "../../Assets/Images/homeIcon.svg"
 import calenderIcon from "../../Assets/Images/calenderIcon.svg";
 import BlackBackground from "../../Assets/Images/blackBg.jpg";
+import paperCut from "../../Assets/Images/paperCut.png"
+import blackBg from "../../Assets/Images/blackBg.jpg";
+import apartMentImg from "../../Assets/Images/apartment-house-real.png";
+import inboxIcon from "../../Assets/Images/InboxIcon.png";
+import mailIcon from "../../Assets/Images/sMailIcon.png";
+import arrowIcon from "../../Assets/Images/blackArrow.png";
+import hasselIcon from "../../Assets/Images/hesselRoundIcon.png"
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
-// import CircularDemo from '../../Components/Carousel'
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer"
 
@@ -156,27 +159,31 @@ export default function Home() {
           <Typography className='hasselHeader'>Be Hassel - Free</Typography>
 
           <Box className="hessleInputBox">
-            <Box className="hasselInnerBox">
+            <Box className="hasselInnerBox" sx={{ background: "#2B2625" }}>
               <img src={light} />
+              <img src={hasselIcon} className='hasselIcon' />
               <Typography className='label'>Exclusive experiences</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
 
-            <Box className="hasselInnerBox">
+            <Box className="hasselInnerBox" sx={{ background: "#3A3533" }}>
               <img src={bankSvg} />
+              <img src={hasselIcon} className='hasselIcon' />
               <Typography className='label'>Local & Authentic</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
 
           </Box>
           <Box className="hessleInputBox">
-            <Box className="hasselInnerBox">
+            <Box className="hasselInnerBox" sx={{ background: "#292726" }}>
               <img src={personSvg} />
+              <img src={hasselIcon} className='hasselIcon' />
               <Typography className='label'>Hostel Activities</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
-            <Box className="hasselInnerBox">
+            <Box className="hasselInnerBox" sx={{ background: "#2B2727" }}>
               <img src={awordSvg} />
+              <img src={hasselIcon} className='hasselIcon' />
               <Typography className='label'>Best selection of hostels</Typography>
               <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
             </Box>
@@ -218,8 +225,8 @@ export default function Home() {
         </Box>
 
         <Box className="workSection">
-          <img src={paperTop} className='paperTop' />
-          <img src={paperBottom} className='paperBottom' />
+          <img src={paperCut} className='paperTop' />
+          <img style={{ rotate: "180deg" }} src={paperCut} className='paperBottom' />
           <Typography className='hasselHeader'>How it works?</Typography>
           <Typography className='HCNText'>Find furnished rooms for rent and off campus housing options near more than 5,000 colleges and universities</Typography>
           <Box className="proertiseBox">
@@ -245,7 +252,36 @@ export default function Home() {
           </Box>
         </Box>
 
+        <Box className="apartmentBox">
 
+          <Box className="apartmentInnerBox">
+            <Typography className='aptHeaderText'>Find New Apartments</Typography>
+            <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility of a private space, with various amenities near more than 5000 colleges and universities.</Typography>
+            <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" />
+            <img src={apartMentImg} className='apartMentImg' />
+          </Box>
+
+        </Box>
+        <Box className="aparEmailBox">
+          <img src={paperCut} className='paperTop' />
+          <Box className="aparMailBox">
+            <img src={inboxIcon} />
+            <Box >
+              <Typography className='aptHeaderText'>Join Our Journey and
+                Gain Industrial Experience</Typography>
+              <Typography>Sign up to our newsletter for deals,
+                inspo and other travel treats!</Typography>
+            </Box>
+
+            <Box className="mailSendBox">
+              <img src={mailIcon} className='mailIcon' />
+              <Box className="sendMailBtn">
+                <img src={arrowIcon} className='arrowIcon' />
+              </Box>
+              <input type="text" placeholder='Your Email address' />
+            </Box>
+          </Box>
+        </Box>
         <Footer />
       </Box>
     </>
