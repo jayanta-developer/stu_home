@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom"
 import "./style.css"
 
 //Images
@@ -9,10 +10,11 @@ import { Box, Typography } from '@mui/material';
 
 
 export default function NavBar() {
+  const navigate = useNavigate()
   return (
     <>
       <Box className="navBar">
-        <img src={shAppLogo} className='navCLogo' />
+        <img src={shAppLogo} className='navCLogo' onClick={() => navigate("/")} />
         <Box className="navRBox">
           <Typography>EXPLORE</Typography>
           <Typography>ABOUT US</Typography>

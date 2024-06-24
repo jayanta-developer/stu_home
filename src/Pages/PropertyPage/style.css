@@ -1,0 +1,166 @@
+.propertyHomeSection {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.propertyHomeSection .HomeBG {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  z-index: -2;
+}
+.propertyHomeSection .propertyheaderText {
+  width: 100%;
+  text-align: center;
+  font-family: "PoppinsBold" !important;
+  font-size: 30px !important;
+  color: #fffae6;
+  margin-top: 90px;
+}
+.propertyDetailSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+}
+.propertyTitleBox {
+  width: 75%;
+  margin-bottom: 37px;
+}
+.proTilInnerBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.propertyTitle {
+  font-family: "Satoshi" !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  color: #fff;
+}
+.propertyPriceText {
+  font-family: "Satoshi" !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #fff;
+}
+.propertyPriceText span {
+  color: #fffae694;
+}
+.propertyBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+}
+.propLocBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.propContactBtn {
+  width: 185px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 27px;
+  background: #fdaf17;
+  transition: background 0.5s;
+  cursor: pointer;
+}
+.propContactBtn:hover {
+  background: #fdb017ce;
+}
+.propContactBtn p {
+  font-size: 16px;
+  font-family: "Satoshi" !important;
+  color: #fff;
+}
+.locText {
+  min-width: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.locText p {
+  color: #7d7f88;
+}
+.start_Box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.start_Box p {
+  font-size: 16px !important;
+  font-family: "Satoshi" !important;
+  color: #ffffff;
+}
+.start_Box span {
+  font-size: 16px !important;
+  font-family: "Satoshi" !important;
+  color: #7d7f88;
+}
+.perpelBtn {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #000000;
+  border: 1px solid #f1c121;
+  border-radius: 10px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.perpelBtn p {
+  color: #fff;
+  font-size: 14px !important;
+}
+.properyImgBox {
+  width: 75%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.imgBox1 {
+  width: 60%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.imgBox1 img {
+  width: 100%;
+  height: 100%;
+}
+.imgBox2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+.img2Inn {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+}
+.img2Inn img {
+  width: 100%;
+  height: 100%;
+}

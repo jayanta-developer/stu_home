@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom"
 import "./style.css";
 
 //images
@@ -38,6 +39,7 @@ import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer"
 
 export default function Home() {
+  const navigate = useNavigate()
   const [searchSelector, setSearchSelecotr] = useState(0);
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("Select your location");
@@ -55,7 +57,7 @@ export default function Home() {
 
   const PropertiesCard = ({ img, btnText, title, location }) => {
     return (
-      <Box className="propertiesCard">
+      <Box className="propertiesCard" onClick={() => navigate("/property")}>
         <Box className="coverImg">
           <img src={img} />
           <Box className='loveIcon'>
