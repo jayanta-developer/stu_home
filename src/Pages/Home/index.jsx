@@ -1,36 +1,34 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 //images
-import HomeBG from "../../Assets/Images/homeBackgRound.png";
-import HomeYIcon from "../../Assets/Images/HomeYIcom.png";
-import locationIcon from "../../Assets/Images/locationIcon.png";
-import DropIcon from "../../Assets/Images/grayDropIcon.png";
-import light from "../../Assets/Images/light.svg";
-import bankSvg from "../../Assets/Images/bankSvg.svg";
-import personSvg from "../../Assets/Images/personSvg.svg";
-import awordSvg from "../../Assets/Images/awardSvg.svg";
-import propertyImg1 from "../../Assets/Images/propertieImg1.png";
-import propertyImg2 from "../../Assets/Images/propertiImg2.png";
-import propertyImg3 from "../../Assets/Images/PropertieImg3.png";
 import star from "../../Assets/Images/star.png";
-import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png"
-import badIcon from "../../Assets/Images/badIcon.png"
-import bathIcon from "../../Assets/Images/bathIcon.png"
-import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png"
-import LoveIcon from "../../Assets/Images/loveIcon.png"
-import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg"
-import HomeIcon from "../../Assets/Images/homeIcon.svg"
-import calenderIcon from "../../Assets/Images/calenderIcon.svg";
-import BlackBackground from "../../Assets/Images/blackBg.jpg";
-import paperCut from "../../Assets/Images/paperCut.png"
-import blackBg from "../../Assets/Images/blackBg.jpg";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
+import light from "../../Assets/Images/light.svg";
+import badIcon from "../../Assets/Images/badIcon.png";
+import bankSvg from "../../Assets/Images/bankSvg.svg";
+import bathIcon from "../../Assets/Images/bathIcon.png";
+import LoveIcon from "../../Assets/Images/loveIcon.png";
+import HomeIcon from "../../Assets/Images/homeIcon.svg";
+import paperCut from "../../Assets/Images/paperCut.png";
+import awordSvg from "../../Assets/Images/awardSvg.svg";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
+import HomeYIcon from "../../Assets/Images/HomeYIcom.png";
+import personSvg from "../../Assets/Images/personSvg.svg";
 import arrowIcon from "../../Assets/Images/blackArrow.png";
-import hasselIcon from "../../Assets/Images/hesselRoundIcon.png"
+import inboxIcon from "../../Assets/Images/InboxIcon.png";
+import DropIcon from "../../Assets/Images/grayDropIcon.png";
+import HomeBG from "../../Assets/Images/homeBackgRound.png";
+import propertyImg2 from "../../Assets/Images/propertiImg2.png";
+import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
+import locationIcon from "../../Assets/Images/locationIcon.png";
+import calenderIcon from "../../Assets/Images/calenderIcon.svg";
+import hasselIcon from "../../Assets/Images/hesselRoundIcon.png";
+import propertyImg3 from "../../Assets/Images/PropertieImg3.png";
+import propertyImg1 from "../../Assets/Images/propertieImg1.png";
+import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
+import apartMentImg from "../../Assets/Images/apartment-house-real.png";
+import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 
 //components
 import { Box, Typography } from '@mui/material';

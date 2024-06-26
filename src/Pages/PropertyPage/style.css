@@ -138,6 +138,8 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
+  position: relative;
+  margin-bottom: 50px;
 }
 .imgBox1 {
   width: 60%;
@@ -159,8 +161,214 @@
   width: 100%;
   height: 50%;
   border-radius: 10px;
+  overflow: hidden;
 }
 .img2Inn img {
   width: 100%;
   height: 100%;
+}
+.showAllBtn {
+  position: absolute;
+  bottom: 11px;
+  right: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 40px;
+  background-color: #000000;
+  border: 1px solid #f1c121;
+  border-radius: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.showAllBtn {
+  color: #fff;
+  font-family: "Satoshi" !important;
+}
+.propertyInfoBox {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.propertyInfoInBox {
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+  backdrop-filter: blur(10px);
+}
+.overViewBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+.facilitiesBox {
+  width: 40%;
+  height: 300px;
+}
+.overTitelBOx {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.overViewTitle {
+  font-family: "Poppins" !important;
+  color: #fff;
+  font-size: 22px !important;
+}
+.overSubHeader {
+  font-family: "Satoshi" !important;
+  color: #fff;
+  font-size: 16px !important;
+}
+.locationBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.overAvatarInfoBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatarBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.overAvatarInfoBox .avatarNamBox p {
+  font-family: "Poppins" !important;
+  font-size: 16px !important;
+  color: #fff;
+}
+.overAvatarInfoBox .avatarNamBox span {
+  font-family: "Satoshi" !important;
+  font-size: 16px !important;
+  color: #7d7f88;
+}
+.mesCallBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.mesCallBox > div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #7171712e;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.mesCallBox > div:hover {
+  background: #717171ad;
+}
+.facilitiesItemBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+.facilitesItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.facilitesItem p {
+  color: #fff;
+}
+.facilOuterBox {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+}
+.aboutLocBox {
+  width: 60%;
+}
+.testimonialsBox {
+  width: 40%;
+}
+.aboutLocBox p {
+  color: #ffff;
+}
+.costBtn {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 27px;
+  background: #fdaf17;
+  gap: 16px;
+  cursor: pointer;
+}
+.costBtn span {
+  font-family: "Satoshi" !important;
+  color: #fff;
+}
+.testimonialsBox .avatarNamBox p {
+  color: #fff;
+}
+.testimonialsBox .reviewText {
+  font-family: "Satoshi" !important;
+  color: #fff;
+}
+.testimonialsBox .reviewText span {
+  color: #9c9c9c;
+  cursor: pointer;
+}
+.reviewBox {
+  margin: 20px 0;
+}
+.MapBox {
+  width: 75%;
+  height: 285px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.MapBox > div {
+  height: 100% !important;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.rentSection {
+  width: 75%;
+  height: 100px;
+  border-radius: 15px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.rentSection samp {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: underline;
+  font-family: "Courier New", Courier, monospace;
+}
+.propertyDetailSection .apartmentBox {
+  background-image: none;
 }
