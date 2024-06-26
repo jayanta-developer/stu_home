@@ -11,13 +11,17 @@ import { Box, Typography } from '@mui/material';
 
 export default function NavBar() {
   const navigate = useNavigate()
+  const curentUrl = window.location.href
+
+  console.log(curentUrl);
+
   return (
     <>
       <Box className="navBar">
         <img src={shAppLogo} className='navCLogo' onClick={() => navigate("/")} />
         <Box className="navRBox">
           <Typography>EXPLORE</Typography>
-          <Typography>ABOUT US</Typography>
+          <Typography onClick={() => navigate("/about")}>ABOUT US</Typography>
           <Box className="logInBox">
             <img src={LogAvatarIcon} />
             <Typography>LOG IN \ SIGN UP</Typography>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //pages
 import Home from "./Pages/Home";
 import PropertyPage from "./Pages/PropertyPage";
+import About from "./Pages/About";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/property" element={<PropertyPage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

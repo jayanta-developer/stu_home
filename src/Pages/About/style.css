@@ -1,0 +1,139 @@
+.achieveBox {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+  margin-bottom: 100px;
+}
+.aboutPage .hasselHeader {
+  margin-bottom: 13px !important;
+}
+.achiveSubHeader {
+  font-size: 16px !important;
+  color: #ffffffda;
+  font-family: "Satoshi" !important;
+  text-align: center;
+  width: 80%;
+}
+.achieverListBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.achiverCard {
+  width: 25%;
+  min-width: 250px;
+  max-width: 285px;
+  height: 350px;
+  border-radius: 5px;
+  background: #292726;
+  box-shadow: 0px 4px 44px 0px #0000001f;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  position: relative;
+}
+.achiverCard .imgBox {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.achiverCard .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+.achiverCard .achiName {
+  font-size: 20px !important;
+  font-family: "PoppinsBold" !important;
+  color: #fff;
+}
+.achiverCard .achivCardSummery {
+  font-size: 16px !important;
+  color: #fff;
+  font-family: "Satoshi" !important;
+  text-align: center;
+}
+.achivIconBox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.achiverCard .appBtn {
+  position: absolute;
+  bottom: -17px;
+}
+.roadMap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #fff9e6;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.roadMapText {
+  font-size: 30px !important;
+  color: #000;
+  font-family: "PoppinsBold" !important;
+  margin-bottom: 30px !important;
+}
+.roadMapbox {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.YellowBox {
+  width: 25%;
+  min-width: 222px;
+  height: 200px;
+  background: #fed428;
+  padding: 20px;
+  border-radius: 8px;
+}
+.YellowBox p {
+  font-size: 20px !important;
+  color: #000;
+  font-family: "PoppinsBold" !important;
+  margin-bottom: 20px;
+}
+.YellowBox span {
+  font-size: 16px !important;
+  color: #000;
+  font-family: "PoppinsBold" !important;
+}
+.lineBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.blackDotBox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blackDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #000000;
+}
+.lineBox .line {
+  width: 50px;
+  height: 2px;
+  border: 1px solid #000;
+}

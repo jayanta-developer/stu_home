@@ -1,4 +1,8 @@
 import img from "../Images/img.png";
+import img1 from "../Images/img1.png";
+import img2 from "../Images/img2.png";
+import img3 from "../Images/img3.png";
+import img4 from "../Images/img4.png";
 
 export const ProductService = [
   {
@@ -60,5 +64,28 @@ export const ProductService = [
     quantity: 24,
     inventoryStatus: "INSTOCK",
     rating: 5,
+  },
+];
+
+export const achieveData = [
+  {
+    img: img1,
+    name: "Jhon Doe",
+    summery: "There are many variations of passages of Lorem Ipsum available, ",
+  },
+  {
+    img: img2,
+    name: "Jhon Doe",
+    summery: "There are many variations of passages of Lorem Ipsum available, ",
+  },
+  {
+    img: img3,
+    name: "Jhon Doe",
+    summery: "There are many variations of passages of Lorem Ipsum available, ",
+  },
+  {
+    img: img4,
+    name: "Jhon Doe",
+    summery: "There are many variations of passages of Lorem Ipsum available, ",
   },
 ];
