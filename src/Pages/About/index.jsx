@@ -7,6 +7,11 @@ import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
 import twitterIcon from "../../Assets/Images/twitterSIcon.png";
 import linkdinIcon from "../../Assets/Images/linkdinIcon.png";
+import apartment from "../../Assets/Images/new-block-modern-apartments-with-balconies-blue-sky-background 1.png";
+import lightIcon from "../../Assets/Images/lightIcon.png";
+import arrowIcon from "../../Assets/Images/arrowInTargetIcon.png"
+import blackBg from "../../Assets/Images/blackBg.jpg";
+import stuHoBg from "../../Assets/Images/stuHoBg.png"
 
 //components
 import { Box, Typography } from '@mui/material';
@@ -34,9 +39,53 @@ export default function About() {
           <Typography className='propertyheaderText'>{headerText}</Typography>
         </Box>
 
+        <Box className="stuHoSection">
+          <img src={blackBg} className='ourMvBackground' />
+
+          <Box className="stuHoTextbox">
+            <Box className="stuhoInnerText">
+              <Typography className='stuhoHeaderText'>What is StuHo ?</Typography>
+              <Typography className='stuhoSubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
+              <Typography className='stuhoSubText'>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</Typography>
+            </Box>
+
+            <Box className="stuhoInnerImg">
+              <img src={stuHoBg} />
+            </Box>
+
+          </Box>
+
+
+
+        </Box>
+
+        <Box className="ourMvSection">
+          <img src={blackBg} className='ourMvBackground' />
+          <Box className="ourtMvImageBox">
+            <img src={apartment} />
+          </Box>
+
+          <Box className="ourMvTextBox">
+            <Box>
+              <img src={lightIcon} />
+              <Typography className='ourHeaderText'>Our Vision</Typography>
+              <Typography className='oursubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
+            </Box>
+
+            <Box>
+              <img src={arrowIcon} />
+              <Typography className='ourHeaderText'>Our Mission</Typography>
+              <Typography className='oursubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
+            </Box>
+          </Box>
+
+
+        </Box>
+
         <Box className="roadMap">
           <Typography className='roadMapText'>Road Map</Typography>
           <Box className="roadMapbox">
+
 
             <Box className="YellowBox">
               <Typography>2009</Typography>
@@ -45,17 +94,14 @@ export default function About() {
                 but the majority have suffered alteration in some form,
                 by injected humour, or randomised
               </sapn>
+              <Box className="blackDotBox blackDotright">
+                <Box className="blackDot"></Box>
+              </Box>
             </Box>
 
-            <Box className="lineBox">
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-              <Box className="line"></Box>
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-            </Box>
+            <Box className="line"></Box>
+
+
 
             <Box className="YellowBox">
               <Typography>2011</Typography>
@@ -64,17 +110,18 @@ export default function About() {
                 but the majority have suffered alteration in some form,
                 by injected humour, or randomised
               </sapn>
+              <Box className="blackDotBox blackDotright">
+                <Box className="blackDot"></Box>
+              </Box>
+              <Box className="blackDotBox blackDotLeft">
+                <Box className="blackDot"></Box>
+              </Box>
             </Box>
 
-            <Box className="lineBox">
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-              <Box className="line"></Box>
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-            </Box>
+
+            <Box className="line"></Box>
+
+
 
             <Box className="YellowBox">
               <Typography>2014-2015</Typography>
@@ -83,17 +130,16 @@ export default function About() {
                 but the majority have suffered alteration in some form,
                 by injected humour, or randomised
               </sapn>
+              <Box className="blackDotBox blackDotright">
+                <Box className="blackDot"></Box>
+              </Box>
+              <Box className="blackDotBox blackDotLeft">
+                <Box className="blackDot"></Box>
+              </Box>
             </Box>
 
-            <Box className="lineBox">
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-              <Box className="line"></Box>
-              <Box className="blackDotBox">
-                <Box className="blackDot"></Box>
-              </Box>
-            </Box>
+            <Box className="line"></Box>
+
 
             <Box className="YellowBox">
               <Typography>2017-2020</Typography>
@@ -102,6 +148,9 @@ export default function About() {
                 but the majority have suffered alteration in some form,
                 by injected humour, or randomised
               </sapn>
+              <Box className="blackDotBox blackDotLeft">
+                <Box className="blackDot"></Box>
+              </Box>
             </Box>
 
           </Box>
