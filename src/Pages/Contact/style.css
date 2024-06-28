@@ -1,0 +1,80 @@
+.contactSubHeader {
+  font-family: "Satoshi" !important;
+  color: #ffffffd8;
+  font-size: 18px !important;
+  width: 100%;
+  text-align: center;
+}
+.getTouchBox {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.getTouchInnderBox {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.getTTextBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.getTMapBox {
+  width: 50%;
+  height: 326px;
+  border-radius: 16px;
+}
+
+.getTMapBox > div {
+  height: 100% !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.getTHeader {
+  font-family: "PoppinsBold" !important;
+  font-size: 30px !important;
+  color: #fff;
+}
+.getTSubHeader {
+  font-family: "Satoshi" !important;
+  color: #ffffffd5;
+  font-size: 16px !important;
+}
+.getTItemBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.getTItem {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+.GTItemIconBox {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: rgb(41, 41, 41);
+}
+.getTItem P {
+  font-family: "PoppinsBold" !important;
+  font-size: 18px !important;
+  color: #fff;
+}
+.getTItem span {
+  font-family: "Satoshi" !important;
+  font-size: 14px !important;
+  color: #ffffffc5;
+}
