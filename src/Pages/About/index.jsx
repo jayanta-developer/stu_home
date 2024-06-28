@@ -12,6 +12,11 @@ import lightIcon from "../../Assets/Images/lightIcon.png";
 import arrowIcon from "../../Assets/Images/arrowInTargetIcon.png"
 import blackBg from "../../Assets/Images/blackBg.jpg";
 import stuHoBg from "../../Assets/Images/stuHoBg.png"
+import yellowArrow from "../../Assets/Images/yellowArrow.png"
+import paperCut from "../../Assets/Images/paperCut.png";
+import inboxIcon from "../../Assets/Images/InboxIcon.png";
+import mailIcon from "../../Assets/Images/sMailIcon.png";
+
 
 //components
 import { Box, Typography } from '@mui/material';
@@ -40,13 +45,32 @@ export default function About() {
         </Box>
 
         <Box className="stuHoSection">
-          <img src={blackBg} className='ourMvBackground' />
+          {/* <img src={blackBg} className='ourMvBackground' /> */}
 
           <Box className="stuHoTextbox">
             <Box className="stuhoInnerText">
               <Typography className='stuhoHeaderText'>What is StuHo ?</Typography>
               <Typography className='stuhoSubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
               <Typography className='stuhoSubText'>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</Typography>
+              <Box className="countBox">
+                <Box className="countInnerBox">
+                  <span>More than</span>
+                  <Typography>13.7M</Typography>
+                  <span>Reviews</span>
+                </Box>
+                <img src={yellowArrow} />
+                <Box className="countInnerBox">
+                  <span>Hostels in over</span>
+                  <Typography>102</Typography>
+                  <span>Countries</span>
+                </Box>
+                <img src={yellowArrow} />
+                <Box className="countInnerBox">
+                  <span>Website and Apps in</span>
+                  <Typography>10</Typography>
+                  <span>Countries</span>
+                </Box>
+              </Box>
             </Box>
 
             <Box className="stuhoInnerImg">
@@ -188,6 +212,26 @@ export default function About() {
                 colleges and universities.</Typography>
               <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" />
               <img src={apartMentImg} className='apartMentImg' />
+            </Box>
+          </Box>
+        </Box>
+        <Box className="aparEmailBox">
+          <img src={paperCut} className='paperTop' />
+          <Box className="aparMailBox">
+            <img src={inboxIcon} />
+            <Box >
+              <Typography className='aptHeaderText'>Join Our Journey and
+                Gain Industrial Experience</Typography>
+              <Typography>Sign up to our newsletter for deals,
+                inspo and other travel treats!</Typography>
+            </Box>
+
+            <Box className="mailSendBox">
+              <img src={mailIcon} className='mailIcon' />
+              <Box className="sendMailBtn">
+                <img src={arrowIcon} className='arrowIcon' />
+              </Box>
+              <input type="text" placeholder='Your Email address' />
             </Box>
           </Box>
         </Box>
