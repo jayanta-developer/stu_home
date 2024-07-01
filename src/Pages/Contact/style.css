@@ -1,3 +1,6 @@
+:root {
+  --primaryColor: #fdaf17;
+}
 .contactSubHeader {
   font-family: "Satoshi" !important;
   color: #ffffffd8;
@@ -77,4 +80,167 @@
   font-family: "Satoshi" !important;
   font-size: 14px !important;
   color: #ffffffc5;
+}
+.messageBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+.messageHeaderBox {
+  width: 100%;
+  height: 400px;
+  background: var(--primaryColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+.messageHeaderBox p {
+  font-family: "PoppinsBold" !important;
+  color: #000;
+  font-size: 30px !important;
+}
+.messageHeaderBox span {
+  width: 53%;
+  font-family: "Satoshi" !important;
+  color: #000000d8;
+  font-size: 15px !important;
+  text-align: center;
+}
+.messageFooterBox {
+  width: 100%;
+  height: 749px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 100px;
+}
+.messageInputBox {
+  width: 80%;
+  background: #181717;
+  position: absolute;
+  top: 248px;
+  padding: 40px;
+  border-radius: 10px;
+}
+.inputTowBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+.inputTowBox .inputBox {
+  width: 50%;
+}
+.inputBox {
+  height: 50px;
+  border-radius: 7px;
+  border: 1px solid #3d3d3d;
+  background: #00000000;
+  position: relative;
+}
+.inputBox p {
+  position: absolute;
+  top: -13px;
+  left: 20px;
+  font-family: "Satoshi" !important;
+  font-size: 14px !important;
+  color: #ffffffdc;
+  background: #181717;
+  padding: 0 6px;
+}
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 7px;
+  background: #00000000;
+  font-family: "Satoshi" !important;
+  color: #ffffffdc;
+  font-weight: 400 !important;
+  font-size: 17px;
+  padding-left: 20px;
+}
+.inputBox .dropBox {
+  z-index: 2;
+}
+.inputBox .dropItem {
+  color: #fff;
+  font-family: "Satoshi" !important;
+  font-size: 14px !important;
+}
+.inputBox input:focus {
+  outline: none;
+}
+.messageInput {
+  width: 100%;
+  height: 120px;
+}
+.messageInput textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 20px;
+  background: #00000000;
+  font-family: "Satoshi" !important;
+  font-weight: 400 !important;
+  color: #ffffffdc;
+  font-size: 17px;
+}
+.messageInput textarea:focus {
+  outline: none;
+}
+.subjectInput {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.countryDropImg {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  width: 18px;
+  height: 14px;
+}
+.fromBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+.mideaText {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+.mideaText p {
+  width: 100%;
+  text-align: center;
+  font-size: 35px !important;
+  font-family: "PoppinsBold" !important;
+  color: #fff;
+}
+.mideaBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 23px;
+  gap: 20px;
+}
+.mideaBox > div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #252323;
+  border-radius: 12px;
+  cursor: pointer;
 }

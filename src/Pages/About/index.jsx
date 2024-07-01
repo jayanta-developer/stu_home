@@ -16,6 +16,9 @@ import yellowArrow from "../../Assets/Images/yellowArrow.png"
 import paperCut from "../../Assets/Images/paperCut.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
+import arrowIcon2 from "../../Assets/Images/blackArrow.png";
+
+
 
 
 //components
@@ -102,15 +105,11 @@ export default function About() {
               <Typography className='oursubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
             </Box>
           </Box>
-
-
         </Box>
 
         <Box className="roadMap">
           <Typography className='roadMapText'>Road Map</Typography>
           <Box className="roadMapbox">
-
-
             <Box className="YellowBox">
               <Typography>2009</Typography>
               <sapn>
@@ -122,11 +121,7 @@ export default function About() {
                 <Box className="blackDot"></Box>
               </Box>
             </Box>
-
             <Box className="line"></Box>
-
-
-
             <Box className="YellowBox">
               <Typography>2011</Typography>
               <sapn>
@@ -141,12 +136,7 @@ export default function About() {
                 <Box className="blackDot"></Box>
               </Box>
             </Box>
-
-
             <Box className="line"></Box>
-
-
-
             <Box className="YellowBox">
               <Typography>2014-2015</Typography>
               <sapn>
@@ -161,10 +151,7 @@ export default function About() {
                 <Box className="blackDot"></Box>
               </Box>
             </Box>
-
             <Box className="line"></Box>
-
-
             <Box className="YellowBox">
               <Typography>2017-2020</Typography>
               <sapn>
@@ -176,9 +163,7 @@ export default function About() {
                 <Box className="blackDot"></Box>
               </Box>
             </Box>
-
           </Box>
-
         </Box>
 
         <Box className="propertyDetailSection">
@@ -210,7 +195,7 @@ export default function About() {
               <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility
                 of a private space, with various amenities near more than 5000
                 colleges and universities.</Typography>
-              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" />
+              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#fff" />
               <img src={apartMentImg} className='apartMentImg' />
             </Box>
           </Box>
@@ -229,7 +214,7 @@ export default function About() {
             <Box className="mailSendBox">
               <img src={mailIcon} className='mailIcon' />
               <Box className="sendMailBtn">
-                <img src={arrowIcon} className='arrowIcon' />
+                <img src={arrowIcon2} className='arrowIcon' />
               </Box>
               <input type="text" placeholder='Your Email address' />
             </Box>

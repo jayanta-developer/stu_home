@@ -1,38 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./style.css";
 
 //images
-import HomeBG from "../../Assets/Images/propertyBg.png";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
-import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
-import twitterIcon from "../../Assets/Images/twitterSIcon.png";
-import linkdinIcon from "../../Assets/Images/linkdinIcon.png";
-import apartment from "../../Assets/Images/new-block-modern-apartments-with-balconies-blue-sky-background 1.png";
-import lightIcon from "../../Assets/Images/lightIcon.png";
-import arrowIcon from "../../Assets/Images/arrowInTargetIcon.png"
 import blackBg from "../../Assets/Images/blackBg.jpg";
-import stuHoBg from "../../Assets/Images/stuHoBg.png"
-import yellowArrow from "../../Assets/Images/yellowArrow.png"
 import paperCut from "../../Assets/Images/paperCut.png";
+import HomeBG from "../../Assets/Images/propertyBg.png";
+import mailIcon from "../../Assets/Images/mailIcon.png"
+import callIcon from "../../Assets/Images/callIconS.png"
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import arrowIcon2 from "../../Assets/Images/blackArrow.png";
 import locationIcon from "../../Assets/Images/locationS.png"
-import callIcon from "../../Assets/Images/callIconS.png"
-import mailIcon from "../../Assets/Images/mailIcon.png"
+import mailIcon2 from "../../Assets/Images/sMailIcon.png";
+import facebookIcon from "../../Assets/Images/FacebookIcon.png";
+import TwitterIcon from "../../Assets/Images/twitterSIcon.png";
+import InstaIcon from "../../Assets/Images/instaIcon.png";
+import lingkdinIcon from "../../Assets/Images/lingkdinIcon.png"
 
+//data
+import { countries } from "../../Assets/Data"
 
 //components
 import { Box, Typography } from '@mui/material';
 import SimpleMap from "../../Components/Map"
 import NavBar from "../../Components/NavBar";
-import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
+import { AppBtn } from "../../Components/ButtonBox"
 
-//data
-import { achieveData } from "../../Assets/Data"
 
 export default function Contact() {
-
+  const [genderDrop, setGenderDrop] = useState(false)
+  const [genderDropVal, setGenderDropVal] = useState("")
+  const [countryDrop, setCountryDrop] = useState(false)
+  const [countryDropVal, setCountryDropVal] = useState("")
 
   const GRowItem = ({ icon, title, subTitle }) => {
     return (
@@ -47,6 +46,12 @@ export default function Contact() {
       </Box>
     )
   }
+
+  const genders = [
+    "Male",
+    "Female",
+    "Others"
+  ]
 
 
   return (
@@ -69,18 +74,107 @@ export default function Contact() {
                 {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "2715 Ash Dr. San Jose, South Dakota 83475" })}
                 {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "willie.jennings@example.com" })}
                 {GRowItem({ icon: callIcon, title: "Call Us", subTitle: "(406) 555-0120" })}
-
               </Box>
             </Box>
             <Box className="getTMapBox">
               <SimpleMap />
             </Box>
-
           </Box>
-
-
         </Box>
 
+        <Box className="messageBox">
+          <Box className="messageHeaderBox">
+            <Typography>Send Us a Message</Typography>
+            <span>Lorem ipsum dolor sit amet consectetur. Orci sapien arcu ligula morbi faucibus. Ultrices pellentesque augue malesuada scelerisque duis at auctor sed. Vestibulum quis nulla semper purus aenean convallis.</span>
+          </Box>
+          <Box className="messageFooterBox">
+            <img src={blackBg} className='ourMvBackground' />
+            <Box className="mideaText">
+              <Typography>Follow Our Social Media</Typography>
+              <Box className="mideaBox">
+                <Box>
+                  <img src={facebookIcon} />
+                </Box>
+                <Box>
+                  <img src={TwitterIcon} />
+                </Box>
+                <Box>
+                  <img src={InstaIcon} />
+                </Box>
+                <Box>
+                  <img src={lingkdinIcon} />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box className="messageInputBox">
+            <Box className="inputTowBox">
+              <Box className="inputBox">
+                <Typography>First Name *</Typography>
+                <input placeholder='JHON' />
+              </Box>
+              <Box className="inputBox">
+                <Typography>Last Name *</Typography>
+                <input placeholder='STIVEN' />
+              </Box>
+            </Box>
+
+            <Box className="inputTowBox">
+              <Box className="inputBox">
+                <Typography>Email ID *</Typography>
+                <input placeholder='info@student.com' />
+              </Box>
+              <Box className="inputBox">
+                <Typography>Phone Number *</Typography>
+                <input placeholder='123-456-7890' />
+              </Box>
+            </Box>
+
+            <Box className="inputTowBox">
+              <Box className="inputBox" onClick={() => setGenderDrop(!genderDrop)}>
+                <Typography>Your Gender</Typography>
+                <input type="text" value={genderDropVal} placeholder='Select Your Gender' />
+                <Box className="dropBox" sx={{ height: genderDrop ? "130px" : "0px" }}>
+                  {
+                    genders?.map((el, i) => (
+                      <Box key={i} className="dropItem" onClick={() => setGenderDropVal(el)}>
+                        <span>{el}</span>
+                      </Box>
+                    ))
+                  }
+                </Box>
+              </Box>
+              <Box className="inputBox" onClick={() => setCountryDrop(!countryDrop)}>
+                <Typography>Nationality *</Typography>
+                <img style={{ display: countryDropVal?.flag ? "block" : "none" }} className='countryDropImg' src={countryDropVal?.flag} />
+                <input style={{ paddingLeft: "40px" }} type="text" value={countryDropVal?.name} placeholder='Select Your Gender' />
+                <Box className="dropBox" sx={{ height: countryDrop ? "130px" : "0px" }}>
+                  {
+                    countries?.map((el, i) => (
+                      <Box key={i} className="dropItem" onClick={() => setCountryDropVal(el)}>
+                        <span>{el.name}</span>
+                      </Box>
+                    ))
+                  }
+                </Box>
+              </Box>
+            </Box>
+
+            <Box className="inputBox subjectInput">
+              <Typography>Subject</Typography>
+              <input placeholder='Your Subject' />
+            </Box>
+
+            <Box className="inputBox messageInput">
+              <Typography>Message</Typography>
+              <textarea placeholder='Write something here...' />
+            </Box>
+            <Box className="fromBtnBox">
+              <AppBtn btnText="SEND MESSAGE" />
+            </Box>
+          </Box>
+
+        </Box>
 
         <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />
@@ -94,7 +188,7 @@ export default function Contact() {
             </Box>
 
             <Box className="mailSendBox">
-              <img src={mailIcon} className='mailIcon' />
+              <img src={mailIcon2} className='mailIcon' />
               <Box className="sendMailBtn">
                 <img src={arrowIcon2} className='arrowIcon' />
               </Box>

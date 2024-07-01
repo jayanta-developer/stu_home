@@ -277,7 +277,6 @@ export default function PropertyPage() {
               <Typography className='propertyPriceText'>₹ 2,700 <span>/ month</span></Typography>
               <samp>Payment estimation</samp>
             </Box>
-
             <AppBtn btnText="Rent" />
           </Box>
 
@@ -285,11 +284,10 @@ export default function PropertyPage() {
             <Box className="apartmentInnerBox">
               <Typography className='aptHeaderText'>Find New Apartments</Typography>
               <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility of a private space, with various amenities near more than 5000 colleges and universities.</Typography>
-              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" />
+              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
               <img src={apartMentImg} className='apartMentImg' />
             </Box>
           </Box>
-
 
         </Box>
         <Box className="aparEmailBox">

@@ -32,9 +32,8 @@ export default function Footer() {
           <Box className="footerRowOuterBox">
             <Box className="footerInnerText">
 
-
-              <Box className="footerRowItem">
-                <img src={cLogo} />
+              <Box className="footerRowItem footerClogo">
+                <img className='footerClogoImg' src={cLogo} />
                 <Typography className='conctText'>Connect with us</Typography>
                 <Box className="social">
                   <img src={facebook} />
@@ -69,9 +68,6 @@ export default function Footer() {
                 <Typography className='footerNText'>Press </Typography>
                 <Typography className='footerNText'>Careers</Typography>
               </Box>
-
-
-
             </Box>
           </Box>
 

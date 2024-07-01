@@ -2,10 +2,10 @@ import { Box, Typography } from "@mui/material"
 import "./style.css"
 
 
-export const AppBtn = ({ btnText, bgColor, hoverColor, width, height }) => {
+export const AppBtn = ({ btnText, bgColor, hoverColor, width, height, textColor }) => {
   return (
     <Box className="appBtn" sx={{ width: width || "207px", minHeight: height || "50px", background: bgColor || "#fdaf17", ":hover": { background: hoverColor || "#cc8e13" } }}>
-      <Typography>{btnText}</Typography>
+      <Typography sx={{ color: textColor || "#000" }}>{btnText}</Typography>
     </Box>
   )
 }

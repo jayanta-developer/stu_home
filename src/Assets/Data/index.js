@@ -89,3 +89,46 @@ export const achieveData = [
     summery: "There are many variations of passages of Lorem Ipsum available, ",
   },
 ];
+
+export const countries = [
+  {
+    name: "United States",
+    flag: "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png",
+  },
+  {
+    name: "Canada",
+    flag: "https://www.countryflags.com/wp-content/uploads/canada-flag-png-large.png",
+  },
+  {
+    name: "United Kingdom",
+    flag: "https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png",
+  },
+  {
+    name: "Germany",
+    flag: "https://www.countryflags.com/wp-content/uploads/germany-flag-png-large.png",
+  },
+  {
+    name: "France",
+    flag: "https://www.countryflags.com/wp-content/uploads/france-flag-png-large.png",
+  },
+  {
+    name: "Japan",
+    flag: "https://www.countryflags.com/wp-content/uploads/japan-flag-png-large.png",
+  },
+  {
+    name: "Australia",
+    flag: "https://www.countryflags.com/wp-content/uploads/australia-flag-png-large.png",
+  },
+  {
+    name: "Brazil",
+    flag: "https://www.countryflags.com/wp-content/uploads/brazil-flag-png-large.png",
+  },
+  {
+    name: "India",
+    flag: "https://www.countryflags.com/wp-content/uploads/india-flag-png-large.png",
+  },
+  {
+    name: "South Africa",
+    flag: "https://www.countryflags.com/wp-content/uploads/south-africa-flag-png-large.png",
+  },
+];

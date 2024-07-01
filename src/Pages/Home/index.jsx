@@ -100,7 +100,7 @@ export default function Home() {
         <img src={img} />
         <Typography className='workCardTitle'>{title}</Typography>
         <Typography className='workCardSubTitle'>{subTitle}</Typography>
-        <AppBtn btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" />
+        <AppBtn btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
       </Box>
     )
   }
@@ -257,7 +257,7 @@ export default function Home() {
           <Box className="apartmentInnerBox">
             <Typography className='aptHeaderText'>Find New Apartments</Typography>
             <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility of a private space, with various amenities near more than 5000 colleges and universities.</Typography>
-            <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" />
+            <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
             <img src={apartMentImg} className='apartMentImg' />
           </Box>
 
