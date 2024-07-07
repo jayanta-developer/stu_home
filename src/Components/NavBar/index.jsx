@@ -11,7 +11,7 @@ import { Box, Typography } from '@mui/material';
 
 export default function NavBar() {
   const navigate = useNavigate()
-  const curentUrl = window.location.href
+  const curentUrl = window.location.href;
 
   console.log(curentUrl);
 

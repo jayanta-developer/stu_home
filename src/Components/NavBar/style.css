@@ -9,7 +9,7 @@
   align-items: center;
 }
 .navRBox {
-  width: 40%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -42,4 +42,18 @@
   font-family: "Satoshi";
   color: #fff;
   font-weight: 500 !important;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .navRBox {
+    width: 65%;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .navRBox {
+    width: 40%;
+  }
 }

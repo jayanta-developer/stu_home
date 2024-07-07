@@ -19,6 +19,8 @@ import arrowIcon from "../../Assets/Images/blackArrow.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import DropIcon from "../../Assets/Images/grayDropIcon.png";
 import HomeBG from "../../Assets/Images/homeBackgRound.png";
+import HomeBGTabe from "../../Assets/Images/homeBackgRoundTabe.png";
+import HomeBGMobile from "../../Assets/Images/homeBackgRoundMobile.png";
 import propertyImg2 from "../../Assets/Images/propertiImg2.png";
 import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
 import locationIcon from "../../Assets/Images/locationIcon.png";
@@ -109,7 +111,9 @@ export default function Home() {
     <>
       <Box className="homeContainer">
         <Box className="homeSection">
-          <img src={HomeBG} className='HomeBG' />
+          <img src={HomeBG} className='HomeBG HomeBGDesktop' />
+          <img src={HomeBGTabe} className='HomeBG HomeBGTabe' />
+          <img src={HomeBGMobile} className='HomeBG HomeBGMobile' />
           {/* Nav bar */}
           <NavBar />
           <Box className="homeCenterBox">
@@ -265,11 +269,11 @@ export default function Home() {
         <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />
           <Box className="aparMailBox">
-            <img src={inboxIcon} />
+            <img className='InboxIcon' src={inboxIcon} />
             <Box >
               <Typography className='aptHeaderText'>Join Our Journey and
                 Gain Industrial Experience</Typography>
-              <Typography>Sign up to our newsletter for deals,
+              <Typography className='aptSubHeader_Text'>Sign up to our newsletter for deals,
                 inspo and other travel treats!</Typography>
             </Box>
 

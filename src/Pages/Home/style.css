@@ -57,7 +57,7 @@
   color: var(--primaryColor);
 }
 .mainSearchBox {
-  width: 51%;
+  width: 90%;
   height: 100px;
   background: #221e1d;
   border-radius: 0px 20px 20px 20px;
@@ -203,7 +203,7 @@
   padding-top: 30px;
 }
 .hessleInputBox {
-  width: 65%;
+  width: 90%;
   height: 226px;
   display: flex;
   flex-direction: row;
@@ -239,8 +239,8 @@
   margin: 10px 0 !important;
 }
 .hessleInputBox .subSabel {
+  font-size: 13px !important;
   font-family: "Satoshi" !important;
-  font-size: 15px !important;
   color: #ffffffd7;
 }
 .hasselInnerBox img {
@@ -257,7 +257,7 @@
   padding-bottom: 100px;
 }
 .proertiseBox {
-  width: 78%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -321,7 +321,7 @@
   color: #9e9e9e;
 }
 .proCardTitle {
-  font-size: 18px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
   font-family: "Satoshi" !important;
   color: #ffffffd8;
@@ -346,8 +346,8 @@
   margin: 10px 0;
 }
 .proDetails img {
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
 }
 .proDetails p {
   font-size: 14px !important;
@@ -361,20 +361,20 @@
   gap: 20px;
 }
 .priceBox span {
-  font-family: "Satoshi" !important;
   font-size: 18px !important;
+  font-family: "Satoshi" !important;
   font-weight: 700 !important;
   color: #858585;
 }
 .priceBox p {
-  font-family: "Satoshi" !important;
   font-size: 18px !important;
+  font-family: "Satoshi" !important;
   font-weight: 700 !important;
   color: #fff;
 }
 .priceBox p samp {
-  font-family: "Satoshi" !important;
   font-size: 18px !important;
+  font-family: "Satoshi" !important;
   font-weight: 700 !important;
   color: var(--primaryColor);
 }
@@ -413,7 +413,7 @@
   margin: 20px 0 !important;
 }
 .workSection .HCNText {
-  width: 45%;
+  width: 95%;
 }
 .workSection .propertiesCard {
   display: flex;
@@ -461,7 +461,7 @@
   padding: 150px 0;
 }
 .apartmentInnerBox {
-  width: 70%;
+  width: 95%;
   /* height: 283px; */
   background: var(--primaryColor);
   border-radius: 30px;
@@ -471,6 +471,7 @@
   position: relative;
 }
 .aptHeaderText {
+  text-align: center;
   font-family: "PoppinsBold" !important;
   font-size: 40px !important;
   font-weight: 700 !important;
@@ -504,9 +505,9 @@
   width: 100%;
 }
 .aparMailBox {
-  width: 70%;
+  width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
@@ -546,4 +547,113 @@
   position: absolute;
   top: 23px;
   left: 10px;
+}
+.aparEmailBox .InboxIcon {
+  display: none;
+}
+.aptSubHeader_Text {
+  text-align: center;
+}
+.HomeBGDesktop {
+  display: none;
+}
+.HomeBGTabe {
+  display: none;
+}
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .HCNText {
+    width: 90%;
+  }
+  .proCardTitle {
+    font-size: 14px !important;
+  }
+  .proDetails p {
+    font-size: 9px !important;
+  }
+  .priceBox span {
+    font-size: 12px !important;
+  }
+  .priceBox p {
+    font-size: 12px !important;
+  }
+  .priceBox p samp {
+    font-size: 12px !important;
+  }
+  .workSection .HCNText {
+    width: 80%;
+  }
+  .apartmentInnerBox {
+    width: 95%;
+  }
+  .HomeBGMobile {
+    display: none;
+  }
+  .HomeBGTabe {
+    display: block;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .HCNText {
+    width: 100%;
+  }
+  .mainSearchBox {
+    width: 51%;
+  }
+  .hessleInputBox {
+    width: 65%;
+  }
+  .hessleInputBox .subSabel {
+    font-size: 15px !important;
+  }
+  .proertiseBox {
+    width: 78%;
+  }
+  .proCardTitle {
+    font-size: 18px !important;
+  }
+  .proDetails img {
+    width: 20px;
+    height: 20px;
+  }
+  .proDetails p {
+    font-size: 14px !important;
+  }
+  .priceBox span {
+    font-size: 18px !important;
+  }
+  .priceBox p {
+    font-size: 18px !important;
+  }
+  .priceBox p samp {
+    font-size: 18px !important;
+  }
+  .workSection .HCNText {
+    width: 45%;
+  }
+  .apartmentInnerBox {
+    width: 70%;
+  }
+  .aparEmailBox .InboxIcon {
+    display: block;
+  }
+  .aparMailBox {
+    width: 70%;
+    flex-direction: row;
+  }
+  .aptHeaderText {
+    text-align: start;
+  }
+  .aptSubHeader_Text {
+    text-align: start;
+  }
+  .HomeBGDesktop {
+    display: block;
+  }
+
+  .HomeBGTabe {
+    display: none;
+  }
 }
