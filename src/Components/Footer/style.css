@@ -5,7 +5,6 @@
 }
 .footerTextBox {
   width: 100%;
-  height: 400px;
   position: relative;
   background: #000;
   padding: 80px 0;
@@ -44,6 +43,7 @@
   justify-content: space-between;
   gap: 20px;
   z-index: 2;
+  flex-wrap: wrap;
 }
 .footerNText {
   color: #ffeded;
@@ -58,10 +58,11 @@
 .footerInnerText {
   width: 95%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 50px;
   z-index: 2;
+  gap: 50px;
 }
 .social {
   display: flex;
@@ -98,14 +99,24 @@
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {
+  .footer {
+  }
   .footerInnerText {
     width: 95%;
+    flex-direction: row;
+    gap: unset;
   }
   .footerRowHText {
     font-size: 15px !important;
   }
   .conctText {
     font-size: 17px !important;
+  }
+  .footerTextBox {
+    height: 400px;
+  }
+  .footerRowList {
+    flex-wrap: unset;
   }
 }
 

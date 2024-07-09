@@ -1,16 +1,16 @@
 /* nav bar */
 .navBar {
   width: 100%;
-  height: 100px;
-  padding: 0 10%;
+  height: 70px;
+  padding: 0 4%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 .navRBox {
+  display: none;
   width: 70%;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -35,19 +35,34 @@
   border-radius: 5px;
 }
 .navBar .navCLogo {
-  width: 93px;
-  height: 62px;
+  width: 46px;
+  height: 33px;
 }
 .navBar p {
   font-family: "Satoshi";
   color: #fff;
   font-weight: 500 !important;
 }
+.humMenu {
+  display: block;
+}
 
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .navRBox {
     width: 65%;
+    display: flex;
+  }
+  .navBar {
+    padding: 0 10%;
+    height: 100px;
+  }
+  .navBar .navCLogo {
+    width: 93px;
+    height: 62px;
+  }
+  .humMenu {
+    display: none;
   }
 }
 

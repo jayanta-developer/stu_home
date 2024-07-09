@@ -31,6 +31,9 @@ import propertyImg1 from "../../Assets/Images/propertieImg1.png";
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
 import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
+import filterIcon from "../../Assets/Images/filter-circle.svg"
+import searchIcon from "../../Assets/Images/searchIcon.png"
+import whiteLine from "../../Assets/Images/whiteLine.png"
 
 //components
 import { Box, Typography } from '@mui/material';
@@ -42,11 +45,9 @@ export default function Home() {
   const navigate = useNavigate()
   const [searchSelector, setSearchSelecotr] = useState(0);
   const [locationDrop, setLocationDrop] = useState(false);
-  const [locationDropVal, setLocationDropVal] = useState("Select your location");
+  const [locationDropVal, setLocationDropVal] = useState("");
 
   const LocationDropItem = [
-    "Ahmednagar",
-    "Chandrapur",
     "Nagpur",
     "Solapur",
     "Mumbai",
@@ -121,7 +122,30 @@ export default function Home() {
               <Typography className='homeBoldText'>HOME AWAY FROM HOME</Typography>
               <img src={HomeYIcon} />
             </Box>
-            <Typography className='HCNText'>36,000 properties, 178 countries <span>•</span> Over 13 million verified guest reviews <span>•</span> 24/7 customer service</Typography>
+            <Typography className='HCNText'>
+              36,000 properties, 178 countries
+              <span>•</span> Over 13 million verified
+              guest reviews <span>•</span> 24/7 customer service
+            </Typography>
+
+            <Box className="mobileSearchBar">
+              <input type="text" placeholder='Search...' />
+              <Typography>{locationDropVal || "Location"}</Typography>
+              <img src={searchIcon} className="searchIocn" />
+              <img src={filterIcon} className="filterIcon" onClick={() => setLocationDrop(!locationDrop)} />
+              <img src={whiteLine} className="whiteLine" />
+              <Box className="MDropBox" sx={{ height: locationDrop ? "145px" : "0px" }}>
+                {LocationDropItem?.map((el, i) => (
+                  <Box key={i} className="dropItem" onClick={() => {
+                    setLocationDropVal(el)
+                    setLocationDrop(false)
+                  }}>
+                    <span>{el}</span>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+
 
             <Box className="mainSearchBox">
               <Box className="selectorBox">
@@ -136,7 +160,7 @@ export default function Home() {
               <Box className="innerSearchBox">
                 <Box className="locationSechBox" onClick={() => setLocationDrop(!locationDrop)}>
                   <img src={locationIcon} />
-                  <Typography className='locDropText'>{locationDropVal}</Typography>
+                  <Typography className='locDropText'>{locationDropVal || "Select your location"}</Typography>
                   <img className='dropIcon' src={DropIcon} style={{ rotate: locationDrop ? "180deg" : "0deg" }} />
 
                   <Box className="dropBox" sx={{ height: locationDrop ? "160px" : '0px' }}>
@@ -233,7 +257,7 @@ export default function Home() {
           <img style={{ rotate: "180deg" }} src={paperCut} className='paperBottom' />
           <Typography className='hasselHeader'>How it works?</Typography>
           <Typography className='HCNText'>Find furnished rooms for rent and off campus housing options near more than 5,000 colleges and universities</Typography>
-          <Box className="proertiseBox">
+          <Box className="workCardBox">
 
             {WorkCard({
               img: searchHomeIcon,
