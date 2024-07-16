@@ -2,28 +2,33 @@
   --primaryColor: #fdaf17;
 }
 .achieveBox {
-  width: 75%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 27px;
-  margin-bottom: 75px;
 }
 .aboutPage .hasselHeader {
   margin-bottom: 13px !important;
+  text-align: center;
 }
 .achiveSubHeader {
   font-size: 16px !important;
   color: #ffffffda;
   font-family: "Satoshi" !important;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 .achieverListBox {
   width: 100%;
+  height: 400px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 20px;
+  overflow: scroll;
+}
+.achieverListBox::-webkit-scrollbar {
+  display: none;
 }
 .achiverCard {
   width: 25%;
@@ -81,8 +86,8 @@
   flex-direction: column;
   background: #fff9e6;
   justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
 .roadMapText {
   font-size: 30px !important;
@@ -91,11 +96,15 @@
   margin-bottom: 30px !important;
 }
 .roadMapbox {
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
+  overflow: scroll;
+}
+.roadMapbox::-webkit-scrollbar {
+  display: none;
 }
 .lineMainBox {
   width: 100%;
@@ -121,10 +130,10 @@
   font-family: "PoppinsBold" !important;
   margin-bottom: 20px;
 }
-.YellowBox span {
-  font-size: 16px !important;
+.YellowBox sapn {
+  font-size: 14px !important;
   color: #000;
-  font-family: "PoppinsBold" !important;
+  font-family: "Satoshi" !important;
 }
 .lineBox {
   display: flex;
@@ -148,6 +157,7 @@
 }
 .line {
   width: 6%;
+  min-width: 40px;
   height: 2px;
   border: 1px solid #000;
 }
@@ -178,7 +188,7 @@
   left: 0px;
 }
 .ourtMvImageBox {
-  width: 60%;
+  width: 100%;
   height: 100%;
   z-index: 1;
 }
@@ -187,9 +197,9 @@
   height: 100%;
 }
 .ourMvTextBox {
-  width: 50%;
-  height: 473px;
-  background: var(--primaryColor);
+  width: 100%;
+  height: 100%;
+  background: #fdaf17d9;
   border-radius: 1px;
   position: absolute;
   right: 0px;
@@ -200,17 +210,17 @@
   gap: 20px;
 }
 .ourMvTextBox img {
-  width: 44px;
+  width: 27px;
 }
 .ourHeaderText {
   font-family: "PoppinsBold" !important;
-  font-size: 25px !important;
-  color: #000;
+  font-size: 20px !important;
+  color: #696969;
 }
 .oursubText {
   font-family: "Satoshi" !important;
   font-size: 14px !important;
-  color: #000;
+  color: #696969;
 }
 .stuHoSection {
   width: 100%;
@@ -222,7 +232,7 @@
   justify-content: center;
 }
 .stuHoTextbox {
-  width: 70%;
+  width: 95%;
   height: 400px;
   display: flex;
   flex-direction: row;
@@ -231,13 +241,13 @@
   position: relative;
 }
 .stuhoInnerImg {
-  width: 65%;
+  width: 100%;
   height: 70%;
   position: absolute;
   right: 0px;
 }
 .stuhoInnerText {
-  width: 50%;
+  width: 100%;
   z-index: 2;
 }
 .stuhoInnerImg img {
@@ -262,6 +272,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: 40px;
 }
 .countInnerBox {
   display: flex;
@@ -270,11 +281,108 @@
 }
 .countInnerBox span {
   font-family: "Satoshi" !important;
-  font-size: 16px !important;
+  font-size: 13px !important;
   color: #fffde6d8;
 }
 .countInnerBox p {
   font-family: "PoppinsBold" !important;
-  font-size: 38px !important;
+  font-size: 25px !important;
   color: #fff;
+}
+.countInnerBox img {
+  width: 20px;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .stuHoTextbox {
+    width: 90%;
+  }
+  .countInnerBox p {
+    font-size: 20px !important;
+  }
+  .oursubText {
+    font-size: 12px !important;
+  }
+  .achieveBox {
+    width: 90%;
+  }
+  .countInnerBox img {
+    width: 30px;
+  }
+  .stuhoInnerImg {
+    width: 65%;
+    height: 70%;
+  }
+  .stuhoInnerText {
+    width: 50%;
+  }
+  .stuHoTextbox .countBox {
+    margin-top: 0px;
+  }
+  .ourtMvImageBox {
+    width: 60%;
+  }
+  .ourMvTextBox {
+    width: 50%;
+    height: 473px;
+    background: var(--primaryColor);
+  }
+  .ourMvTextBox img {
+    width: 44px;
+  }
+  .ourHeaderText {
+    font-size: 25px !important;
+  }
+  .ourHeaderText {
+    color: #000000;
+  }
+  .oursubText {
+    color: #000000;
+  }
+  .aboutPage .hasselHeader {
+    text-align: start;
+  }
+  .achiveSubHeader {
+    width: 80%;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .stuHoTextbox {
+    width: 70%;
+  }
+  .countInnerBox p {
+    font-size: 38px !important;
+  }
+  .countInnerBox span {
+    font-size: 16px !important;
+  }
+  .roadMapbox {
+    width: 95%;
+    overflow: unset;
+  }
+  .oursubText {
+    font-size: 14px !important;
+  }
+  .achieveBox {
+    width: 75%;
+    margin-bottom: 75px;
+  }
+  .achieverListBox {
+    overflow: unset;
+    height: unset;
+    justify-content: center;
+  }
+  .roadMap {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .countInnerBox img {
+    width: 37px;
+  }
+  .YellowBox sapn {
+    font-size: 15px !important;
+  }
 }

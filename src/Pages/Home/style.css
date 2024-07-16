@@ -47,6 +47,7 @@
   margin-bottom: 5px !important;
 }
 .HCNText {
+  width: 95%;
   font-family: "Satoshi" !important;
   font-size: 12px !important;
   text-align: center;
@@ -340,8 +341,8 @@
   gap: 10px;
 }
 .CardlocationBox p {
+  font-size: 11px !important;
   font-family: "Satoshi" !important;
-  font-size: 16px !important;
   color: #ffffffd8;
 }
 .proDetails {
@@ -356,7 +357,7 @@
   height: 12px;
 }
 .proDetails p {
-  font-size: 14px !important;
+  font-size: 9px !important;
   color: #9e9e9e;
   font-family: "Satoshi" !important;
 }
@@ -465,7 +466,7 @@
   background-image: url("../../Assets/Images/blackBg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 25px 0;
+  padding: 50px 0;
 }
 .apartmentInnerBox {
   width: 95%;
@@ -498,12 +499,12 @@
 }
 .aparEmailBox {
   width: 100%;
-  height: 300px;
   background: var(--primaryColor);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 47px 0;
 }
 .aparEmailBox .paperTop {
   position: absolute;
@@ -541,6 +542,7 @@
 }
 .aparEmailBox .aptHeaderText {
   font-size: 24px !important;
+  margin-bottom: 10px;
 }
 .mailSendBox input {
   width: 100%;
@@ -671,9 +673,7 @@
   .proCardTitle {
     font-size: 14px !important;
   }
-  .proDetails p {
-    font-size: 12px !important;
-  }
+
   .priceBox span {
     font-size: 16px !important;
   }
@@ -718,7 +718,6 @@
     font-weight: 700 !important;
     text-align: center;
     margin: 40px 0 !important;
-    margin-left: 40px !important;
   }
   .hasselInnerBox {
     padding: 30px 20px;
@@ -753,7 +752,7 @@
     font-size: 24px !important;
   }
   .apartmentBox {
-    padding: 150px 0;
+    padding: 50px 0;
   }
   .apartmentInnerBox {
     width: 95%;
@@ -803,6 +802,17 @@
   .hessleInputBox .subSabel {
     font-size: 13px !important;
     display: block;
+  }
+  .homeLabel img {
+    top: -12px;
+    right: -7px;
+    width: 100px;
+  }
+  .CardlocationBox p {
+    font-size: 13px !important;
+  }
+  .proDetails p {
+    font-size: 11px !important;
   }
 }
 
@@ -875,5 +885,26 @@
   }
   .workSection .propertiesCard {
     min-width: unset;
+  }
+  .homeLabel img {
+    top: -14px;
+    right: -7px;
+    width: 104px;
+  }
+  .CardlocationBox p {
+    font-size: 16px !important;
+  }
+  .proDetails p {
+    font-size: 14px !important;
+  }
+  .apartmentBox {
+    padding: 150px 0;
+  }
+  .aparEmailBox {
+    height: 300px;
+    padding: 0px;
+  }
+  .hasselHeader {
+    margin-left: 40px !important;
   }
 }

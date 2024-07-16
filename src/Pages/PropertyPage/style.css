@@ -17,7 +17,7 @@
   width: 100%;
   text-align: center;
   font-family: "PoppinsBold" !important;
-  font-size: 30px !important;
+  font-size: 20px !important;
   color: #fffae6;
   margin-top: 90px;
 }
@@ -26,19 +26,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
   position: relative;
 }
 .propertyTitleBox {
-  width: 75%;
+  width: 95%;
   margin-bottom: 37px;
 }
 .proTilInnerBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 15px;
+  gap: 20px;
 }
 .propertyTitle {
   font-family: "Satoshi" !important;
@@ -67,6 +68,7 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .propContactBtn {
   width: 185px;
@@ -134,7 +136,7 @@
   font-size: 14px !important;
 }
 .properyImgBox {
-  width: 75%;
+  width: 95%;
   height: 400px;
   display: flex;
   flex-direction: row;
@@ -149,7 +151,7 @@
   overflow: hidden;
 }
 .imgBox1 img {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 .imgBox2 {
@@ -166,7 +168,7 @@
   overflow: hidden;
 }
 .img2Inn img {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 .showAllBtn {
@@ -190,9 +192,9 @@
   font-family: "Satoshi" !important;
 }
 .propertyInfoBox {
-  width: 75%;
+  width: 95%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 30px;
   margin-bottom: 30px;
@@ -204,15 +206,15 @@
   backdrop-filter: blur(10px);
 }
 .overViewBox {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 300px;
 }
 .facilitiesBox {
-  width: 40%;
-  height: 300px;
+  width: 100%;
+  /* height: 300px; */
 }
 .overTitelBOx {
   width: 100%;
@@ -293,6 +295,7 @@
 }
 .facilitesItem p {
   color: #fff;
+  font-size: 11px;
 }
 .facilOuterBox {
   display: flex;
@@ -300,16 +303,16 @@
   gap: 55px;
 }
 .aboutLocBox {
-  width: 60%;
+  width: 100%;
 }
 .testimonialsBox {
-  width: 40%;
+  width: 100%;
 }
 .aboutLocBox p {
   color: #ffff;
 }
 .costBtn {
-  width: 50%;
+  width: 100%;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -339,7 +342,7 @@
   margin: 20px 0;
 }
 .MapBox {
-  width: 75%;
+  width: 95%;
   height: 285px;
   padding: 20px;
   border-radius: 15px;
@@ -353,7 +356,7 @@
   overflow: hidden;
 }
 .rentSection {
-  width: 75%;
+  width: 95%;
   height: 100px;
   border-radius: 15px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
@@ -373,4 +376,100 @@
 }
 .propertyDetailSection .apartmentBox {
   background-image: none;
+}
+.rentSection .appBtn {
+  width: 100px;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .propertyDetailSection {
+    padding-top: 60px;
+  }
+  .propertyTitleBox {
+    width: 90%;
+  }
+  .properyImgBox {
+    width: 90%;
+  }
+  .propertyInfoBox {
+    width: 90%;
+    flex-direction: row;
+  }
+  .MapBox {
+    width: 90%;
+  }
+  .rentSection {
+    width: 90%;
+  }
+  .facilitesItem p {
+    color: #fff;
+    font-size: 11px;
+  }
+  .aboutLocBox {
+    width: 51%;
+  }
+  .testimonialsBox {
+    width: 49%;
+  }
+  .propLocBox {
+    flex-wrap: unset;
+  }
+  .overViewBox {
+    width: 60%;
+  }
+  .facilitiesBox {
+    width: 40%;
+  }
+  .imgBox1 img {
+    width: 100%;
+  }
+  .img2Inn img {
+    width: 100%;
+  }
+  .rentSection .appBtn {
+    width: 207px;
+  }
+  .propertyHomeSection .propertyheaderText {
+    font-size: 30px !important;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .propertyDetailSection {
+    padding-top: 100px;
+  }
+  .propertyTitleBox {
+    width: 75%;
+  }
+  .properyImgBox {
+    width: 75%;
+  }
+  .propertyInfoBox {
+    width: 75%;
+  }
+  .MapBox {
+    width: 75%;
+  }
+  .rentSection {
+    width: 75%;
+  }
+  .proTilInnerBox {
+    flex-direction: row;
+    gap: unset;
+  }
+  .facilitesItem p {
+    color: #fff;
+    font-size: 16px;
+  }
+  .aboutLocBox {
+    width: 60%;
+  }
+  .testimonialsBox {
+    width: 40%;
+  }
+  .costBtn {
+    width: 50%;
+  }
 }

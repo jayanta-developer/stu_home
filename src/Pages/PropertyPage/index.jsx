@@ -297,7 +297,7 @@ export default function PropertyPage() {
             <Box >
               <Typography className='aptHeaderText'>Join Our Journey and
                 Gain Industrial Experience</Typography>
-              <Typography>Sign up to our newsletter for deals,
+              <Typography sx={{ textAlign: "center" }}>Sign up to our newsletter for deals,
                 inspo and other travel treats!</Typography>
             </Box>
 
