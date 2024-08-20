@@ -41,6 +41,9 @@ import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer"
 
+//data
+import { properitData } from "../../Assets/Data"
+
 export default function Home() {
   const navigate = useNavigate()
   const [searchSelector, setSearchSelecotr] = useState(0);
@@ -56,9 +59,9 @@ export default function Home() {
   ];
 
 
-  const PropertiesCard = ({ img, btnText, title, location }) => {
+  const PropertiesCard = ({ img, btnText, title, location, key }) => {
     return (
-      <Box className="propertiesCard" onClick={() => navigate("/property")}>
+      <Box key={key} className="propertiesCard" onClick={() => navigate("/property")}>
         <Box className="coverImg">
           <img src={img} />
           <Box className='loveIcon'>
@@ -119,7 +122,7 @@ export default function Home() {
           <NavBar />
           <Box className="homeCenterBox">
             <Box className="homeLabel">
-              <Typography className='homeBoldText'>HOME AWAY FROM HOME</Typography>
+              <Typography className='homeBoldText'>MAKE EVERY TRIP WORTH THE STAY</Typography>
               <img src={HomeYIcon} />
             </Box>
             <Typography className='HCNText'>
@@ -222,22 +225,19 @@ export default function Home() {
         <Box className="PropertiesSection">
           <Typography className='hasselHeader'>Our Properties</Typography>
           <Box className="proertiseBox">
+
             {
-              PropertiesCard({
-                img: propertyImg1,
-                btnText: "Popular",
-                title: "Entire Sea view Cabin near Juhu Beach",
-                location: "Juhu, Mumbai"
-              })
+              properitData?.map((el, i) => (
+                PropertiesCard({
+                  img: el.images[2],
+                  btnText: "Featured",
+                  title: el.title,
+                  location: el.location,
+                  key: i
+                })
+              ))
             }
-            {
-              PropertiesCard({
-                img: propertyImg2,
-                btnText: "Featured",
-                title: "Entire Sea view Cabin near Juhu Beach",
-                location: "Juhu, Mumbai"
-              })
-            }
+
             {
               PropertiesCard({
                 img: propertyImg3,
