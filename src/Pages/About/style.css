@@ -215,12 +215,12 @@
 .ourHeaderText {
   font-family: "PoppinsBold" !important;
   font-size: 20px !important;
-  color: #696969;
+  color: #000000;
 }
 .oursubText {
   font-family: "Satoshi" !important;
   font-size: 14px !important;
-  color: #696969;
+  color: #000;
 }
 .stuHoSection {
   width: 100%;
@@ -333,12 +333,6 @@
   }
   .ourHeaderText {
     font-size: 25px !important;
-  }
-  .ourHeaderText {
-    color: #000000;
-  }
-  .oursubText {
-    color: #000000;
   }
   .aboutPage .hasselHeader {
     text-align: start;

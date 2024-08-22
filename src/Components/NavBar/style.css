@@ -23,7 +23,8 @@
   color: #fcaf17;
 }
 .logInBox {
-  width: 185px;
+  /* width: 185px; */
+  width: 55px;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -46,11 +47,36 @@
 .humMenu {
   display: block;
 }
+.sideMenu {
+  transition: all 0.8s;
+  z-index: 99999;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
+  overflow: hidden;
+}
 
+.subItemDeactivate .navItem {
+  display: none;
+}
+.backIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .navRBox {
-    width: 65%;
+    width: 50%;
     display: flex;
   }
   .navBar {
@@ -69,6 +95,6 @@
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
   .navRBox {
-    width: 40%;
+    width: 30%;
   }
 }

@@ -34,7 +34,10 @@ import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
-import { AppBtn } from "../../Components/ButtonBox"
+import { AppBtn } from "../../Components/ButtonBox";
+
+//data
+import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
   const headerText = "Our Properties Details";
@@ -52,7 +55,7 @@ export default function PropertyPage() {
           <img src={pageBackground} className='propertyBg' />
           <Box className="propertyTitleBox">
             <Box className="proTilInnerBox">
-              <Typography className='propertyTitle'>Entire Sea view Cabin Near Juhu Beach</Typography>
+              <Typography className='propertyTitle'>{properitData[0].title}</Typography>
               <Typography className='propertyPriceText'>₹ 2,700 <span>/ month</span></Typography>
             </Box>
 
@@ -61,7 +64,7 @@ export default function PropertyPage() {
 
                 <Box className="locText">
                   <img src={locationOutIcon} />
-                  <Typography>Juhu, Mumbai</Typography>
+                  <Typography>{properitData[0].location}</Typography>
                 </Box>
 
                 <Box className="start_Box">
@@ -96,14 +99,14 @@ export default function PropertyPage() {
               <Typography>View All Photos</Typography>
             </Box>
             <Box className="imgBox1">
-              <img src={propertyImg} />
+              <img src={properitData[0].images[0]} />
             </Box>
             <Box className="imgBox2">
               <Box className="img2Inn">
-                <img src={propertyImg} />
+                <img src={properitData[0].images[1]} />
               </Box>
               <Box className="img2Inn">
-                <img src={propertyImg} />
+                <img src={properitData[0].images[2]} />
               </Box>
             </Box>
           </Box>
@@ -126,7 +129,7 @@ export default function PropertyPage() {
               <Box className="locationBox">
                 <Box className="CardlocationBox">
                   <img src={locationOutIcon} />
-                  <Typography>Juhu, Mumbai</Typography>
+                  <Typography>{properitData[0].location}</Typography>
                 </Box>
                 <Box className="proDetails">
                   <img src={badIcon} />
@@ -143,7 +146,7 @@ export default function PropertyPage() {
                     <img src={avatart} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>Louise Vuitton</Typography>
+                    <Typography>{properitData[0].owner}</Typography>
                     <span>Property owner</span>
                   </Box>
                 </Box>
@@ -212,8 +215,8 @@ export default function PropertyPage() {
           <Box className="propertyInfoBox">
             <Box className="propertyInfoInBox aboutLocBox">
               <Typography className='overViewTitle'>About location’s neighborhood</Typography>
-              <Typography my={3}>This cabin comes with Smart Home System and beautiful viking style. You can see sunrise in the morning with City View from full Glass Window.</Typography>
-              <Typography mb={3}>This unit is surrounded by business district of West Surabaya that offers you the city life as well as wide range of culinary.</Typography>
+              <Typography my={3}>{properitData[0].summery}</Typography>
+              {/* <Typography mb={3}>This unit is surrounded by business district of West Surabaya that offers you the city life as well as wide range of culinary.</Typography> */}
               <Typography mb={5}>This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
@@ -269,7 +272,7 @@ export default function PropertyPage() {
           </Box>
 
           <Box className="MapBox">
-            <SimpleMap />
+            <SimpleMap lat={properitData[0].map[0]} lng={properitData[0].map[1]} />
           </Box>
 
           <Box className="rentSection">

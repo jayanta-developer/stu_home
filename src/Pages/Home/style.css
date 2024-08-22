@@ -450,7 +450,7 @@
 .workSection .paperTop {
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: -2px;
 }
 .workSection .paperBottom {
   width: 100%;
@@ -508,7 +508,7 @@
 }
 .aparEmailBox .paperTop {
   position: absolute;
-  top: 0px;
+  top: -2px;
   width: 100%;
 }
 .aparMailBox {
@@ -814,6 +814,9 @@
   .proDetails p {
     font-size: 11px !important;
   }
+  .proertiseBox {
+    justify-content: center;
+  }
 }
 
 /* Desktop view */
@@ -833,7 +836,6 @@
     min-width: unset;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     gap: 20px;
     overflow: unset;
   }

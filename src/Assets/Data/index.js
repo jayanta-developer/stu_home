@@ -179,7 +179,9 @@ export const properitData = [
       PropertyImg18,
       PropertyImg19,
     ],
-    location: "Gurugram, Haryana, India",
-    map: [],
+    location: "Gurugram, Haryana",
+    map: ["28.459306", "77.026488"],
+    price: "₹ 2,700",
+    owner: "Hosted by Surya Prakash",
   },
 ];
