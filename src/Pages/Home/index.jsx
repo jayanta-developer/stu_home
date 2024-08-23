@@ -61,7 +61,10 @@ export default function Home() {
 
   const PropertiesCard = ({ img, btnText, title, location, key }) => {
     return (
-      <Box key={key} className="propertiesCard" onClick={() => navigate("/property")}>
+      <Box key={key} className="propertiesCard" onClick={() => {
+        navigate("/property")
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      }}>
         <Box className="coverImg">
           <img src={img} />
           <Box className='loveIcon'>
@@ -238,14 +241,6 @@ export default function Home() {
               ))
             }
 
-            {
-              PropertiesCard({
-                img: propertyImg3,
-                btnText: "Featured",
-                title: "Entire Sea view Cabin near Juhu Beach",
-                location: "Juhu, Mumbai"
-              })
-            }
           </Box>
           <Box className="btnBox">
             <AppBtn btnText="VIEW ALL" />

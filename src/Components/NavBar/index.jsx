@@ -60,7 +60,7 @@ export default function NavBar() {
 
 
         <Box className="navRBox">
-          <Typography>EXPLORE</Typography>
+          <Typography onClick={() => navigate("/property")}>EXPLORE</Typography>
           <Typography onClick={() => navigate("/about")}>ABOUT US</Typography>
           <Box className="logInBox">
             <img src={LogAvatarIcon} />
