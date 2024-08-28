@@ -35,6 +35,7 @@ import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
 import { AppBtn } from "../../Components/ButtonBox";
+import { ImageComponent } from "../../Components/Carousel"
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -42,9 +43,14 @@ import { properitData } from "../../Assets/Data"
 export default function PropertyPage() {
   const headerText = "Our Properties Details";
 
+
   return (
     <>
       <Box className="property">
+        <Box className="backDrop">
+          <ImageComponent />
+        </Box>
+
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
           <NavBar />
@@ -160,72 +166,34 @@ export default function PropertyPage() {
                   </Box>
                 </Box>
               </Box>
-
-
-
-
-
             </Box>
 
 
             <Box className="propertyInfoInBox facilitiesBox">
               <Typography className='overViewTitle'>Home Facilities</Typography>
               <Box className="facilOuterBox">
-                <Box className="facilitiesItemBox">
-                  <Box className="facilitesItem">
-                    <img src={AirIcon} />
-                    <Typography>Air conditioner</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={kitchenIcon} />
-                    <Typography>Kitchen</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={carIcon} />
-                    <Typography>Free parking</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={wifiIcon} />
-                    <Typography>Free WiFi</Typography>
-                  </Box>
-                </Box>
-                <Box className="facilitiesItemBox">
-                  <Box className="facilitesItem">
-                    <img src={AirIcon} />
-                    <Typography>Air conditioner</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={kitchenIcon} />
-                    <Typography>Kitchen</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={carIcon} />
-                    <Typography>Free parking</Typography>
-                  </Box>
-                  <Box className="facilitesItem">
-                    <img src={wifiIcon} />
-                    <Typography>Free WiFi</Typography>
-                  </Box>
-                </Box>
+                {
+                  properitData[0]?.Facilities?.map((el, i) => (
+                    <Box className="facilitesItem" key={i}>
+                      <img src={el.icon} />
+                      <Typography>{el.title}</Typography>
+                    </Box>
+                  ))
+                }
               </Box>
             </Box>
-
           </Box>
 
-          <Box className="propertyInfoBox">
+          <Box className="propertyInfoBox propertyInfoBoxv2">
             <Box className="propertyInfoInBox aboutLocBox">
               <Typography className='overViewTitle'>About location’s neighborhood</Typography>
               <Typography my={3}>{properitData[0].summery}</Typography>
-              {/* <Typography mb={3}>This unit is surrounded by business district of West Surabaya that offers you the city life as well as wide range of culinary.</Typography> */}
               <Typography mb={5}>This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
                 <span>500 ₹ /month</span>
-
               </Box>
             </Box>
-
-
 
             <Box className="propertyInfoInBox testimonialsBox">
               <Typography className='overViewTitle'>Testimonials</Typography>
@@ -265,8 +233,6 @@ export default function PropertyPage() {
                 </Box>
                 <Typography className='reviewText'>My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer...  <span>Read more</span></Typography>
               </Box>
-
-
 
             </Box>
           </Box>

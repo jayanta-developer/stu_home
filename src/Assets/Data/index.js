@@ -24,6 +24,14 @@ import PropertyImg17 from "../Images/Property/f6b9c2d6-acff-4723-ba7c-d918b4d984
 import PropertyImg18 from "../Images/Property/f9828d32-421e-4982-ba7a-b2854bd037bf.webp";
 import PropertyImg19 from "../Images/Property/fded8c3f-85a6-4c2d-9039-9a8d307689c0.webp";
 
+import airConditionar from "../Images/airConditionar.png";
+import kitchenIcon from "../../Assets/Images/kitchen.png";
+import tvIcon from "../Images/TVv2.png";
+import parkingIcon from "../Images/carParking.png";
+import ccTV from "../Images/cctv.png";
+import alarmIcon from "../Images/alarm.png";
+import wifi from "../Images/wifiIconV2.png";
+
 export const ProductService = [
   {
     id: "19990",
@@ -183,5 +191,35 @@ export const properitData = [
     map: ["28.459306", "77.026488"],
     price: "₹ 2,700",
     owner: "Hosted by Surya Prakash",
+    Facilities: [
+      {
+        icon: airConditionar,
+        title: "Air conditioning",
+      },
+      {
+        icon: kitchenIcon,
+        title: "Kitchen",
+      },
+      {
+        icon: wifi,
+        title: "Wifi",
+      },
+      {
+        icon: parkingIcon,
+        title: "Free parking on premises",
+      },
+      {
+        icon: tvIcon,
+        title: "TV",
+      },
+      {
+        icon: ccTV,
+        title: "Exterior security cameras on property",
+      },
+      {
+        icon: alarmIcon,
+        title: "Smoke alarm",
+      },
+    ],
   },
 ];
