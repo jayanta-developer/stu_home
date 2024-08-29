@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./Assets/tailwind.config";
+
 //pages
 import Home from "./Pages/Home";
 import PropertyPage from "./Pages/PropertyPage";

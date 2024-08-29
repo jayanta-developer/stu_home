@@ -14,10 +14,10 @@ import { Typography, Box } from '@mui/material';
 export default function Footer() {
 
   const footerList = [
-    "Data Protection",
-    "Notice",
+    "Terms and Conditions",
+    "Privacy Policy",
     "Terms & Legal",
-    "Coupons",
+    "Blogs",
     "Vouchers",
     "Website Testing",
     "Site Map",
@@ -45,9 +45,9 @@ export default function Footer() {
 
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Accommodation</Typography>
-                <Typography className='footerNText'>Hostels</Typography>
-                <Typography className='footerNText'>Hotels</Typography>
-                <Typography className='footerNText'>Bed and Breakfast</Typography>
+                <Typography className='footerNText'>Flats</Typography>
+                <Typography className='footerNText'>Rooms</Typography>
+                {/* <Typography className='footerNText'>Bed and Breakfast</Typography> */}
               </Box>
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Customer Support</Typography>

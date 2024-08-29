@@ -31,6 +31,10 @@ import parkingIcon from "../Images/carParking.png";
 import ccTV from "../Images/cctv.png";
 import alarmIcon from "../Images/alarm.png";
 import wifi from "../Images/wifiIconV2.png";
+import SecuredEntry from "../Images/securtyEntry.png";
+import SpaceWork from "../Images/SpaceWork.png";
+import Laundry from "../Images/Laundry.png";
+import CustomerSupport from "../Images/CustomerSupport.png";
 
 export const ProductService = [
   {
@@ -189,7 +193,7 @@ export const properitData = [
     ],
     location: "Gurugram, Haryana",
     map: ["28.459306", "77.026488"],
-    price: "₹ 2,700",
+    price: "5,700",
     owner: "Hosted by Surya Prakash",
     Facilities: [
       {
@@ -206,19 +210,23 @@ export const properitData = [
       },
       {
         icon: parkingIcon,
-        title: "Free parking on premises",
+        title: "Free parking",
       },
       {
-        icon: tvIcon,
-        title: "TV",
+        icon: SecuredEntry,
+        title: "Secured Entry",
       },
       {
-        icon: ccTV,
-        title: "Exterior security cameras on property",
+        icon: SpaceWork,
+        title: "Space for Work",
       },
       {
-        icon: alarmIcon,
-        title: "Smoke alarm",
+        icon: Laundry,
+        title: "Laundry Facilities",
+      },
+      {
+        icon: CustomerSupport,
+        title: "24/7 Customer Support",
       },
     ],
   },

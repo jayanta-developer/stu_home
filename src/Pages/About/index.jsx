@@ -108,7 +108,7 @@ export default function About() {
         </Box>
 
         <Box className="roadMap">
-          <Typography className='roadMapText'>Road Map</Typography>
+          <Typography className='roadMapText'>Our Journey</Typography>
           <Box className="roadMapbox">
             <Box className="YellowBox">
               <Typography>2009</Typography>

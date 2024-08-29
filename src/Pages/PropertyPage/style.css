@@ -204,7 +204,6 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
-  backdrop-filter: blur(10px);
 }
 .overViewBox {
   width: 100%;
@@ -316,7 +315,8 @@
   width: 100%;
 }
 .aboutLocBox p {
-  color: #ffff;
+  color: #fff;
+  font-size: 16px !important;
 }
 .costBtn {
   width: 100%;
@@ -393,11 +393,18 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
   background: #7d7f88ad;
+}
+.backDrop > div {
+  width: 95%;
+  height: 400px;
+}
+.backDrop > div > div {
+  width: 95%;
+  height: 400px;
 }
 
 /* Tabe view */
@@ -503,9 +510,17 @@
     width: 40%;
   }
   .costBtn {
-    width: 50%;
+    width: 60%;
   }
   .propertyInfoBoxv2 {
     flex-direction: unset;
+  }
+  .backDrop > div {
+    width: 65%;
+    height: 450px;
+  }
+  .backDrop > div > div {
+    width: 65%;
+    height: 450px;
   }
 }

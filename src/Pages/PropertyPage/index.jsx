@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
 
 
@@ -19,36 +19,53 @@ import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
 import avatart from "../../Assets/Images/avatar.png";
 import messageIcon from "../../Assets/Images/messageIcon.svg";
 import callIconSvg from "../../Assets/Images/callIconsvg.svg";
-import AirIcon from "../../Assets/Images/airIconSvg.svg"
-import kitchenIcon from "../../Assets/Images/kitchenSvg.svg"
-import carIcon from "../../Assets/Images/carIconSvg.svg"
-import wifiIcon from "../../Assets/Images/wifiIcon.svg"
 import paperCut from "../../Assets/Images/paperCut.png";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
 import arrowIcon from "../../Assets/Images/blackArrow.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import apartMentImg from "../../Assets/Images/apartment-house-real.png";
+import avatar1 from "../../Assets/Images/avatar1.png";
+import avatar2 from "../../Assets/Images/avatat2.png";
 
 //components
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useScrollTrigger } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
 import { AppBtn } from "../../Components/ButtonBox";
-import { ImageComponent } from "../../Components/Carousel"
+import { ImageSlider } from "../../Components/Carousel"
 
 //data
 import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
   const headerText = "Our Properties Details";
+  const [gellaryPop, setGellaryPop] = useState(false);
+  const [testimonlText1, setTestimonlText1] = useState(false)
+  const [testimonlText2, setTestimonlText2] = useState(false)
 
+  useEffect(() => {
+    if (gellaryPop) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [gellaryPop]);
+
+  const handleClose = (e) => {
+    if (e.target.id === "gellaryBackdrop") {
+      setGellaryPop(false)
+    }
+  }
 
   return (
     <>
       <Box className="property">
-        <Box className="backDrop">
-          <ImageComponent />
+        <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>
+          <ImageSlider data={properitData[0]} />
         </Box>
 
         <Box className="propertyHomeSection">
@@ -62,7 +79,7 @@ export default function PropertyPage() {
           <Box className="propertyTitleBox">
             <Box className="proTilInnerBox">
               <Typography className='propertyTitle'>{properitData[0].title}</Typography>
-              <Typography className='propertyPriceText'>₹ 2,700 <span>/ month</span></Typography>
+              <Typography className='propertyPriceText'>₹ {properitData[0].price} <span>/ PER DAY</span></Typography>
             </Box>
 
             <Box className="proTilInnerBox">
@@ -100,7 +117,10 @@ export default function PropertyPage() {
           </Box>
 
           <Box className="properyImgBox">
-            <Box className="showAllBtn">
+            <Box className="showAllBtn" onClick={() => {
+              setGellaryPop(true)
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
               <img src={galleryIcon} />
               <Typography>View All Photos</Typography>
             </Box>
@@ -191,7 +211,7 @@ export default function PropertyPage() {
               <Typography mb={5}>This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
-                <span>500 ₹ /month</span>
+                <span>₹ {properitData[0].price} /PER DAY</span>
               </Box>
             </Box>
 
@@ -201,10 +221,10 @@ export default function PropertyPage() {
               <Box className="reviewBox">
                 <Box mb={1} className="avatarBox">
                   <Box className="avatarImg">
-                    <img src={avatart} />
+                    <img src={avatar1} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>Louise Vuitton</Typography>
+                    <Typography>User A</Typography>
                     <Box>
                       <img src={starIcon} />
                       <img src={starIcon} />
@@ -213,16 +233,20 @@ export default function PropertyPage() {
                     </Box>
                   </Box>
                 </Box>
-                <Typography className='reviewText'>My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer...   <span>Read more</span></Typography>
+                <Typography sx={{ display: testimonlText1 ? "block" : "none" }} className='reviewText'>I recently stayed at House No. 479 in sector 47 Gurugaon through Socio Stays, and it was an absolutely wonderful experience. The property was exactly as described, clean, comfortable, and in a great location. The host, [Host Name], was incredibly welcoming and helpful, always available to answer any questions or provide recommendations. I felt right at home and would definitely recommend Socio Stays to anyone looking for a unique and affordable accommodation option. <span onClick={() => setTestimonlText1(false)}>Less view</span></Typography>
+                <Typography sx={{ display: testimonlText1 ? "none" : "block" }} className='reviewText'>I recently stayed at House No. 479 in sector 47 Gurugaon through Socio Stays, and it was an absolutely wonderful... <span onClick={() => {
+                  setTestimonlText1(true)
+                  setTestimonlText2(false)
+                }}>Read more</span></Typography>
               </Box>
 
               <Box className="reviewBox">
                 <Box mb={1} className="avatarBox">
                   <Box className="avatarImg">
-                    <img src={avatart} />
+                    <img src={avatar2} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>Louise Vuitton</Typography>
+                    <Typography>User B</Typography>
                     <Box>
                       <img src={starIcon} />
                       <img src={starIcon} />
@@ -231,7 +255,11 @@ export default function PropertyPage() {
                     </Box>
                   </Box>
                 </Box>
-                <Typography className='reviewText'>My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer...  <span>Read more</span></Typography>
+                <Typography sx={{ display: testimonlText2 ? "block" : "none" }} className='reviewText'>My stay here through Socio Stays was nothing short of amazing. The property was beautifully furnished and had everything I needed for a comfortable stay. The host was incredibly friendly and went above and beyond to ensure I had a great time. I loved the local vibe of the neighborhood and felt like I was truly experiencing the city like a local. I would highly recommend Socio Stays to anyone looking for a memorable and authentic travel experience. <span onClick={() => setTestimonlText2(false)}>Less view</span></Typography>
+                <Typography sx={{ display: testimonlText2 ? "none" : "block" }} className='reviewText'>My stay here through Socio Stays was nothing short of amazing. The property was beautifully furnished and had... <span onClick={() => {
+                  setTestimonlText2(true)
+                  setTestimonlText1(false)
+                }}>Read more</span></Typography>
               </Box>
 
             </Box>
@@ -243,7 +271,7 @@ export default function PropertyPage() {
 
           <Box className="rentSection">
             <Box>
-              <Typography className='propertyPriceText'>₹ 2,700 <span>/ month</span></Typography>
+              <Typography className='propertyPriceText'>₹ {properitData[0].price}<span> / PER DAY</span></Typography>
               <samp>Payment estimation</samp>
             </Box>
             <AppBtn btnText="Rent" />

@@ -59,7 +59,7 @@ export default function Home() {
   ];
 
 
-  const PropertiesCard = ({ img, btnText, title, location, key }) => {
+  const PropertiesCard = ({ img, btnText, title, location, key, price }) => {
     return (
       <Box key={key} className="propertiesCard" onClick={() => {
         navigate("/property")
@@ -95,8 +95,7 @@ export default function Home() {
             <Typography>673 m2</Typography>
           </Box>
           <Box className="priceBox">
-            <span>$526 / month</span>
-            <Typography>$420 <samp>/ month</samp></Typography>
+            <Typography>₹ {price} <samp>/ month</samp></Typography>
           </Box>
         </Box>
       </Box>
@@ -236,7 +235,8 @@ export default function Home() {
                   btnText: "Featured",
                   title: el.title,
                   location: el.location,
-                  key: i
+                  key: i,
+                  price: el.price
                 })
               ))
             }
