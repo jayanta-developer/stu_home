@@ -23,6 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 11%;
 }
 .homeLabel {
   width: 100%;
@@ -38,7 +39,7 @@
   width: 51px;
 }
 .homeBoldText {
-  font-size: 15px !important;
+  font-size: 35px !important;
   font-family: "PoppinsBold" !important;
   font-weight: 700 !important;
   text-align: center;
@@ -47,9 +48,9 @@
   margin-bottom: 5px !important;
 }
 .HCNText {
+  font-size: 20px !important;
   width: 95%;
   font-family: "Satoshi" !important;
-  font-size: 12px !important;
   text-align: center;
   color: #fffae6;
 }
@@ -821,6 +822,9 @@
 
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
+  .homeCenterBox {
+    gap: 0;
+  }
   .HCNText {
     width: 100%;
   }

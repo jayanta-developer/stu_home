@@ -95,7 +95,7 @@ export default function Home() {
             <Typography>673 m2</Typography>
           </Box>
           <Box className="priceBox">
-            <Typography>₹ {price} <samp>/ month</samp></Typography>
+            <Typography>₹ {price} <samp>/ PER DAY</samp></Typography>
           </Box>
         </Box>
       </Box>
