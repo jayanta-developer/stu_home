@@ -7,6 +7,7 @@ import PropertyPage from "./Pages/PropertyPage";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import TermsPage from "./Pages/TermsPage";
+import PolicyPage from "./Pages/PolicyPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Terms-and-Conditions" element={<TermsPage />} />
+        <Route path="/Pricacy-Policy" element={<PolicyPage />} />
       </Routes>
     </>
   );

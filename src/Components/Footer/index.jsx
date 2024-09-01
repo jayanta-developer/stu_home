@@ -27,13 +27,15 @@ export default function Footer() {
   ]
 
 
-  const detactPageClick = (e) => {
+  const DetactPageClick = (e) => {
     window.scrollTo({ top: 0, behavior: "smooth" })
     if (e.target.textContent === "Terms and Conditions") {
       navigate("/Terms-and-Conditions")
+    } else if (e.target.textContent === "Privacy Policy") {
+      navigate("/Pricacy-Policy")
     }
-
   }
+
 
   return (
     <>
@@ -86,7 +88,7 @@ export default function Footer() {
           <Box className="footerRowOuterBox">
             <Box className="footerRowList">
               {footerList?.map((el, i) => (
-                <Typography onClick={detactPageClick} className='footerNText' key={i}>{el}</Typography>
+                <Typography onClick={DetactPageClick} className='footerNText' key={i}>{el}</Typography>
               ))}
             </Box>
           </Box>

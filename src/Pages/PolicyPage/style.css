@@ -1,0 +1,36 @@
+.termNText span {
+  font-size: 18px;
+  font-weight: 600;
+}
+.bulletBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.bulletBox .dotBox {
+  min-width: 35px;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  padding-right: 10px;
+}
+.policyPage .termsTextSection {
+  padding: 30px 0;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .policyPage .termsTextSection {
+    padding: 50px 0;
+  }
+  .bulletBox .dotBox {
+    min-width: 45px;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .bulletBox .dotBox {
+    min-width: 80px;
+  }
+}

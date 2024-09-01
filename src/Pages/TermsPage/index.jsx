@@ -5,30 +5,16 @@ import "./style.css";
 import HomeBG from "../../Assets/Images/propertyBg.png";
 import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
-import twitterIcon from "../../Assets/Images/twitterSIcon.png";
-import linkdinIcon from "../../Assets/Images/linkdinIcon.png";
-import apartment from "../../Assets/Images/new-block-modern-apartments-with-balconies-blue-sky-background 1.png";
-import lightIcon from "../../Assets/Images/lightIcon.png";
-import arrowIcon from "../../Assets/Images/arrowInTargetIcon.png"
-import blackBg from "../../Assets/Images/blackBg.jpg";
-import stuHoBg from "../../Assets/Images/stuHoBg.png"
-import yellowArrow from "../../Assets/Images/yellowArrow.png"
 import paperCut from "../../Assets/Images/paperCut.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
 import arrowIcon2 from "../../Assets/Images/blackArrow.png";
-
-
-
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
-
-//data
-import { achieveData } from "../../Assets/Data"
 
 export default function TermsPage() {
   const headerText = (
