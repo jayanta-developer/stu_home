@@ -1,5 +1,7 @@
 import React from 'react';
 import "./style.css";
+import { useNavigate } from "react-router-dom"
+
 
 //images
 import cLogo from "../../Assets/Images/shAppLogo.png";
@@ -12,6 +14,7 @@ import blackBg from "../../Assets/Images/blackBg.jpg";
 import { Typography, Box } from '@mui/material';
 
 export default function Footer() {
+  const navigate = useNavigate()
 
   const footerList = [
     "Terms and Conditions",
@@ -22,6 +25,15 @@ export default function Footer() {
     "Website Testing",
     "Site Map",
   ]
+
+
+  const detactPageClick = (e) => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    if (e.target.textContent === "Terms and Conditions") {
+      navigate("/Terms-and-Conditions")
+    }
+
+  }
 
   return (
     <>
@@ -74,7 +86,7 @@ export default function Footer() {
           <Box className="footerRowOuterBox">
             <Box className="footerRowList">
               {footerList?.map((el, i) => (
-                <Typography className='footerNText' key={i}>{el}</Typography>
+                <Typography onClick={detactPageClick} className='footerNText' key={i}>{el}</Typography>
               ))}
             </Box>
           </Box>

@@ -34,8 +34,8 @@
 }
 .homeLabel img {
   position: absolute;
-  top: -11px;
-  right: 45px;
+  top: -6px;
+  right: 40px;
   width: 51px;
 }
 .homeBoldText {
@@ -264,7 +264,8 @@
   width: 95%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  /* justify-content: start; */
+  justify-content: center;
   gap: 20px;
   overflow: scroll;
 }

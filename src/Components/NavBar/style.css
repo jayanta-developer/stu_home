@@ -39,8 +39,13 @@
   width: 46px;
   height: 33px;
 }
-.navBar p {
+.sideMenu .navItem p {
   font-size: 30px;
+  font-family: "Satoshi";
+  color: #fff;
+  font-weight: 500 !important;
+}
+.navBar p {
   font-family: "Satoshi";
   color: #fff;
   font-weight: 500 !important;

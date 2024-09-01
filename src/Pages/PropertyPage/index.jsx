@@ -221,10 +221,10 @@ export default function PropertyPage() {
               <Box className="reviewBox">
                 <Box mb={1} className="avatarBox">
                   <Box className="avatarImg">
-                    <img src={avatar1} />
+                    <img src={avatar2} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>User A</Typography>
+                    <Typography>Kiran Malwankar</Typography>
                     <Box>
                       <img src={starIcon} />
                       <img src={starIcon} />
@@ -243,10 +243,10 @@ export default function PropertyPage() {
               <Box className="reviewBox">
                 <Box mb={1} className="avatarBox">
                   <Box className="avatarImg">
-                    <img src={avatar2} />
+                    <img src={avatar1} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>User B</Typography>
+                    <Typography>Shivesh Desai</Typography>
                     <Box>
                       <img src={starIcon} />
                       <img src={starIcon} />
