@@ -27,6 +27,8 @@ export default function Footer() {
   ]
 
 
+  const GoTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
+
   const DetactPageClick = (e) => {
     window.scrollTo({ top: 0, behavior: "smooth" })
     if (e.target.textContent === "Terms and Conditions") {
@@ -49,7 +51,10 @@ export default function Footer() {
             <Box className="footerInnerText">
 
               <Box className="footerRowItem footerClogo">
-                <img className='footerClogoImg' src={cLogo} />
+                <img className='footerClogoImg pointer' src={cLogo} onClick={() => {
+                  navigate("/")
+                  GoTop()
+                }} />
                 <Typography className='conctText'>Connect with us</Typography>
                 <Box className="social">
                   <img src={facebook} />
@@ -72,7 +77,10 @@ export default function Footer() {
               </Box>
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Quick Links</Typography>
-                <Typography className='footerNText' onClick={() => navigate("/blogs")}>Blog</Typography>
+                <Typography className='footerNText' onClick={() => {
+                  navigate("/blogs")
+                  GoTop()
+                }}>Blog</Typography>
                 <Typography className='footerNText'>Booking </Typography>
                 <Typography className='footerNText'>Guarantee </Typography>
                 <Typography className='footerNText'>Hostel Awards </Typography>

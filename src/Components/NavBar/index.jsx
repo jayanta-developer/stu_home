@@ -36,7 +36,7 @@ export default function NavBar() {
   return (
     <>
       <Box className="navBar">
-        <img src={shAppLogo} className='navCLogo' onClick={() => navigate("/")} />
+        <img src={shAppLogo} className='navCLogo pointer' onClick={() => navigate("/")} />
         <img src={HumMenu} className='humMenu' onClick={() => setSideMenu(!sideMenu)} />
 
 
