@@ -33,6 +33,8 @@ export default function Footer() {
       navigate("/Terms-and-Conditions")
     } else if (e.target.textContent === "Privacy Policy") {
       navigate("/Pricacy-Policy")
+    } else if (e.target.textContent === "Blogs") {
+      navigate("/blogs")
     }
   }
 
@@ -70,7 +72,7 @@ export default function Footer() {
               </Box>
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Quick Links</Typography>
-                <Typography className='footerNText'>Blog</Typography>
+                <Typography className='footerNText' onClick={() => navigate("/blogs")}>Blog</Typography>
                 <Typography className='footerNText'>Booking </Typography>
                 <Typography className='footerNText'>Guarantee </Typography>
                 <Typography className='footerNText'>Hostel Awards </Typography>

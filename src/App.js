@@ -1,6 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+
 //pages
 import Home from "./Pages/Home";
 import PropertyPage from "./Pages/PropertyPage";
@@ -8,8 +12,10 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import TermsPage from "./Pages/TermsPage";
 import PolicyPage from "./Pages/PolicyPage";
+import Blogs from "./Pages/Blogs";
 
 export default function App() {
+  AOS.init();
   return (
     <>
       <Routes>
@@ -17,6 +23,7 @@ export default function App() {
         <Route path="/property" element={<PropertyPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/Terms-and-Conditions" element={<TermsPage />} />
         <Route path="/Pricacy-Policy" element={<PolicyPage />} />
       </Routes>
