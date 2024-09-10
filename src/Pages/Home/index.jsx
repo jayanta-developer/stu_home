@@ -46,7 +46,6 @@ import { properitData } from "../../Assets/Data"
 
 export default function Home() {
   const navigate = useNavigate()
-  const [searchSelector, setSearchSelecotr] = useState(0);
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("");
 
@@ -154,10 +153,8 @@ export default function Home() {
 
             <Box className="mainSearchBox">
               <Box className="selectorBox">
-                <Box className={searchSelector === 0 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(0)}>
-                  <Typography>HOSTEL/PG</Typography>
-                </Box>
-                <Box className={searchSelector === 1 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(1)}>
+
+                <Box className="sltIBox sltBoxActive">
                   <Typography>FLATS</Typography>
                 </Box>
               </Box>
@@ -189,21 +186,21 @@ export default function Home() {
         </Box>
 
         <Box className='hasselBox'>
-          <Typography className='hasselHeader'>Be Hassel - Free</Typography>
+          <Typography className='hasselHeader'>Skip The Hassle!</Typography>
 
           <Box className="hessleInputBox">
             <Box className="hasselInnerBox" sx={{ background: "#2B2625" }}>
               <img src={light} />
               <img src={hasselIcon} className='hasselIcon' />
-              <Typography className='label'>Exclusive experiences</Typography>
-              <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
+              <Typography className='label'>Experience Like Never Before</Typography>
+              <Typography className='subSabel'>Ditch the ordinary! Immerse yourself in local culture, discover hidden gems, and enjoy the comforts of a private haven.</Typography>
             </Box>
 
             <Box className="hasselInnerBox" sx={{ background: "#3A3533" }}>
               <img src={bankSvg} />
               <img src={hasselIcon} className='hasselIcon' />
-              <Typography className='label'>Local & Authentic</Typography>
-              <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
+              <Typography className='label'>Best Selection of Stays </Typography>
+              <Typography className='subSabel'>From cozy studios to luxurious villas, we offer unique listings for every budget and travel style. Find your perfect home away from home.</Typography>
             </Box>
 
           </Box>
@@ -211,14 +208,14 @@ export default function Home() {
             <Box className="hasselInnerBox" sx={{ background: "#292726" }}>
               <img src={personSvg} />
               <img src={hasselIcon} className='hasselIcon' />
-              <Typography className='label'>Hostel Activities</Typography>
-              <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
+              <Typography className='label'>Social Activities</Typography>
+              <Typography className='subSabel'>Craving social interaction? We offer options with shared spaces and curated adventures. Want privacy? Relax in your own space and add activities on demand.</Typography>
             </Box>
             <Box className="hasselInnerBox" sx={{ background: "#2B2727" }}>
               <img src={awordSvg} />
               <img src={hasselIcon} className='hasselIcon' />
-              <Typography className='label'>Best selection of hostels</Typography>
-              <Typography className='subSabel'>Browse hundreds of properties in your city of choice. Save your favorites and set up search alerts so you don't miss your dream place!</Typography>
+              <Typography className='label'>Local and Authentic</Typography>
+              <Typography className='subSabel'>Live like a local in vibrant neighborhoods. Connect with welcoming hosts and experience the true essence of your destination.</Typography>
             </Box>
           </Box>
         </Box>
@@ -250,26 +247,26 @@ export default function Home() {
         <Box className="workSection">
           <img src={paperCut} className='paperTop' />
           <img style={{ rotate: "180deg" }} src={paperCut} className='paperBottom' />
-          <Typography className='hasselHeader'>How it works?</Typography>
-          <Typography className='HCNText'>Find furnished rooms for rent and off campus housing options near more than 5,000 colleges and universities</Typography>
+          <Typography className='hasselHeader'>How Does It Work?</Typography>
+          <Typography className='HCNText'>Find easy stays for rent on and off campus near more than 5,000 colleges and universities!</Typography>
           <Box className="workCardBox">
 
             {WorkCard({
               img: searchHomeIcon,
-              title: "Search",
-              subTitle: "You can easily search for hundreds of listings around your school, metro station and city.",
+              title: "Search & Discover",
+              subTitle: "Explore unique listings in vibrant neighborhoods, from budget-friendly studios to luxurious villas. Find your perfect local haven.",
               BtnText: "SEARCH NOW"
             })}
             {WorkCard({
               img: HomeIcon,
-              title: "Match",
-              subTitle: "Review the listings and profiles of the hosts or guests and match based on your housing needs.",
+              title: "Book & Connect",
+              subTitle: "Secure your stay with a few clicks and connect with your friendly host. Get insider tips on local gems!",
               BtnText: "EXPLORE NOW"
             })}
             {WorkCard({
               img: calenderIcon,
-              title: "Move in",
-              subTitle: "Once the booking is approved you can simply move in to your new home.",
+              title: "Experience & Explore",
+              subTitle: "Immerse yourself in the local culture, discover hidden treasures, and relax in the comfort of your private space.",
               BtnText: "REQUEST NOW"
             })}
           </Box>
@@ -290,8 +287,7 @@ export default function Home() {
           <Box className="aparMailBox">
             <img className='InboxIcon' src={inboxIcon} />
             <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and
-                Gain Industrial Experience</Typography>
+              <Typography className='aptHeaderText'>Join Our Journey and Gain Industrial Experience</Typography>
               <Typography className='aptSubHeader_Text'>Sign up to our newsletter for deals,
                 inspo and other travel treats!</Typography>
             </Box>

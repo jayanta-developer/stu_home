@@ -109,23 +109,27 @@ export const ProductService = [
 export const achieveData = [
   {
     img: img1,
-    name: "Jhon Doe",
-    summery: "There are many variations of passages of Lorem Ipsum available, ",
+    name: "Ethan Parker",
+    summery:
+      "Ethan enjoys digital art, hiking, and exploring new design techniques.",
   },
   {
     img: img2,
-    name: "Jhon Doe",
-    summery: "There are many variations of passages of Lorem Ipsum available, ",
+    name: "Sophia Martinez",
+    summery:
+      "Sophia loves traveling, trying new cuisines, and social media marketing. ",
   },
   {
     img: img3,
-    name: "Jhon Doe",
-    summery: "There are many variations of passages of Lorem Ipsum available, ",
+    name: "Lucas Bennett",
+    summery:
+      "Lucas has a keen interest in technology and coding. He like playing video games",
   },
   {
     img: img4,
-    name: "Jhon Doe",
-    summery: "There are many variations of passages of Lorem Ipsum available, ",
+    name: "Mia Thompson",
+    summery:
+      "Mia is passionate about sustainable architecture and urban design. ",
   },
 ];
 

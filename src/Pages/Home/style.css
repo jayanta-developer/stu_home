@@ -140,7 +140,7 @@
   color: #fff;
 }
 .selectorBox {
-  width: 28%;
+  width: 20%;
   height: 37px;
   position: absolute;
   top: -37px;
@@ -151,7 +151,7 @@
   overflow: hidden;
 }
 .sltIBox {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -241,11 +241,15 @@
   font-family: "Poppins" !important;
   font-weight: 600 !important;
   color: #ffffffd8;
+  position: relative;
+  z-index: 1;
 }
 .hessleInputBox .subSabel {
   display: none;
   font-family: "Satoshi" !important;
   color: #ffffffd7;
+  position: relative;
+  z-index: 1;
 }
 .hasselInnerBox img {
   width: 23px;

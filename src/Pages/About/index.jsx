@@ -183,7 +183,7 @@ export default function About() {
                     <img src={twitterIcon} />
                     <img src={linkdinIcon} />
                   </Box>
-                  <Typography className='achivCardSummery'>There are many variations of passages of Lorem Ipsum available, </Typography>
+                  <Typography className='achivCardSummery'>{el.summery}</Typography>
                   <AppBtn btnText="View Profile" width="165px" height="40px" />
                 </Box>
               ))}

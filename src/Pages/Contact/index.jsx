@@ -84,8 +84,8 @@ export default function Contact() {
 
         <Box className="messageBox">
           <Box className="messageHeaderBox">
-            <Typography>Send Us a Message</Typography>
-            <span>Lorem ipsum dolor sit amet consectetur. Orci sapien arcu ligula morbi faucibus. Ultrices pellentesque augue malesuada scelerisque duis at auctor sed. Vestibulum quis nulla semper purus aenean convallis.</span>
+            <Typography>Send us a Message</Typography>
+            <span>Ready to experience Gurgaon like a local? Send us a message and let's plan your stay! </span>
           </Box>
           <Box className="messageFooterBox">
             <img src={blackBg} className='ourMvBackground' />
