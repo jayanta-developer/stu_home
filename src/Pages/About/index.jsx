@@ -33,8 +33,8 @@ import { achieveData } from "../../Assets/Data"
 export default function About() {
   const headerText = (
     <>
-      Over 65,000 people have found <br />
-      their hostel / Flats
+      Ditch the Ordinary, Embrace Luxury:<br /> Welcome to Socio Stays
+
     </>
   );
 
@@ -55,7 +55,7 @@ export default function About() {
               <Typography className='stuhoHeaderText'>What is StuHo ?</Typography>
               <Typography className='stuhoSubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
               <Typography className='stuhoSubText'>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</Typography>
-              <Box className="countBox">
+              {/* <Box className="countBox">
                 <Box className="countInnerBox">
                   <span>More than</span>
                   <Typography>13.7M</Typography>
@@ -73,7 +73,7 @@ export default function About() {
                   <Typography>10</Typography>
                   <span>Countries</span>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
 
             <Box className="stuhoInnerImg">
