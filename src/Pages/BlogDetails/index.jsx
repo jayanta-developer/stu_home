@@ -24,11 +24,12 @@ import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
+import backIcon from "../../Assets/Images/backV2Icon.png"
 
 //Data
 import { BlogData } from "../../Assets/Data"
 
-export default function Blogs() {
+export default function BlogDetails() {
   const navigate = useNavigate()
 
   const headerText = (
@@ -37,15 +38,11 @@ export default function Blogs() {
     </>
   );
 
-  const storeBlogIndex = (i) => {
-    localStorage.setItem("blogIndex", i)
-    navigate("/Blog-details")
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+  const BlogIndex = localStorage.getItem("blogIndex")
 
   return (
     <>
-      <Box className="property aboutPage TermsPage policyPage blogPage">
+      <Box className="property aboutPage TermsPage policyPage blogPage blogDetailsPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
           <NavBar />
@@ -55,18 +52,29 @@ export default function Blogs() {
           <img src={pageBackground} className='propertyBg' />
 
           <Box className="blogInSection">
+            <Box className="backTabe" onClick={() => navigate("/blogs")}>
+              <img src={backIcon} />
+              <Typography>Back</Typography>
+            </Box>
+            <Box className="blog1Box">
+              <Box className="blog1A">
+                <Typography className='blogTitle'>{BlogData[BlogIndex].title}</Typography>
+                <Typography>{BlogData[BlogIndex].summery}</Typography>
+              </Box>
+              <Box className="blog1B">
+                <img src={BlogData[BlogIndex].img} />
+              </Box>
+            </Box>
             {
-              BlogData?.map((el, i) => (
-                <Box key={0} className="blogCard">
-                  <img src={el.img} />
-                  <Typography className='blogHeader'>{el?.title.slice(0, 66)}...</Typography>
-                  <Typography className='blogSubHeader'>{el?.summery?.slice(0, 140)}... </Typography>
-                  <Box className="BlogCbtnBox">
-                    <AppBtn btnText="Read More" onClick={() => storeBlogIndex(i)} />
-                  </Box>
+              BlogData[BlogIndex].subPoint.map((el, i) => (
+                <Box key={i}>
+                  <Typography className='PSubHeader'>{el.header}</Typography>
+                  <Typography className='PSubSummery'>{el.summery}</Typography>
                 </Box>
               ))
             }
+            <Typography className='blogTitle'>{BlogData[BlogIndex].Conclusion}</Typography>
+            <Typography>{BlogData[BlogIndex].ConclusionSummery}</Typography>
           </Box>
         </Box>
 

@@ -1,0 +1,85 @@
+.blog1Box {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.blog1A {
+  width: 100%;
+}
+.blog1B {
+  width: 100%;
+  border-radius: 13px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.blog1B img {
+  width: 100%;
+  object-fit: cover;
+}
+.blogDetailsPage .blogInSection {
+  padding: 20px;
+  position: relative;
+}
+.PSubHeader {
+  font-size: 26px !important;
+  font-family: "PoppinsBold" !important;
+  color: #fffc;
+}
+.PSubSummery {
+  font-size: 18px !important;
+  color: #fffc;
+}
+.backTabe {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+.backTabe img {
+  width: 28px;
+}
+.backTabe p {
+  font-size: 18px !important;
+  color: #fff;
+  font-weight: 500 !important;
+}
+.blogTitle {
+  font-size: 30px !important;
+  margin-top: 10px !important;
+  font-family: "PoppinsBold" !important;
+  margin-bottom: 10px !important;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .blog1B {
+    width: 60%;
+    margin-left: 0;
+  }
+  .blog1A {
+    margin-bottom: 40px;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .blog1Box {
+    flex-direction: row;
+    align-items: unset;
+  }
+  .blog1B {
+    width: 30%;
+  }
+  .blog1A {
+    width: 70%;
+  }
+  .blogTitle {
+    font-size: 26px !important;
+    margin-top: 0px !important;
+  }
+}

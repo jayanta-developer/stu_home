@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact";
 import TermsPage from "./Pages/TermsPage";
 import PolicyPage from "./Pages/PolicyPage";
 import Blogs from "./Pages/Blogs";
+import BlogDetails from "./Pages/BlogDetails";
 
 export default function App() {
   AOS.init();
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/Blog-details" element={<BlogDetails />} />
         <Route path="/Terms-and-Conditions" element={<TermsPage />} />
         <Route path="/Pricacy-Policy" element={<PolicyPage />} />
       </Routes>

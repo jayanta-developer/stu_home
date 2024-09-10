@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 
 //images
-import cLogo from "../../Assets/Images/shAppLogo.png";
+import cLogo from "../../Assets/Images/ClogoNew-removebg-preview.png";
 import facebook from "../../Assets/Images/FacebookIcon.png";
 import twitter from "../../Assets/Images/TwitterIcon.png";
 import instaIcon from "../../Assets/Images/instaIcon.png";

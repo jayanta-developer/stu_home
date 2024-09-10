@@ -4,7 +4,8 @@ import "./style.css"
 
 //Images
 import LogAvatarIcon from "../../Assets/Images/logAvatarIcon.png";
-import shAppLogo from "../../Assets/Images/shAppLogo.png";
+import shAppLogo from "../../Assets/Images/ClogoNew-removebg-preview.png";
+// import shAppLogo from "../../Assets/Images/shAppLogo.png";
 import HumMenu from "../../Assets/Images/HumMenu.png"
 import backIcon from "../../Assets/Images/backIcon.png"
 
