@@ -9,7 +9,6 @@ import facebook from "../../Assets/Images/FacebookIcon.png";
 import twitter from "../../Assets/Images/TwitterIcon.png";
 import instaIcon from "../../Assets/Images/instaIcon.png";
 import lingkdinIcon from "../../Assets/Images/lingkdinIcon.png";
-
 import blackBg from "../../Assets/Images/blackBg.jpg";
 import { Typography, Box } from '@mui/material';
 
@@ -19,11 +18,11 @@ export default function Footer() {
   const footerList = [
     "Terms and Conditions",
     "Privacy Policy",
-    "Terms & Legal",
+    // "Terms & Legal",
     "Blogs",
-    "Vouchers",
-    "Website Testing",
-    "Site Map",
+    // "Vouchers",
+    // "Website Testing",
+    // "Site Map",
   ]
 
 

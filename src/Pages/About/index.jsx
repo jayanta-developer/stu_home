@@ -52,9 +52,9 @@ export default function About() {
 
           <Box className="stuHoTextbox">
             <Box className="stuhoInnerText">
-              <Typography className='stuhoHeaderText'>What is StuHo ?</Typography>
-              <Typography className='stuhoSubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
-              <Typography className='stuhoSubText'>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</Typography>
+              <Typography className='stuhoHeaderText'>Socio Stays</Typography>
+              <Typography className='stuhoSubText'><span>Imagine</span> stepping into a world of unparalleled comfort, exquisite design, and personalized service. Socio Stays isn't your average accommodation platform; it's a gateway to elevated experiences for discerning travelers like you</Typography>
+              <Typography className='stuhoSubText'><span>Forget</span> the limitations of traditional rentals. Socio Stays offers a modern sanctuary for those who seek more than just a place to stay. We combine the power of technology with unwavering hospitality to curate unforgettable stays in prime locations.</Typography>
               {/* <Box className="countBox">
                 <Box className="countInnerBox">
                   <span>More than</span>
@@ -93,21 +93,30 @@ export default function About() {
           </Box>
 
           <Box className="ourMvTextBox">
+            <Typography className='omtbHeader'>Here's what sets us apart!</Typography>
             <Box>
-              <img src={lightIcon} />
-              <Typography className='ourHeaderText'>Our Vision</Typography>
-              <Typography className='oursubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
+              {/* <img src={lightIcon} /> */}
+              <Typography className='ourHeaderText'>Meticulously Selected Properties</Typography>
+              <Typography className='oursubText'>Each Socio Stays residence is hand-picked to meet the highest standards of luxury. Think top-tier amenities, stylish interiors, and exceptional service that anticipates your every need. </Typography>
             </Box>
 
             <Box>
-              <img src={arrowIcon} />
-              <Typography className='ourHeaderText'>Our Mission</Typography>
-              <Typography className='oursubText'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Typography>
+              {/* <img src={arrowIcon} /> */}
+              <Typography className='ourHeaderText'>Seamless Booking & Curated Experiences</Typography>
+              <Typography className='oursubText'>Our cutting-edge platform makes booking a breeze, while our team of experts crafts tailored experiences to suit your travel style, whether you're on a business trip or a leisure adventure.
+              </Typography>
+            </Box>
+            <Box>
+              {/* <img src={arrowIcon} /> */}
+              <Typography className='ourHeaderText'>Unforgettable Memories</Typography>
+              <Typography className='oursubText'>At Socio Stays, we prioritize quality, convenience, and your complete satisfaction. Our mission is to transform every stay into a treasured memory that will leave you wanting more.
+                <Typography mt={2} className='oursubText'>Ready to redefine luxury travel? Explore Socio Stay today and discover a world of elevated experiences waiting to be explored.</Typography>
+              </Typography>
             </Box>
           </Box>
         </Box>
 
-        <Box className="roadMap">
+        {/* <Box className="roadMap">
           <Typography className='roadMapText'>Our Journey</Typography>
           <Box className="roadMapbox">
             <Box className="YellowBox">
@@ -164,7 +173,7 @@ export default function About() {
               </Box>
             </Box>
           </Box>
-        </Box>
+        </Box> */}
 
         <Box className="propertyDetailSection">
           <img src={pageBackground} className='propertyBg' />
@@ -200,7 +209,7 @@ export default function About() {
             </Box>
           </Box>
         </Box>
-        <Box className="aparEmailBox">
+        {/* <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />
           <Box className="aparMailBox">
             <img src={inboxIcon} />
@@ -219,7 +228,7 @@ export default function About() {
               <input type="text" placeholder='Your Email address' />
             </Box>
           </Box>
-        </Box>
+        </Box> */}
         <Footer />
       </Box>
 

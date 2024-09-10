@@ -266,6 +266,11 @@
   color: #ffffffda;
   margin-bottom: 20px !important;
 }
+.stuhoSubText span {
+  font-weight: 600;
+  font-size: 16px;
+  font-style: italic;
+}
 .stuHoTextbox .countBox {
   width: 100%;
   display: flex;
@@ -292,7 +297,11 @@
 .countInnerBox img {
   width: 20px;
 }
-
+.omtbHeader {
+  font-size: 28px !important;
+  font-family: "PoppinsBold" !important;
+  font-weight: 600 !important;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .stuHoTextbox {
