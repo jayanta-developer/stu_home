@@ -11,7 +11,7 @@
   width: 100%;
   border-radius: 13px;
   overflow: hidden;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .blog1B img {
@@ -60,7 +60,6 @@
 @media only screen and (min-width: 768px) {
   .blog1B {
     width: 60%;
-    margin-left: 0;
   }
   .blog1A {
     margin-bottom: 40px;
@@ -74,6 +73,7 @@
   }
   .blog1B {
     width: 30%;
+    margin-left: 10px;
   }
   .blog1A {
     width: 70%;
