@@ -37,6 +37,7 @@
   top: -6px;
   right: 40px;
   width: 51px;
+  display: none;
 }
 .homeBoldText {
   font-size: 35px !important;
@@ -439,10 +440,11 @@
   background: #fff;
 }
 .workCardTitle {
-  font-size: 20px !important;
+  font-size: 15px !important;
   font-weight: 700 !important;
   color: #000;
   font-family: "Poppins" !important;
+  text-align: center;
 }
 .workCardSubTitle {
   font-size: 16px !important;
@@ -655,10 +657,10 @@
   min-width: unset;
   padding: 8px;
   justify-content: center;
-  gap: 16px;
+  gap: 3px;
 }
 .workCardBox .propertiesCard img {
-  width: 32px;
+  width: 25px;
 }
 .workCardBox .propertiesCard .workCardSubTitle {
   display: none;
@@ -756,6 +758,7 @@
   }
   .workCardTitle {
     font-size: 24px !important;
+    text-align: start;
   }
   .apartmentBox {
     padding: 50px 0;
@@ -792,6 +795,7 @@
   }
   .workCardBox .propertiesCard {
     height: 396px;
+    gap: 16px;
   }
   .workCardBox .propertiesCard img {
     width: unset;
@@ -813,6 +817,7 @@
     top: -12px;
     right: -7px;
     width: 100px;
+    display: block;
   }
   .CardlocationBox p {
     font-size: 13px !important;

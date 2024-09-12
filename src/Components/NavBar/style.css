@@ -37,8 +37,8 @@
   border-radius: 5px;
 }
 .navBar .navCLogo {
-  width: 46px;
-  height: 33px;
+  width: 67px;
+  height: 48px;
 }
 .sideMenu .navItem p {
   font-size: 30px;
@@ -83,11 +83,11 @@
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .navRBox {
-    width: 50%;
+    width: 74%;
     display: flex;
   }
   .navBar {
-    padding: 0 10%;
+    padding: 0 6%;
     height: 100px;
   }
   .navBar .navCLogo {
@@ -103,5 +103,8 @@
 @media only screen and (min-width: 1000px) {
   .navRBox {
     width: 40%;
+  }
+  .navBar {
+    padding: 0 10%;
   }
 }

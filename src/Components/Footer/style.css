@@ -7,7 +7,7 @@
   width: 100%;
   position: relative;
   background: #000;
-  padding: 80px 0;
+  padding: 30px 0;
 }
 .footerTextBox .fobg {
   position: absolute;
@@ -114,6 +114,7 @@
   }
   .footerTextBox {
     height: 400px;
+    padding: 80px 0;
   }
   .footerRowList {
     width: 48%;
