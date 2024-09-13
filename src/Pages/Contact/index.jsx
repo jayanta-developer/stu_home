@@ -69,7 +69,7 @@ export default function Contact() {
           <Box className="getTouchInnderBox">
             <Box className="getTTextBox">
               <Typography className='getTHeader'>Get in Touch</Typography>
-              <Typography className='getTSubHeader'>Lorem ipsum dolor sit amet consectetur. Orci sapien arcu ligula morbi faucibus. Ultrices pellentesque augue malesuada scelerisque duis at auctor sed. Vestibulum quis nulla semper purus aenean convallis.</Typography>
+              <Typography className='getTSubHeader'>For any specific questions or booking requests, don't hesitate to contact us. We're here to help make your stay perfect! </Typography>
               <Box className="getTItemBox">
                 {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "2715 Ash Dr. San Jose, South Dakota 83475" })}
                 {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "willie.jennings@example.com" })}
@@ -85,7 +85,7 @@ export default function Contact() {
         <Box className="messageBox">
           <Box className="messageHeaderBox">
             <Typography>Send us a Message</Typography>
-            <span>Ready to experience Gurgaon like a local? Send us a message and let's plan your stay! </span>
+            <span>Ready to experience Gurgaon like a local? Send us a message and let's plan your stay!</span>
           </Box>
           <Box className="messageFooterBox">
             <img src={blackBg} className='ourMvBackground' />

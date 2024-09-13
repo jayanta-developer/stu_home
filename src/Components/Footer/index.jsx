@@ -77,16 +77,23 @@ export default function Footer() {
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Quick Links</Typography>
                 <Typography className='footerNText' onClick={() => {
+                  navigate("/Terms-and-Conditions")
+                  GoTop()
+                }}>Terms and Conditions </Typography>
+                <Typography className='footerNText' onClick={() => {
+                  navigate("/Pricacy-Policy")
+                  GoTop()
+                }}>Privacy Policy</Typography>
+                <Typography className='footerNText' onClick={() => {
                   navigate("/blogs")
                   GoTop()
                 }}>Blog</Typography>
                 <Typography className='footerNText'>Booking </Typography>
-                <Typography className='footerNText'>Guarantee </Typography>
-                <Typography className='footerNText'>Hostel Awards </Typography>
+
               </Box>
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>About Us</Typography>
-                <Typography className='footerNText'>Hostelworld Group </Typography>
+                <Typography className='footerNText'>Our Journey</Typography>
                 <Typography className='footerNText'>PLC </Typography>
                 <Typography className='footerNText'>Press </Typography>
                 <Typography className='footerNText'>Careers</Typography>

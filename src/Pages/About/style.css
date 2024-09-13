@@ -334,7 +334,7 @@
   }
   .ourMvTextBox {
     width: 50%;
-    height: 473px;
+    height: auto;
     background: var(--primaryColor);
   }
   .ourMvTextBox img {
