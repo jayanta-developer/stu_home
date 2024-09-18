@@ -33,11 +33,11 @@ export default function Contact() {
   const [countryDrop, setCountryDrop] = useState(false)
   const [countryDropVal, setCountryDropVal] = useState("")
 
-  const GRowItem = ({ icon, title, subTitle }) => {
+  const GRowItem = ({ icon, title, subTitle, id }) => {
     return (
       <Box className="getTItem">
-        <Box className='GTItemIconBox'>
-          <img src={icon} />
+        <Box id={id} className='GTItemIconBox pointer' onClick={handelInfoClick}>
+          <img id={id} src={icon} onClick={handelInfoClick} />
         </Box>
         <Box>
           <Typography>{title}</Typography>
@@ -45,6 +45,17 @@ export default function Contact() {
         </Box>
       </Box>
     )
+  }
+
+  const handelInfoClick = (e) => {
+    if (e.target.id === "phone") {
+      window.location.href = `tel:${8920149160}`;
+    } else if (e.target.id === "email") {
+      window.location.href = `mailto:${"Platforms@sociostays.com"}`;
+    } else if (e.target.id === "location") {
+      const url = `https://www.google.com/maps?q=${28.427544567977957},${77.04680663898678}`;
+      window.open(url, "_blank");
+    }
   }
 
   const genders = [
@@ -71,13 +82,13 @@ export default function Contact() {
               <Typography className='getTHeader'>Get in Touch</Typography>
               <Typography className='getTSubHeader'>For any specific questions or booking requests, don't hesitate to contact us. We're here to help make your stay perfect! </Typography>
               <Box className="getTItemBox">
-                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "2715 Ash Dr. San Jose, South Dakota 83475" })}
-                {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "willie.jennings@example.com" })}
-                {GRowItem({ icon: callIcon, title: "Call Us", subTitle: "(406) 555-0120" })}
+                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "C2GW+XP8 Gurugram, Haryana", id: "location" })}
+                {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "Platforms@sociostays.com", id: "email" })}
+                {GRowItem({ icon: callIcon, title: "Call Us", subTitle: "8920149160", id: "phone" })}
               </Box>
             </Box>
             <Box className="getTMapBox">
-              <SimpleMap />
+              <SimpleMap latVal={28.42751626252157} lngVal={77.04680663898678} zoomVal={10} />
             </Box>
           </Box>
         </Box>

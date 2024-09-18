@@ -14,6 +14,7 @@ import TermsPage from "./Pages/TermsPage";
 import PolicyPage from "./Pages/PolicyPage";
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
+import PropertyList from "./Pages/PropertyList";
 
 export default function App() {
   AOS.init();
@@ -21,7 +22,8 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/property" element={<PropertyPage />} />
+        <Route path="/propertys" element={<PropertyList />} />
+        <Route path="/property/200L4" element={<PropertyPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />

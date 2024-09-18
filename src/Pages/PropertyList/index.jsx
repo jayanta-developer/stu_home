@@ -25,28 +25,24 @@ import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
 import FindApartment from "../../Components/FindApartment"
+import PropertieCard from "../../Components/PropertieCard"
+
 
 //Data
-import { BlogData } from "../../Assets/Data"
+import { properitData } from "../../Assets/Data"
 
-export default function Blogs() {
+export default function PropertyList() {
   const navigate = useNavigate()
-
   const headerText = (
     <>
-      Our Blogs
+      Our Propertys
     </>
   );
 
-  const storeBlogIndex = (i) => {
-    localStorage.setItem("blogIndex", i)
-    navigate("/Blog-details")
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
 
   return (
     <>
-      <Box className="property aboutPage TermsPage policyPage blogPage">
+      <Box className="property aboutPage TermsPage policyPage blogPage propertyListPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
           <NavBar />
@@ -56,17 +52,9 @@ export default function Blogs() {
           <img src={pageBackground} className='propertyBg' />
 
           <Box className="blogInSection">
-            {
-              BlogData?.map((el, i) => (
-                <Box key={0} className="blogCard">
-                  <img src={el.img} />
-                  <Typography className='blogHeader'>{el?.title.slice(0, 66)}...</Typography>
-                  <Typography className='blogSubHeader'>{el?.summery?.slice(0, 140)}... </Typography>
-                  <Box className="BlogCbtnBox">
-                    <AppBtn btnText="Read More" onClick={() => storeBlogIndex(i)} />
-                  </Box>
-                </Box>
-              ))
+            {properitData?.map((el, i) => (
+              <PropertieCard img={el.images[2]} btnText={"Featured"} title={el.title} location={el.location} key={i} price={el.price} id={el.id} />
+            ))
             }
           </Box>
         </Box>

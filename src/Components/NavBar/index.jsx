@@ -49,7 +49,7 @@ export default function NavBar() {
           <Box className="navItem" onClick={() => navigate("/")}>
             <Typography>HOME</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/property")}>
+          <Box className="navItem" onClick={() => navigate("/propertys")}>
             <Typography>EXPLORE</Typography>
           </Box>
           <Box className="navItem" onClick={() => navigate("/contact")}>
@@ -67,7 +67,7 @@ export default function NavBar() {
 
 
         <Box className="navRBox">
-          <Typography onClick={() => navigate("/property")}>EXPLORE</Typography>
+          <Typography onClick={() => navigate("/propertys")}>EXPLORE</Typography>
           <Typography onClick={() => navigate("/contact")}>CONTACT</Typography>
           <Typography onClick={() => navigate("/blogs")}>BLOGS</Typography>
           <Typography onClick={() => navigate("/about")}>ABOUT US</Typography>

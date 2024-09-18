@@ -9,7 +9,8 @@ import callIcon from "../../Assets/Images/callIcon.png"
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import starIcon from "../../Assets/Images/star.png";
 import shareIcon from "../../Assets/Images/shareIcon.svg"
-import loveIcon from "../../Assets/Images/loverIcon.svg"
+import loveIcon from "../../Assets/Images/loveIconWLine.png"
+import loveIconW from "../../Assets/Images/loveIconW.png"
 import searchIcon from "../../Assets/Images/searchIcon.svg"
 import propertyImg from "../../Assets/Images/propertyImg.png";
 import galleryIcon from "../../Assets/Images/gallery-24.png";
@@ -34,15 +35,19 @@ import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
 import { AppBtn } from "../../Components/ButtonBox";
 import { ImageSlider } from "../../Components/Carousel"
+import FindApartment from "../../Components/FindApartment"
 
 //data
 import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
+  const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
+
   const headerText = "Our Properties Details";
   const [gellaryPop, setGellaryPop] = useState(false);
   const [testimonlText1, setTestimonlText1] = useState(false)
   const [testimonlText2, setTestimonlText2] = useState(false)
+  const [fev, setFev] = useState(isPropertyFevData?.includes(properitData[0].id) ? true : false)
 
   useEffect(() => {
     if (gellaryPop) {
@@ -59,6 +64,24 @@ export default function PropertyPage() {
     if (e.target.id === "gellaryBackdrop") {
       setGellaryPop(false)
     }
+  }
+
+
+
+  const handleFavoriteClick = () => {
+    const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev"));
+    if (isPropertyFev?.includes(properitData[0].id)) {
+      const removeArrey = isPropertyFev?.filter(item => item !== properitData[0].id);
+      localStorage.setItem("propertyFev", JSON.stringify(removeArrey))
+      setFev(false)
+    } else {
+      localStorage.setItem("propertyFev", JSON.stringify([properitData[0].id]))
+      setFev(true)
+    }
+  }
+
+  const handleCall = () => {
+    window.location.href = `tel:${8920149160}`;
   }
 
   return (
@@ -99,17 +122,21 @@ export default function PropertyPage() {
                   <img src={shareIcon} />
                   <Typography>Share</Typography>
                 </Box>
-                <Box className="perpelBtn">
-                  <img src={loveIcon} />
+                <Box className="perpelBtn" onClick={handleFavoriteClick}>
+                  {
+                    fev ?
+                      <img className='loveIcon' src={loveIconW} /> :
+                      <img className='loveIcon' src={loveIcon} />
+                  }
                   <Typography>Favorite</Typography>
                 </Box>
-                <Box className="perpelBtn">
+                {/* <Box className="perpelBtn">
                   <img src={searchIcon} />
                   <Typography>Browse Nearby listing</Typography>
-                </Box>
+                </Box> */}
               </Box>
 
-              <Box className="propContactBtn">
+              <Box className="propContactBtn" onClick={handleCall}>
                 <img src={callIcon} />
                 <Typography>Contact Sellers</Typography>
               </Box>
@@ -266,7 +293,7 @@ export default function PropertyPage() {
           </Box>
 
           <Box className="MapBox">
-            <SimpleMap lat={properitData[0].map[0]} lng={properitData[0].map[1]} />
+            <SimpleMap latVal={properitData[0]?.map[0]} lngVal={properitData[0]?.map[1]} zoomVal={15} />
           </Box>
 
           <Box className="rentSection">
@@ -277,14 +304,7 @@ export default function PropertyPage() {
             <AppBtn btnText="Rent" />
           </Box>
 
-          <Box className="apartmentBox">
-            <Box className="apartmentInnerBox">
-              <Typography className='aptHeaderText'>Find New Apartments</Typography>
-              <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility of a private space, with various amenities near more than 5000 colleges and universities.</Typography>
-              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
-              <img src={apartMentImg} className='apartMentImg' />
-            </Box>
-          </Box>
+          <FindApartment />
 
         </Box>
         <Box className="aparEmailBox">

@@ -29,7 +29,6 @@ import hasselIcon from "../../Assets/Images/hesselRoundIcon.png";
 import propertyImg3 from "../../Assets/Images/PropertieImg3.png";
 import propertyImg1 from "../../Assets/Images/propertieImg1.png";
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import filterIcon from "../../Assets/Images/filter-circle.svg"
 import searchIcon from "../../Assets/Images/searchIcon.png"
@@ -39,7 +38,9 @@ import whiteLine from "../../Assets/Images/whiteLine.png"
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
+import FindApartment from "../../Components/FindApartment"
 import Footer from "../../Components/Footer"
+import PropertieCard from "../../Components/PropertieCard"
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -61,7 +62,7 @@ export default function Home() {
   const PropertiesCard = ({ img, btnText, title, location, key, price }) => {
     return (
       <Box key={key} className="propertiesCard" onClick={() => {
-        navigate("/property")
+        navigate("/property/200L4")
         window.scrollTo({ top: 0, behavior: "smooth" })
       }}>
         <Box className="coverImg">
@@ -127,9 +128,8 @@ export default function Home() {
               <img src={HomeYIcon} />
             </Box>
             <Typography className='HCNText'>
-              36,000 properties, 178 countries
-              <span>•</span> Over 13 million verified
-              guest reviews <span>•</span> 24/7 customer service
+              Experience luxurious <span>•</span> suite-like stays with personalized care <span>•</span> fresh meals <span>•</span> and all the comforts
+              of home—at a price that’s better than any hotel
             </Typography>
 
             <Box className="mobileSearchBar">
@@ -220,26 +220,21 @@ export default function Home() {
           </Box>
         </Box>
 
-
         <Box className="PropertiesSection">
           <Typography className='hasselHeader'>Our Properties</Typography>
           <Box className="proertiseBox">
 
             {
               properitData?.map((el, i) => (
-                PropertiesCard({
-                  img: el.images[2],
-                  btnText: "Featured",
-                  title: el.title,
-                  location: el.location,
-                  key: i,
-                  price: el.price
-                })
+                <PropertieCard img={el.images[2]} btnText={"Featured"} title={el.title} location={el.location} key={i} price={el.price} id={el.id} />
               ))
             }
 
           </Box>
-          <Box className="btnBox">
+          <Box className="btnBox" onClick={() => {
+            navigate("/propertys")
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }}>
             <AppBtn btnText="VIEW ALL" />
           </Box>
         </Box>
@@ -271,17 +266,8 @@ export default function Home() {
             })}
           </Box>
         </Box>
+        <FindApartment />
 
-        <Box className="apartmentBox">
-
-          <Box className="apartmentInnerBox">
-            <Typography className='aptHeaderText'>Find New Apartments</Typography>
-            <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility of a private space, with various amenities near more than 5000 colleges and universities.</Typography>
-            <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
-            <img src={apartMentImg} className='apartMentImg' />
-          </Box>
-
-        </Box>
         <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />
           <Box className="aparMailBox">

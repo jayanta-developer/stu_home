@@ -339,6 +339,7 @@
   font-weight: 700 !important;
   font-family: "Satoshi" !important;
   color: #ffffffd8;
+  cursor: pointer;
 }
 .CardlocationBox {
   display: flex;
@@ -488,7 +489,7 @@
 }
 .aptHeaderText {
   font-size: 24px !important;
-  text-align: center;
+  text-align: start;
   font-family: "PoppinsBold" !important;
   font-weight: 700 !important;
   color: #000;
@@ -551,6 +552,8 @@
 .aparEmailBox .aptHeaderText {
   font-size: 24px !important;
   margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
 .mailSendBox input {
   width: 100%;
@@ -672,6 +675,10 @@
   width: 150px;
   min-height: 37px;
 }
+.loveIcon {
+  width: 16px;
+  height: 16px;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .HCNText {
@@ -774,6 +781,7 @@
     position: relative;
   }
   .aptHeaderText {
+    width: 80%;
     font-size: 40px !important;
   }
   .aptSubHeaderText {
@@ -836,7 +844,7 @@
     gap: 0;
   }
   .HCNText {
-    width: 100%;
+    width: 55%;
   }
   .mainSearchBox {
     width: 51%;
@@ -887,7 +895,7 @@
     flex-direction: row;
   }
   .aptHeaderText {
-    text-align: start;
+    width: 65%;
   }
   .aptSubHeader_Text {
     text-align: start;
@@ -922,5 +930,8 @@
   }
   .hasselHeader {
     margin-left: 40px !important;
+  }
+  .aparEmailBox .aptHeaderText {
+    text-align: start;
   }
 }

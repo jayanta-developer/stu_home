@@ -26,6 +26,7 @@ import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
+import FindApartment from "../../Components/FindApartment"
 
 //data
 import { achieveData } from "../../Assets/Data"
@@ -33,8 +34,7 @@ import { achieveData } from "../../Assets/Data"
 export default function About() {
   const headerText = (
     <>
-      Ditch the Ordinary, Embrace Luxury:<br /> Welcome to Socio Stays
-
+      Ditch the Ordinary, Embrace Luxury<br /> Welcome to Socio Stays
     </>
   );
 
@@ -178,7 +178,7 @@ export default function About() {
         <Box className="propertyDetailSection">
           <img src={pageBackground} className='propertyBg' />
 
-          <Box className="achieveBox">
+          {/* <Box className="achieveBox">
             <Typography className='hasselHeader'>Together everyone achieves more</Typography>
             <Typography className='achiveSubHeader'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Typography>
             <Box className="achieverListBox">
@@ -197,17 +197,8 @@ export default function About() {
                 </Box>
               ))}
             </Box>
-          </Box>
-          <Box className="apartmentBox">
-            <Box className="apartmentInnerBox">
-              <Typography className='aptHeaderText'>Find New Apartments</Typography>
-              <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility
-                of a private space, with various amenities near more than 5000
-                colleges and universities.</Typography>
-              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#fff" />
-              <img src={apartMentImg} className='apartMentImg' />
-            </Box>
-          </Box>
+          </Box> */}
+          <FindApartment />
         </Box>
         {/* <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />

@@ -25,6 +25,7 @@ import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
 import backIcon from "../../Assets/Images/backV2Icon.png"
+import FindApartment from "../../Components/FindApartment"
 
 //Data
 import { BlogData } from "../../Assets/Data"
@@ -80,16 +81,7 @@ export default function BlogDetails() {
 
         <Box className="propertyDetailSection">
           <img src={pageBackground} className='propertyBg' />
-          <Box className="apartmentBox">
-            <Box className="apartmentInnerBox">
-              <Typography className='aptHeaderText'>Find New Apartments</Typography>
-              <Typography className='aptSubHeaderText'>Enjoy the comforts and flexibility
-                of a private space, with various amenities near more than 5000
-                colleges and universities.</Typography>
-              <AppBtn btnText="SEARCH NOW" bgColor="#221E1D" hoverColor="#4d4745" textColor="#fff" />
-              <img src={apartMentImg} className='apartMentImg' />
-            </Box>
-          </Box>
+          <FindApartment />
         </Box>
         <Box className="aparEmailBox">
           <img src={paperCut} className='paperTop' />
