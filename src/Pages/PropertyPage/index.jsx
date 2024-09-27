@@ -87,7 +87,7 @@ export default function PropertyPage() {
     window.location.href = `tel:${8920149160}`;
   }
   const openWhatsapp = () => {
-    const url = `https://wa.me/${8920149160}`;
+    const url = `https://wa.me/${7304140237}`;
     window.open(url, '_blank');
   }
 
