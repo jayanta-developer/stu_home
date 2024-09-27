@@ -69,6 +69,7 @@
   justify-content: center;
   gap: 7%;
   overflow: hidden;
+  background: #000000c4;
 }
 
 .subItemDeactivate .navItem {

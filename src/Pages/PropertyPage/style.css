@@ -65,10 +65,15 @@
 }
 .propLocBox {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pIconBtnBox {
+  display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 .propContactBtn {
   width: 185px;
@@ -235,8 +240,8 @@
 }
 .locationBox {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 .overAvatarInfoBox {
   width: 100%;
@@ -244,6 +249,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.property .proDetails {
+  padding-left: 30px;
 }
 .avatarBox {
   display: flex;
@@ -374,6 +382,38 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  position: relative;
+}
+.estimatPop {
+  position: absolute;
+  top: 111px;
+  left: 0px;
+  width: 250px;
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 13px;
+  gap: 10px;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.estimatPopActive {
+  height: 158px;
+  padding: 10px 20px;
+}
+.estimatPop p {
+  font-size: 14px;
+  font-family: "Poppins" !important;
+  color: #000000;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+}
+.estimatPop img {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  cursor: pointer;
 }
 .rentSection samp {
   font-size: 14px;
@@ -405,6 +445,18 @@
 .backDrop > div > div {
   width: 95%;
   height: 400px;
+}
+.contactBtnBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+.whatsappIcon {
+  width: 40px;
+  cursor: pointer;
 }
 
 /* Tabe view */
@@ -522,5 +574,10 @@
   .backDrop > div > div {
     width: 70%;
     height: 80vh;
+  }
+  .contactBtnBox {
+    width: unset;
+    flex-direction: row;
+    justify-content: end;
   }
 }

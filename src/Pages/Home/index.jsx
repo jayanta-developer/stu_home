@@ -49,13 +49,11 @@ export default function Home() {
   const navigate = useNavigate()
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("");
+  const [searchSelector, setSearchSelecotr] = useState(0);
 
   const LocationDropItem = [
-    "Nagpur",
-    "Solapur",
-    "Mumbai",
-    "Pune",
-    "Thane",
+    " Sector 47, Gurgaon",
+    "Sector 37, Gurgaon",
   ];
 
 
@@ -153,9 +151,11 @@ export default function Home() {
 
             <Box className="mainSearchBox">
               <Box className="selectorBox">
-
-                <Box className="sltIBox sltBoxActive">
+                <Box className={searchSelector === 0 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(0)}>
                   <Typography>FLATS</Typography>
+                </Box>
+                <Box className={searchSelector === 1 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(1)}>
+                  <Typography>ROOMS </Typography>
                 </Box>
               </Box>
 

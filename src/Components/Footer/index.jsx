@@ -93,10 +93,11 @@ export default function Footer() {
               </Box>
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>About Us</Typography>
-                <Typography className='footerNText'>Our Journey</Typography>
-                <Typography className='footerNText'>PLC </Typography>
+                {/* <Typography className='footerNText'>Our Journey</Typography> */}
+                {/* <Typography className='footerNText'>PLC </Typography> */}
                 <Typography className='footerNText'>Press </Typography>
                 <Typography className='footerNText'>Careers</Typography>
+                <Typography className='footerNText'>Pages for t&c</Typography>
               </Box>
             </Box>
           </Box>
@@ -110,7 +111,7 @@ export default function Footer() {
           </Box>
         </Box>
         <Box className="footerBottmBox">
-          <Typography>© 2023 . All Rights Reserved</Typography>
+          <Typography>© 2024 . All Rights Reserved</Typography>
         </Box>
 
       </Box>

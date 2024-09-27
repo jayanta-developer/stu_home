@@ -27,6 +27,8 @@ import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import avatar1 from "../../Assets/Images/avatar1.png";
 import avatar2 from "../../Assets/Images/avatat2.png";
+import whatsappIcon from "../../Assets/Images/whatsappIcon.png"
+import crossIcon from "../../Assets/Images/crossIcon.png"
 
 //components
 import { Box, Typography, useScrollTrigger } from '@mui/material';
@@ -48,6 +50,7 @@ export default function PropertyPage() {
   const [testimonlText1, setTestimonlText1] = useState(false)
   const [testimonlText2, setTestimonlText2] = useState(false)
   const [fev, setFev] = useState(isPropertyFevData?.includes(properitData[0].id) ? true : false)
+  const [estimatPop, setEstimatPop] = useState(false);
 
   useEffect(() => {
     if (gellaryPop) {
@@ -83,6 +86,10 @@ export default function PropertyPage() {
   const handleCall = () => {
     window.location.href = `tel:${8920149160}`;
   }
+  const openWhatsapp = () => {
+    const url = `https://wa.me/${8920149160}`;
+    window.open(url, '_blank');
+  }
 
   return (
     <>
@@ -113,33 +120,40 @@ export default function PropertyPage() {
                   <Typography>{properitData[0].location}</Typography>
                 </Box>
 
-                <Box className="start_Box">
-                  <img src={starIcon} />
-                  <Typography>4.8 <span>(74)</span></Typography>
-                </Box>
+                <div className="pIconBtnBox">
+                  <Box className="start_Box">
+                    <img src={starIcon} />
+                    <Typography>4.8 <span>(74)</span></Typography>
+                  </Box>
 
-                <Box className="perpelBtn">
-                  <img src={shareIcon} />
-                  <Typography>Share</Typography>
-                </Box>
-                <Box className="perpelBtn" onClick={handleFavoriteClick}>
-                  {
-                    fev ?
-                      <img className='loveIcon' src={loveIconW} /> :
-                      <img className='loveIcon' src={loveIcon} />
-                  }
-                  <Typography>Favorite</Typography>
-                </Box>
+                  <Box className="perpelBtn">
+                    <img src={shareIcon} />
+                    <Typography>Share</Typography>
+                  </Box>
+                  <Box className="perpelBtn" onClick={handleFavoriteClick}>
+                    {
+                      fev ?
+                        <img className='loveIcon' src={loveIconW} /> :
+                        <img className='loveIcon' src={loveIcon} />
+                    }
+                    <Typography>Favorite</Typography>
+                  </Box>
+                </div>
                 {/* <Box className="perpelBtn">
                   <img src={searchIcon} />
                   <Typography>Browse Nearby listing</Typography>
                 </Box> */}
               </Box>
 
-              <Box className="propContactBtn" onClick={handleCall}>
-                <img src={callIcon} />
-                <Typography>Contact Sellers</Typography>
+
+              <Box className="contactBtnBox">
+                <img src={whatsappIcon} className='whatsappIcon' onClick={openWhatsapp} />
+                <Box className="propContactBtn" onClick={handleCall}>
+                  <img src={callIcon} />
+                  <Typography>Contact Sellers</Typography>
+                </Box>
               </Box>
+
             </Box>
           </Box>
 
@@ -186,11 +200,11 @@ export default function PropertyPage() {
                 </Box>
                 <Box className="proDetails">
                   <img src={badIcon} />
-                  <Typography>3 Rooms</Typography>
+                  <Typography>4 Rooms</Typography>
                   <img src={bathIcon} />
-                  <Typography>3 Bath</Typography>
+                  <Typography>4 Bath</Typography>
                   <img src={roomAreaIcon} />
-                  <Typography>673 m2</Typography>
+                  <Typography>1000+ sq.ft</Typography>
                 </Box>
               </Box>
               <Box className="overAvatarInfoBox">
@@ -235,7 +249,7 @@ export default function PropertyPage() {
             <Box className="propertyInfoInBox aboutLocBox">
               <Typography className='overViewTitle'>About location’s neighborhood</Typography>
               <Typography my={3}>{properitData[0].summery}</Typography>
-              <Typography mb={5}>This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.</Typography>
+              <Typography mb={5}>We ensure the best comfort & convenience for a memorable stay @ SocioStays!</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
                 <span>₹ {properitData[0].price} /PER DAY</span>
@@ -299,9 +313,18 @@ export default function PropertyPage() {
           <Box className="rentSection">
             <Box>
               <Typography className='propertyPriceText'>₹ {properitData[0].price}<span> / PER DAY</span></Typography>
-              <samp>Payment estimation</samp>
+              <samp onClick={() => setEstimatPop(!estimatPop)}>Payment estimation</samp>
             </Box>
             <AppBtn btnText="Rent" />
+
+            <div className={estimatPop ? "estimatPop estimatPopActive" : "estimatPop"}>
+              <img src={crossIcon} onClick={() => setEstimatPop(false)} />
+              <p>Day to night: 6999 per night</p>
+              <p>Add dates</p>
+              <p>Add no. of guests</p>
+              <p>Rs.6999 x ___ Nights </p>
+
+            </div>
           </Box>
 
           <FindApartment />

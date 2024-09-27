@@ -35,7 +35,7 @@ export default function PropertyList() {
   const navigate = useNavigate()
   const headerText = (
     <>
-      Our Propertys
+      Properties
     </>
   );
 
@@ -54,8 +54,7 @@ export default function PropertyList() {
           <Box className="blogInSection">
             {properitData?.map((el, i) => (
               <PropertieCard img={el.images[2]} btnText={"Featured"} title={el.title} location={el.location} key={i} price={el.price} id={el.id} />
-            ))
-            }
+            ))}
           </Box>
         </Box>
 

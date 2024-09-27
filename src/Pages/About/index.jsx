@@ -52,7 +52,7 @@ export default function About() {
 
           <Box className="stuHoTextbox">
             <Box className="stuhoInnerText">
-              <Typography className='stuhoHeaderText'>Socio Stays</Typography>
+              <Typography className='stuhoHeaderText'>SocioStays</Typography>
               <Typography className='stuhoSubText'><span>Imagine</span> stepping into a world of unparalleled comfort, exquisite design, and personalized service. Socio Stays isn't your average accommodation platform; it's a gateway to elevated experiences for discerning travelers like you</Typography>
               <Typography className='stuhoSubText'><span>Forget</span> the limitations of traditional rentals. Socio Stays offers a modern sanctuary for those who seek more than just a place to stay. We combine the power of technology with unwavering hospitality to curate unforgettable stays in prime locations.</Typography>
               {/* <Box className="countBox">
