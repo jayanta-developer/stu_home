@@ -203,8 +203,7 @@ export const properitData = [
       PropertyImg18,
       PropertyImg19,
     ],
-    location:
-      "Entire Sea view…. to 360* View Elite Guest House with Rooftop in Malibu Town",
+    location: "Sector 47, Gurgaon",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
     owner: "Hosted by Surya Prakash",

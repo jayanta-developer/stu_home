@@ -97,7 +97,6 @@ export default function Footer() {
                 {/* <Typography className='footerNText'>PLC </Typography> */}
                 <Typography className='footerNText'>Press </Typography>
                 <Typography className='footerNText'>Careers</Typography>
-                <Typography className='footerNText'>Pages for t&c</Typography>
               </Box>
             </Box>
           </Box>

@@ -38,6 +38,7 @@ import SimpleMap from "../../Components/Map"
 import { AppBtn } from "../../Components/ButtonBox";
 import { ImageSlider } from "../../Components/Carousel"
 import FindApartment from "../../Components/FindApartment"
+import SharePopup from "../../Components/SharePop"
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -51,6 +52,9 @@ export default function PropertyPage() {
   const [testimonlText2, setTestimonlText2] = useState(false)
   const [fev, setFev] = useState(isPropertyFevData?.includes(properitData[0].id) ? true : false)
   const [estimatPop, setEstimatPop] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
 
   useEffect(() => {
     if (gellaryPop) {
@@ -113,6 +117,7 @@ export default function PropertyPage() {
             </Box>
 
             <Box className="proTilInnerBox">
+              <SharePopup isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />
               <Box className="propLocBox">
 
                 <Box className="locText">
@@ -126,7 +131,7 @@ export default function PropertyPage() {
                     <Typography>4.8 <span>(74)</span></Typography>
                   </Box>
 
-                  <Box className="perpelBtn">
+                  <Box className="perpelBtn" onClick={() => setIsPopupOpen(true)}>
                     <img src={shareIcon} />
                     <Typography>Share</Typography>
                   </Box>
@@ -191,7 +196,7 @@ export default function PropertyPage() {
                 <img src={starIcon} />
                 <Typography>4.8 <span>(74)</span></Typography>
               </Box>
-              <Typography className='overSubHeader'>Entire Sea view Cabin Near Juhu Beach</Typography>
+              <Typography className='overSubHeader'>360* View Elite Guest House with Rooftop in Malibu Town</Typography>
 
               <Box className="locationBox">
                 <Box className="CardlocationBox">
@@ -247,7 +252,7 @@ export default function PropertyPage() {
 
           <Box className="propertyInfoBox propertyInfoBoxv2">
             <Box className="propertyInfoInBox aboutLocBox">
-              <Typography className='overViewTitle'>About location’s neighborhood</Typography>
+              <Typography className='overViewTitle'>SocioStays welcomes you to Elite Guest House in Gurgaon! </Typography>
               <Typography my={3}>{properitData[0].summery}</Typography>
               <Typography mb={5}>We ensure the best comfort & convenience for a memorable stay @ SocioStays!</Typography>
               <Box className="costBtn">
