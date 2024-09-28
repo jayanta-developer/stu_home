@@ -17,8 +17,6 @@ const Marker = ({ text }) => (
 );
 
 export default function SimpleMap({ latVal, lngVal, zoomVal }) {
-  console.log(latVal, lngVal);
-
   const defaultProps = {
     center: {
       lat: latVal,
@@ -26,7 +24,6 @@ export default function SimpleMap({ latVal, lngVal, zoomVal }) {
     },
     zoom: zoomVal,
   };
-  console.log(defaultProps);
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>

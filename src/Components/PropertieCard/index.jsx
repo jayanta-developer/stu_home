@@ -14,7 +14,7 @@ import loveBlack from "../../Assets/Images/loveB.png"
 
 
 
-export default function PropertieCard({ img, btnText, title, location, key, price, id }) {
+export default function PropertieCard({ key, value, btnText }) {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const navigate = useNavigate()
 
@@ -23,12 +23,13 @@ export default function PropertieCard({ img, btnText, title, location, key, pric
       <Box key={key} className="propertiesCard" onClick={() => {
         navigate("/property/200L4")
         window.scrollTo({ top: 0, behavior: "smooth" })
+        localStorage.setItem("propertyIndex", value?.id)
       }}>
         <Box className="coverImg">
-          <img src={img} />
+          <img src={value?.images[2]} />
           <Box className='loveIcon'>
             <img src={
-              isPropertyFevData?.includes(id) ? LoveIcon : loveBlack
+              isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack
             } />
           </Box>
         </Box>
@@ -42,21 +43,21 @@ export default function PropertieCard({ img, btnText, title, location, key, pric
               <Typography>{btnText}</Typography>
             </Box>
           </Box>
-          <Typography className='proCardTitle'>{title}</Typography>
+          <Typography className='proCardTitle'>{value?.title}</Typography>
           <Box className="CardlocationBox">
             <img src={locationOutIcon} />
-            <Typography>{location}</Typography>
+            <Typography>{value?.location}</Typography>
           </Box>
           <Box className="proDetails">
             <img src={badIcon} />
-            <Typography>3 Rooms</Typography>
+            <Typography>{value?.room} Rooms</Typography>
             <img src={bathIcon} />
-            <Typography>3 Bath</Typography>
+            <Typography>{value?.bath} Bath</Typography>
             <img src={roomAreaIcon} />
-            <Typography>673 m2</Typography>
+            <Typography>{value?.area}</Typography>
           </Box>
           <Box className="priceBox">
-            <Typography>₹ {price} <samp>/ PER DAY</samp></Typography>
+            <Typography>₹ {value?.price} <samp>/ PER DAY</samp></Typography>
           </Box>
         </Box>
       </Box>

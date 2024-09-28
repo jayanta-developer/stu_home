@@ -52,6 +52,9 @@ export default function NavBar() {
           <Box className="navItem" onClick={() => navigate("/propertys")}>
             <Typography>EXPLORE</Typography>
           </Box>
+          <Box className="navItem" onClick={() => navigate("/favorite-list")}>
+            <Typography>FAVORITES</Typography>
+          </Box>
           <Box className="navItem" onClick={() => navigate("/contact")}>
             <Typography>CONTACT</Typography>
           </Box>
@@ -68,6 +71,7 @@ export default function NavBar() {
 
         <Box className="navRBox">
           <Typography onClick={() => navigate("/propertys")}>EXPLORE</Typography>
+          <Typography onClick={() => navigate("/favorite-list")}>FAVORITES</Typography>
           <Typography onClick={() => navigate("/contact")}>CONTACT</Typography>
           <Typography onClick={() => navigate("/blogs")}>BLOGS</Typography>
           <Typography onClick={() => navigate("/about")}>ABOUT US</Typography>

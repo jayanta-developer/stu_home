@@ -15,6 +15,7 @@ import PolicyPage from "./Pages/PolicyPage";
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
 import PropertyList from "./Pages/PropertyList";
+import FavoriteList from "./Pages/Favorite";
 
 export default function App() {
   AOS.init();
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/Blog-details" element={<BlogDetails />} />
         <Route path="/Terms-and-Conditions" element={<TermsPage />} />
         <Route path="/Pricacy-Policy" element={<PolicyPage />} />
+        <Route path="/favorite-list" element={<FavoriteList />} />
       </Routes>
     </>
   );

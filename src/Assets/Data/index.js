@@ -178,7 +178,75 @@ export const countries = [
 
 export const properitData = [
   {
-    id: "200L4",
+    id: "6URFY0L4",
+    title: "Ultra Luxurious 4BHK F-Property",
+    summery:
+      "Best for business or leisure stay. All Suite Rooms have attached bath, grand balcony & lobby. Optional Full Floor- 4 Suite Rooms with sit out & well equipped kitchen available for big group bookings. Open-Sky Terrace Garden, In-Room dining & Car Parking available. SocioStays is within 15 mins drive from all tourist attractions, dining & shopping mall experiences.",
+    images: [
+      PropertyImg1,
+      PropertyImg12,
+      PropertyImg6,
+      PropertyImg4,
+      PropertyImg3,
+      PropertyImg2,
+      PropertyImg5,
+      PropertyImg7,
+      PropertyImg8,
+      PropertyImg9,
+      PropertyImg10,
+      PropertyImg11,
+      PropertyImg13,
+      PropertyImg14,
+      PropertyImg15,
+      PropertyImg16,
+      PropertyImg17,
+      PropertyImg18,
+      PropertyImg19,
+    ],
+    location: "Sector 47, Gurgaon",
+    map: [28.417202857277694, 77.04754041620399],
+    price: "6,999",
+    owner: "Hosted by Surya Prakash",
+    room: "4",
+    bath: "4",
+    area: "1000+ sq.ft",
+    Facilities: [
+      {
+        icon: airConditionar,
+        title: "Air conditioning",
+      },
+      {
+        icon: kitchenIcon,
+        title: "Kitchen",
+      },
+      {
+        icon: wifi,
+        title: "Wifi",
+      },
+      {
+        icon: parkingIcon,
+        title: "Free parking",
+      },
+      {
+        icon: SecuredEntry,
+        title: "Secured Entry",
+      },
+      {
+        icon: SpaceWork,
+        title: "Space for Work",
+      },
+      {
+        icon: Laundry,
+        title: "Laundry Facilities",
+      },
+      {
+        icon: CustomerSupport,
+        title: "24/7 Customer Support",
+      },
+    ],
+  },
+  {
+    id: "7I24RE77",
     title: "Ultra Luxurious 4BHK F-Property",
     summery:
       "Best for business or leisure stay. All Suite Rooms have attached bath, grand balcony & lobby. Optional Full Floor- 4 Suite Rooms with sit out & well equipped kitchen available for big group bookings. Open-Sky Terrace Garden, In-Room dining & Car Parking available. SocioStays is within 15 mins drive from all tourist attractions, dining & shopping mall experiences.",
@@ -203,10 +271,13 @@ export const properitData = [
       PropertyImg18,
       PropertyImg19,
     ],
-    location: "Sector 47, Gurgaon",
+    location: "Sector 37, Gurgaon",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
     owner: "Hosted by Surya Prakash",
+    room: "4",
+    bath: "4",
+    area: "1000+ sq.ft",
     Facilities: [
       {
         icon: airConditionar,

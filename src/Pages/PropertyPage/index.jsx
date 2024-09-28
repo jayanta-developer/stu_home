@@ -45,12 +45,14 @@ import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
+  const propertyIndex = localStorage.getItem("propertyIndex")
+  const correntPropertyData = properitData.find((el) => el.id === propertyIndex);
 
   const headerText = "Our Properties Details";
   const [gellaryPop, setGellaryPop] = useState(false);
-  const [testimonlText1, setTestimonlText1] = useState(false)
-  const [testimonlText2, setTestimonlText2] = useState(false)
-  const [fev, setFev] = useState(isPropertyFevData?.includes(properitData[0].id) ? true : false)
+  const [testimonlText1, setTestimonlText1] = useState(false);
+  const [testimonlText2, setTestimonlText2] = useState(false);
+  const [fev, setFev] = useState(isPropertyFevData?.includes(correntPropertyData?.id) ? true : false);
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -76,16 +78,20 @@ export default function PropertyPage() {
 
 
   const handleFavoriteClick = () => {
-    const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev"));
-    if (isPropertyFev?.includes(properitData[0].id)) {
-      const removeArrey = isPropertyFev?.filter(item => item !== properitData[0].id);
-      localStorage.setItem("propertyFev", JSON.stringify(removeArrey))
-      setFev(false)
+    const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || []; // Ensure it's an array
+    if (isPropertyFev.includes(correntPropertyData?.id)) {
+      // Remove the property if it's already in favorites
+      const removeArray = isPropertyFev.filter(item => item !== correntPropertyData?.id);
+      localStorage.setItem("propertyFev", JSON.stringify(removeArray));
+      setFev(false);
     } else {
-      localStorage.setItem("propertyFev", JSON.stringify([properitData[0].id]))
-      setFev(true)
+      // Add the property to favorites
+      const updatedFavorites = [...isPropertyFev, correntPropertyData?.id];
+      localStorage.setItem("propertyFev", JSON.stringify(updatedFavorites));
+      setFev(true);
     }
-  }
+  };
+
 
   const handleCall = () => {
     window.location.href = `tel:${8920149160}`;
@@ -99,7 +105,7 @@ export default function PropertyPage() {
     <>
       <Box className="property">
         <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>
-          <ImageSlider data={properitData[0]} />
+          <ImageSlider data={correntPropertyData} />
         </Box>
 
         <Box className="propertyHomeSection">
@@ -112,8 +118,8 @@ export default function PropertyPage() {
           <img src={pageBackground} className='propertyBg' />
           <Box className="propertyTitleBox">
             <Box className="proTilInnerBox">
-              <Typography className='propertyTitle'>{properitData[0].title}</Typography>
-              <Typography className='propertyPriceText'>₹ {properitData[0].price} <span>/ PER DAY</span></Typography>
+              <Typography className='propertyTitle'>{correntPropertyData?.title}</Typography>
+              <Typography className='propertyPriceText'>₹ {correntPropertyData?.price} <span>/ PER DAY</span></Typography>
             </Box>
 
             <Box className="proTilInnerBox">
@@ -122,7 +128,7 @@ export default function PropertyPage() {
 
                 <Box className="locText">
                   <img src={locationOutIcon} />
-                  <Typography>{properitData[0].location}</Typography>
+                  <Typography>{correntPropertyData?.location}</Typography>
                 </Box>
 
                 <div className="pIconBtnBox">
@@ -171,14 +177,14 @@ export default function PropertyPage() {
               <Typography>View All Photos</Typography>
             </Box>
             <Box className="imgBox1">
-              <img src={properitData[0].images[0]} />
+              <img src={correntPropertyData?.images[0]} />
             </Box>
             <Box className="imgBox2">
               <Box className="img2Inn">
-                <img src={properitData[0].images[1]} />
+                <img src={correntPropertyData?.images[1]} />
               </Box>
               <Box className="img2Inn">
-                <img src={properitData[0].images[2]} />
+                <img src={correntPropertyData?.images[2]} />
               </Box>
             </Box>
           </Box>
@@ -201,7 +207,7 @@ export default function PropertyPage() {
               <Box className="locationBox">
                 <Box className="CardlocationBox">
                   <img src={locationOutIcon} />
-                  <Typography>{properitData[0].location}</Typography>
+                  <Typography>{correntPropertyData?.location}</Typography>
                 </Box>
                 <Box className="proDetails">
                   <img src={badIcon} />
@@ -218,7 +224,7 @@ export default function PropertyPage() {
                     <img src={avatart} />
                   </Box>
                   <Box className="avatarNamBox">
-                    <Typography>{properitData[0].owner}</Typography>
+                    <Typography>{correntPropertyData?.owner}</Typography>
                     <span>Property owner</span>
                   </Box>
                 </Box>
@@ -239,7 +245,7 @@ export default function PropertyPage() {
               <Typography className='overViewTitle'>Home Facilities</Typography>
               <Box className="facilOuterBox">
                 {
-                  properitData[0]?.Facilities?.map((el, i) => (
+                  correntPropertyData?.Facilities?.map((el, i) => (
                     <Box className="facilitesItem" key={i}>
                       <img src={el.icon} />
                       <Typography>{el.title}</Typography>
@@ -253,11 +259,11 @@ export default function PropertyPage() {
           <Box className="propertyInfoBox propertyInfoBoxv2">
             <Box className="propertyInfoInBox aboutLocBox">
               <Typography className='overViewTitle'>SocioStays welcomes you to Elite Guest House in Gurgaon! </Typography>
-              <Typography my={3}>{properitData[0].summery}</Typography>
+              <Typography my={3}>{correntPropertyData?.summery}</Typography>
               <Typography mb={5}>We ensure the best comfort & convenience for a memorable stay @ SocioStays!</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
-                <span>₹ {properitData[0].price} /PER DAY</span>
+                <span>₹ {correntPropertyData?.price} /PER DAY</span>
               </Box>
             </Box>
 
@@ -312,12 +318,12 @@ export default function PropertyPage() {
           </Box>
 
           <Box className="MapBox">
-            <SimpleMap latVal={properitData[0]?.map[0]} lngVal={properitData[0]?.map[1]} zoomVal={15} />
+            <SimpleMap latVal={correntPropertyData?.map[0]} lngVal={correntPropertyData?.map[1]} zoomVal={15} />
           </Box>
 
           <Box className="rentSection">
             <Box>
-              <Typography className='propertyPriceText'>₹ {properitData[0].price}<span> / PER DAY</span></Typography>
+              <Typography className='propertyPriceText'>₹ {correntPropertyData.price}<span> / PER DAY</span></Typography>
               <samp onClick={() => setEstimatPop(!estimatPop)}>Payment estimation</samp>
             </Box>
             <AppBtn btnText="Rent" />

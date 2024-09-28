@@ -226,7 +226,7 @@ export default function Home() {
 
             {
               properitData?.map((el, i) => (
-                <PropertieCard img={el.images[2]} btnText={"Featured"} title={el.title} location={el.location} key={i} price={el.price} id={el.id} />
+                <PropertieCard value={el} btnText={"Featured"} key={i} />
               ))
             }
 

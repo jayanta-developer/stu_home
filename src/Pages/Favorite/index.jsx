@@ -4,14 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
 import paperCut from "../../Assets/Images/paperCut.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
 import arrowIcon2 from "../../Assets/Images/blackArrow.png";
-import bulletIcon from "../../Assets/Images/bulletIcon.png"
-
 
 
 //components
@@ -26,18 +23,30 @@ import PropertieCard from "../../Components/PropertieCard"
 //Data
 import { properitData } from "../../Assets/Data"
 
-export default function PropertyList() {
+export default function FavoriteList() {
+
   const navigate = useNavigate()
   const headerText = (
     <>
-      Properties
+      Favorite
     </>
   );
 
 
+  const propertyFev = JSON.parse(localStorage.getItem("propertyFev") || "[]");
+  let newData = []
+
+  propertyFev.forEach((el) => {
+    const favoriteProperty = properitData.find((elId) => elId.id === el);
+    if (favoriteProperty) {
+      newData.push(favoriteProperty);
+    }
+  });
+
+
   return (
     <>
-      <Box className="property aboutPage TermsPage policyPage blogPage propertyListPage">
+      <Box className="property aboutPage TermsPage policyPage blogPage propertyListPage favoritePage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
           <NavBar />
@@ -46,11 +55,17 @@ export default function PropertyList() {
         <Box className="BlogSection">
           <img src={pageBackground} className='propertyBg' />
 
-          <Box className="blogInSection">
-            {properitData?.map((el, i) => (
-              <PropertieCard btnText={"Featured"} key={i} value={el} />
-            ))}
-          </Box>
+          {newData.length ?
+            <Box className="blogInSection">
+              {newData?.map((el, i) => (
+                <PropertieCard btnText={"Featured"} key={i} value={el} />
+              ))}
+            </Box> :
+            <Box className="blogInSection">
+              <h1>You have no favorite property</h1>
+            </Box>
+          }
+
         </Box>
 
         <Box className="propertyDetailSection">

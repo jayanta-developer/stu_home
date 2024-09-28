@@ -252,9 +252,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.property .proDetails {
-  padding-left: 30px;
-}
+
 .avatarBox {
   display: flex;
   flex-direction: row;
