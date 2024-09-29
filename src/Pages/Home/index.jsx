@@ -31,7 +31,7 @@ import propertyImg1 from "../../Assets/Images/propertieImg1.png";
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import filterIcon from "../../Assets/Images/filter-circle.svg"
-import searchIcon from "../../Assets/Images/searchIcon.png"
+import searchIcon from "../../Assets/Images/SearchIconV2.png"
 import whiteLine from "../../Assets/Images/whiteLine.png"
 
 //components
@@ -50,55 +50,11 @@ export default function Home() {
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("");
   const [searchSelector, setSearchSelecotr] = useState(0);
-
-  const LocationDropItem = [
-    " Sector 47, Gurgaon",
-    "Sector 37, Gurgaon",
-  ];
+  const [selectedPropertyId, setSelectedPropertyId] = useState()
 
 
-  const PropertiesCard = ({ img, btnText, title, location, key, price }) => {
-    return (
-      <Box key={key} className="propertiesCard" onClick={() => {
-        navigate("/property/200L4")
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }}>
-        <Box className="coverImg">
-          <img src={img} />
-          <Box className='loveIcon'>
-            <img src={LoveIcon} />
-          </Box>
-        </Box>
-        <Box className="propCardTextBox">
-          <Box className="startBox">
-            <Box className="starInBox">
-              <img src={star} />
-              <Typography>4.8 <span>(73)</span></Typography>
-            </Box>
-            <Box className="cardBtn">
-              <Typography>{btnText}</Typography>
-            </Box>
-          </Box>
-          <Typography className='proCardTitle'>{title}</Typography>
-          <Box className="CardlocationBox">
-            <img src={locationOutIcon} />
-            <Typography>{location}</Typography>
-          </Box>
-          <Box className="proDetails">
-            <img src={badIcon} />
-            <Typography>3 Rooms</Typography>
-            <img src={bathIcon} />
-            <Typography>3 Bath</Typography>
-            <img src={roomAreaIcon} />
-            <Typography>673 m2</Typography>
-          </Box>
-          <Box className="priceBox">
-            <Typography>₹ {price} <samp>/ PER DAY</samp></Typography>
-          </Box>
-        </Box>
-      </Box>
-    )
-  }
+
+
 
   const WorkCard = ({ img, title, subTitle, BtnText }) => {
     return (
@@ -109,6 +65,12 @@ export default function Home() {
         <AppBtn btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
       </Box>
     )
+  }
+
+  const GoProperty = () => {
+    navigate("/property/200L4")
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    localStorage.setItem("propertyIndex", selectedPropertyId)
   }
 
   return (
@@ -133,16 +95,17 @@ export default function Home() {
             <Box className="mobileSearchBar">
               <input type="text" placeholder='Search...' />
               <Typography>{locationDropVal || "Location"}</Typography>
-              <img src={searchIcon} className="searchIocn" />
+              <img src={searchIcon} className="searchIocn" onClick={GoProperty} />
               <img src={filterIcon} className="filterIcon" onClick={() => setLocationDrop(!locationDrop)} />
               <img src={whiteLine} className="whiteLine" />
               <Box className="MDropBox" sx={{ height: locationDrop ? "145px" : "0px" }}>
-                {LocationDropItem?.map((el, i) => (
+                {properitData?.map((el, i) => (
                   <Box key={i} className="dropItem" onClick={() => {
-                    setLocationDropVal(el)
+                    setLocationDropVal(el?.location)
                     setLocationDrop(false)
+                    setSelectedPropertyId(el.id)
                   }}>
-                    <span>{el}</span>
+                    <span>{el?.location}</span>
                   </Box>
                 ))}
               </Box>
@@ -166,9 +129,12 @@ export default function Home() {
                   <img className='dropIcon' src={DropIcon} style={{ rotate: locationDrop ? "180deg" : "0deg" }} />
 
                   <Box className="dropBox" sx={{ height: locationDrop ? "160px" : '0px' }}>
-                    {LocationDropItem?.map((el, i) => (
-                      <Box key={i} className="dropItem" onClick={() => setLocationDropVal(el)}>
-                        <Typography>{el}</Typography>
+                    {properitData?.map((el, i) => (
+                      <Box key={i} className="dropItem" onClick={() => {
+                        setSelectedPropertyId(el.id)
+                        setLocationDropVal(el?.location)
+                      }}>
+                        <Typography>{el?.location}</Typography>
                       </Box>
                     ))}
                   </Box>
@@ -176,7 +142,7 @@ export default function Home() {
 
                 <Box className="sechInputBox">
                   <input type="text" placeholder='Search for locality, landmark' />
-                  <Box className="searchBtn">
+                  <Box className="searchBtn" onClick={GoProperty}>
                     <Typography>Search</Typography>
                   </Box>
                 </Box>

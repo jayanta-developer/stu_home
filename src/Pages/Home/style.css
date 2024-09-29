@@ -593,7 +593,7 @@
   border: none;
   border-radius: 33px;
   background: #0000000a;
-  padding-left: 58px;
+  padding-left: 72px;
   color: #fff;
   font-family: "Poppins" !important;
 }
@@ -602,14 +602,14 @@
 }
 .mobileSearchBar .searchIocn {
   position: absolute;
-  top: 17px;
-  left: 17px;
-  width: 18px;
+  top: 8px;
+  left: 12px;
+  width: 35px;
 }
 .mobileSearchBar .whiteLine {
   position: absolute;
   top: 12px;
-  left: 50px;
+  left: 58px;
   width: 2px;
   height: 30px;
   opacity: 0.8;
@@ -617,18 +617,18 @@
 .mobileSearchBar .filterIcon {
   position: absolute;
   top: 14px;
-  right: 74px;
+  right: 9px;
 }
 .mobileSearchBar p {
   position: absolute;
   color: #fff;
   top: 15px;
-  right: 13px;
+  right: 37px;
   font-size: 14px;
 }
 .MDropBox {
   position: absolute;
-  width: 40%;
+  width: auto;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -642,6 +642,7 @@
   width: 100%;
   min-height: 30px;
   background: #ffffffcb;
+  padding: 0 20px;
 }
 .workCardBox {
   width: 100%;
