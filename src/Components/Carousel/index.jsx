@@ -13,6 +13,7 @@ export const ImageSlider = ({ data }) => {
       images={formattedImages}
       showBullets={true}
       showNavs={true}
+      autoPlay
     />
 
   );

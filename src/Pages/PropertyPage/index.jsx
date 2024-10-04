@@ -11,8 +11,6 @@ import starIcon from "../../Assets/Images/star.png";
 import shareIcon from "../../Assets/Images/shareIcon.svg"
 import loveIcon from "../../Assets/Images/loveIconWLine.png"
 import loveIconW from "../../Assets/Images/loveIconW.png"
-import searchIcon from "../../Assets/Images/searchIcon.svg"
-import propertyImg from "../../Assets/Images/propertyImg.png";
 import galleryIcon from "../../Assets/Images/gallery-24.png";
 import badIcon from "../../Assets/Images/badIcon.png";
 import bathIcon from "../../Assets/Images/bathIcon.png";
@@ -24,14 +22,18 @@ import paperCut from "../../Assets/Images/paperCut.png";
 import mailIcon from "../../Assets/Images/sMailIcon.png";
 import arrowIcon from "../../Assets/Images/blackArrow.png";
 import inboxIcon from "../../Assets/Images/InboxIcon.png";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import avatar1 from "../../Assets/Images/avatar1.png";
 import avatar2 from "../../Assets/Images/avatat2.png";
 import whatsappIcon from "../../Assets/Images/whatsappIcon.png"
 import crossIcon from "../../Assets/Images/crossIcon.png"
+import blogImg1 from "../../Assets/Images/blogImg1.jpeg";
+import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
+import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
+import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
+import blogImg5 from "../../Assets/Images/blogImg5.jpg";
 
 //components
-import { Box, Typography, useScrollTrigger } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
@@ -39,6 +41,8 @@ import { AppBtn } from "../../Components/ButtonBox";
 import { ImageSlider } from "../../Components/Carousel"
 import FindApartment from "../../Components/FindApartment"
 import SharePopup from "../../Components/SharePop"
+import SimpleImageSlider from "react-simple-image-slider";
+
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -47,7 +51,6 @@ export default function PropertyPage() {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const propertyIndex = localStorage.getItem("propertyIndex")
   const correntPropertyData = properitData.find((el) => el.id === propertyIndex);
-
   const headerText = "Our Properties Details";
   const [gellaryPop, setGellaryPop] = useState(false);
   const [testimonlText1, setTestimonlText1] = useState(false);
@@ -57,6 +60,12 @@ export default function PropertyPage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 
+  const caroselData = [blogImg1, blogImg2, blogImg3, blogImg4]
+
+
+  const formatted_Images = caroselData.map((el, index) => ({
+    url: el
+  }));
 
   useEffect(() => {
     if (gellaryPop) {
@@ -78,14 +87,12 @@ export default function PropertyPage() {
 
 
   const handleFavoriteClick = () => {
-    const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || []; // Ensure it's an array
+    const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || [];
     if (isPropertyFev.includes(correntPropertyData?.id)) {
-      // Remove the property if it's already in favorites
       const removeArray = isPropertyFev.filter(item => item !== correntPropertyData?.id);
       localStorage.setItem("propertyFev", JSON.stringify(removeArray));
       setFev(false);
     } else {
-      // Add the property to favorites
       const updatedFavorites = [...isPropertyFev, correntPropertyData?.id];
       localStorage.setItem("propertyFev", JSON.stringify(updatedFavorites));
       setFev(true);
@@ -168,17 +175,19 @@ export default function PropertyPage() {
             </Box>
           </Box>
 
+
+
+
+          <div className="Img_Slider" id="gellaryBackdrop">
+            <SimpleImageSlider
+              images={formatted_Images}
+              showBullets={true}
+              showNavs={true}
+              autoPlay
+            />
+          </div>
           <Box className="properyImgBox">
-            <Box className="showAllBtn" onClick={() => {
-              setGellaryPop(true)
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}>
-              <img src={galleryIcon} />
-              <Typography>View All Photos</Typography>
-            </Box>
-            <Box className="imgBox1">
-              <img src={correntPropertyData?.images[0]} />
-            </Box>
+
             <Box className="imgBox2">
               <Box className="img2Inn">
                 <img src={correntPropertyData?.images[1]} />
@@ -187,6 +196,19 @@ export default function PropertyPage() {
                 <img src={correntPropertyData?.images[2]} />
               </Box>
             </Box>
+
+            <Box className="imgBox1">
+              <video autoPlay muted loop src={correntPropertyData?.video}></video>
+            </Box>
+
+            <Box className="showAllBtn" onClick={() => {
+              setGellaryPop(true)
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
+              <img src={galleryIcon} />
+              <Typography>View All Photos</Typography>
+            </Box>
+
           </Box>
 
           <Box className="propertyInfoBox">
@@ -362,7 +384,7 @@ export default function PropertyPage() {
           </Box>
         </Box>
         <Footer />
-      </Box>
+      </Box >
     </>
   )
 }

@@ -41,7 +41,8 @@ import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
 import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
 import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
 import blogImg5 from "../../Assets/Images/blogImg5.jpg";
-import blogImg6 from "../../Assets/Images/blogImg6.webp";
+
+import video from "../Images/videoplayback.webm";
 
 export const ProductService = [
   {
@@ -203,6 +204,7 @@ export const properitData = [
       PropertyImg18,
       PropertyImg19,
     ],
+    video: video,
     location: "Sector 47, Gurgaon",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
@@ -271,6 +273,7 @@ export const properitData = [
       PropertyImg18,
       PropertyImg19,
     ],
+    video: video,
     location: "Sector 37, Gurgaon",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
