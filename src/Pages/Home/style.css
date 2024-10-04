@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 .locationSechBox {
-  width: 30%;
+  width: 25%;
   border-right: 1px solid rgba(128, 128, 128, 0.158);
   height: 100%;
   display: flex;
@@ -847,7 +847,7 @@
     width: 55%;
   }
   .mainSearchBox {
-    width: 51%;
+    width: 70%;
   }
   .hessleInputBox {
     width: 65%;

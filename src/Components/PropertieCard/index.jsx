@@ -46,7 +46,7 @@ export default function PropertieCard({ key, value, btnText }) {
           <Typography className='proCardTitle'>{value?.title}</Typography>
           <Box className="CardlocationBox">
             <img src={locationOutIcon} />
-            <Typography>{value?.location}</Typography>
+            <Typography>{value?.city}, {value?.Sector}</Typography>
           </Box>
           <Box className="proDetails">
             <img src={badIcon} />

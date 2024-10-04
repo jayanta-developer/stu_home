@@ -59,6 +59,8 @@ export default function PropertyPage() {
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  console.log(correntPropertyData);
+
 
   const caroselData = [blogImg1, blogImg2, blogImg3, blogImg4]
 
@@ -135,7 +137,7 @@ export default function PropertyPage() {
 
                 <Box className="locText">
                   <img src={locationOutIcon} />
-                  <Typography>{correntPropertyData?.location}</Typography>
+                  <Typography>{correntPropertyData?.city}, {correntPropertyData?.Sector}</Typography>
                 </Box>
 
                 <div className="pIconBtnBox">
@@ -229,7 +231,7 @@ export default function PropertyPage() {
               <Box className="locationBox">
                 <Box className="CardlocationBox">
                   <img src={locationOutIcon} />
-                  <Typography>{correntPropertyData?.location}</Typography>
+                  <Typography>{correntPropertyData?.city}, {correntPropertyData?.Sector}</Typography>
                 </Box>
                 <Box className="proDetails">
                   <img src={badIcon} />

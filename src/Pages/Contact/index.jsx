@@ -36,12 +36,12 @@ export default function Contact() {
   const GRowItem = ({ icon, title, subTitle, id }) => {
     return (
       <Box className="getTItem">
-        <Box id={id} className='GTItemIconBox pointer' onClick={handelInfoClick}>
-          <img id={id} src={icon} onClick={handelInfoClick} />
+        <Box className='GTItemIconBox'>
+          <img src={icon} />
         </Box>
         <Box>
-          <Typography>{title}</Typography>
-          <span>{subTitle}</span>
+          <Typography >{title}</Typography>
+          <span id={id} onClick={handelInfoClick}>{subTitle}</span>
         </Box>
       </Box>
     )
@@ -82,7 +82,7 @@ export default function Contact() {
               <Typography className='getTHeader'>Get in Touch</Typography>
               <Typography className='getTSubHeader'>For any specific questions or booking requests, don't hesitate to contact us. We're here to help make your stay perfect! </Typography>
               <Box className="getTItemBox">
-                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "C2GW+XP8 Gurugram, Haryana", id: "location" })}
+                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "House no. 479, Malibu Town, Sector 47 Gurugram, Harayana - 122018", id: "location" })}
                 {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "Platforms@sociostays.com", id: "email" })}
                 {GRowItem({ icon: callIcon, title: "Call Us", subTitle: "8920149160", id: "phone" })}
               </Box>
