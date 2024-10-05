@@ -494,7 +494,7 @@
   }
   .properyImgBox {
     width: 90%;
-    height: 65vh;
+    height: 45vh;
   }
   .Img_Slider {
     width: 90%;
@@ -565,9 +565,11 @@
   }
   .properyImgBox {
     width: 75%;
+    height: 100vh;
   }
   .Img_Slider {
     width: 75%;
+    height: 500px;
   }
   .propertyInfoBox {
     width: 75%;
