@@ -39,7 +39,7 @@ export default function PolicyPage() {
           <Box className="termsTextSection">
             <Typography className='termNText'>This Privacy Policy applies to all websites, applications, and other services offered by Socio Stays ("we," "us," or "Socio Stays"). Here, we explain how Socio Stays processes your personal data when you use our services. Personal data is any information that can be used to identify you, directly or indirectly.</Typography>
             <Box className="gapBox"></Box>
-            <Typography className='termNText'><span>Important Note: </span> Socio Stays is a metasearch platform connecting property owners with guests seeking accommodations. We do not own or operate any properties listed on our platform</Typography>
+            {/* <Typography className='termNText'><span>Important Note: </span> Socio Stays is a metasearch platform connecting property owners with guests seeking accommodations. We do not own or operate any properties listed on our platform</Typography> */}
 
             <Typography className='termsHeader'>Changes to the Privacy Notice</Typography>
             <Typography className='termNText'>Due to continuous technological advancements, changes to our services, legal updates, or other reasons, we may need to modify this Privacy Notice. We will update this policy regularly, so please keep yourself informed of its contents.</Typography>

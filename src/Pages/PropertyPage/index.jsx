@@ -31,9 +31,11 @@ import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
 import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
 import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
 import blogImg5 from "../../Assets/Images/blogImg5.jpg";
+import SocioStay from "../../Assets/Images/SocioStaysIcon.png"
+// import socioIcon from "../../Assets/Images/"
 
 //components
-import { Box, Typography } from '@mui/material';
+import { Avatar, Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
@@ -103,10 +105,10 @@ export default function PropertyPage() {
 
 
   const handleCall = () => {
-    window.location.href = `tel:${8920149160}`;
+    window.location.href = `tel:${7738082241}`;
   }
   const openWhatsapp = () => {
-    const url = `https://wa.me/${7304140237}`;
+    const url = `https://wa.me/${7738082241}`;
     window.open(url, '_blank');
   }
 
@@ -245,7 +247,7 @@ export default function PropertyPage() {
               <Box className="overAvatarInfoBox">
                 <Box className="avatarBox">
                   <Box className="avatarImg">
-                    <img src={avatart} />
+                    <img className='socioStayIcon' src={SocioStay} />
                   </Box>
                   <Box className="avatarNamBox">
                     <Typography>{correntPropertyData?.owner}</Typography>
@@ -354,11 +356,9 @@ export default function PropertyPage() {
 
             <div className={estimatPop ? "estimatPop estimatPopActive" : "estimatPop"}>
               <img src={crossIcon} onClick={() => setEstimatPop(false)} />
-              <p>Day to night: 6999 per night</p>
-              <p>Add dates</p>
-              <p>Add no. of guests</p>
-              <p>Rs.6999 x ___ Nights </p>
-
+              <p>Day to night: {correntPropertyData.price} per night</p>
+              <p>Maximum no. of guests 10</p>
+              <p>Plus Services and Taxes</p>
             </div>
           </Box>
 

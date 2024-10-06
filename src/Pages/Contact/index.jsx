@@ -49,7 +49,7 @@ export default function Contact() {
 
   const handelInfoClick = (e) => {
     if (e.target.id === "phone") {
-      window.location.href = `tel:${8920149160}`;
+      window.location.href = `tel:${7738082241}`;
     } else if (e.target.id === "email") {
       window.location.href = `mailto:${"Platforms@sociostays.com"}`;
     } else if (e.target.id === "location") {
@@ -82,7 +82,7 @@ export default function Contact() {
               <Typography className='getTHeader'>Get in Touch</Typography>
               <Typography className='getTSubHeader'>For any specific questions or booking requests, don't hesitate to contact us. We're here to help make your stay perfect! </Typography>
               <Box className="getTItemBox">
-                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "House no. 479, Malibu Town, Sector 47 Gurugram, Harayana - 122018", id: "location" })}
+                {GRowItem({ icon: locationIcon, title: "Head Office", subTitle: "Malibu Town, Sector 47 Gurugram, Harayana - 122018", id: "location" })}
                 {GRowItem({ icon: mailIcon, title: "Email Us", subTitle: "Platforms@sociostays.com", id: "email" })}
                 {GRowItem({ icon: callIcon, title: "Call Us", subTitle: "8920149160", id: "phone" })}
               </Box>

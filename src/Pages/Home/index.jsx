@@ -64,13 +64,27 @@ export default function Home() {
   );
   const sectorData = properitData.filter((el) => el.city === locationDropVal)
 
+  const handleWorkBtnClick = (BtnText) => {
+    if (BtnText === "SEARCH NOW") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+    if (BtnText === "BOOK NOW") {
+      navigate("/explore")
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+    if (BtnText === "EXPLORE NOW") {
+      navigate("/blogs")
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }
+
   const WorkCard = ({ img, title, subTitle, BtnText }) => {
     return (
       <Box className="propertiesCard">
         <img src={img} />
         <Typography className='workCardTitle'>{title}</Typography>
         <Typography className='workCardSubTitle'>{subTitle}</Typography>
-        <AppBtn btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
+        <AppBtn onClick={() => handleWorkBtnClick(BtnText)} btnText={BtnText} bgColor="#221E1D" hoverColor="#4d4745" textColor="#FFF" />
       </Box>
     )
   }
@@ -151,7 +165,7 @@ export default function Home() {
 
                 {/* sector */}
                 <Box className="locationSechBox" onClick={() => setSectorDrop(!sectorDrop)}>
-                  <Typography className='locDropText'>{sectorDropVal || "Sector"}</Typography>
+                  <Typography className='locDropText'>{sectorDropVal || "Area"}</Typography>
                   <img className='dropIcon' src={DropIcon} style={{ rotate: sectorDrop ? "180deg" : "0deg" }} />
 
                   <Box className="dropBox" sx={{ height: sectorDrop ? "auto" : '0px' }}>
@@ -252,13 +266,13 @@ export default function Home() {
               img: HomeIcon,
               title: "Book & Connect",
               subTitle: "Secure your stay with a few clicks and connect with your friendly host. Get insider tips on local gems!",
-              BtnText: "EXPLORE NOW"
+              BtnText: "BOOK NOW"
             })}
             {WorkCard({
               img: calenderIcon,
               title: "Experience & Explore",
               subTitle: "Immerse yourself in the local culture, discover hidden treasures, and relax in the comfort of your private space.",
-              BtnText: "REQUEST NOW"
+              BtnText: "EXPLORE NOW"
             })}
           </Box>
         </Box>

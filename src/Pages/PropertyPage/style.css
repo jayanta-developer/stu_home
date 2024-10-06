@@ -424,7 +424,7 @@
   overflow: hidden;
 }
 .estimatPopActive {
-  height: 158px;
+  height: 120px;
   padding: 10px 20px;
 }
 .estimatPop p {
@@ -483,7 +483,10 @@
   width: 40px;
   cursor: pointer;
 }
-
+.socioStayIcon {
+  width: 40px;
+  height: 40px;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertyDetailSection {

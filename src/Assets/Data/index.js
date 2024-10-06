@@ -41,6 +41,8 @@ import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
 import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
 import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
 import blogImg5 from "../../Assets/Images/blogImg5.jpg";
+import blogImg6 from "../../Assets/Images/Best-Party-Places-in-DELHI-Noida.jpg";
+import blogImg7 from "../../Assets/Images/create-memorable-moments.jpg";
 
 import video from "../Images/videoplayback.webm";
 
@@ -209,7 +211,7 @@ export const properitData = [
     Sector: "Sector 47",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
-    owner: "Hosted by Surya Prakash",
+    owner: "Hosted by SocioStays",
     room: "4",
     bath: "4",
     area: "1000+ sq.ft",
@@ -279,7 +281,7 @@ export const properitData = [
     Sector: "Sector 37",
     map: [28.417202857277694, 77.04754041620399],
     price: "6,999",
-    owner: "Hosted by Surya Prakash",
+    owner: "Hosted by SocioStay",
     room: "4",
     bath: "4",
     area: "1000+ sq.ft",
@@ -329,7 +331,7 @@ export const BlogData = [
     Conclusion: "Conclusion",
     ConclusionSummery:
       "Delhi offers a myriad of party stays that cater to every type of celebration, from vibrant nights out to luxurious, private gatherings. Whether you’re drawn to the lively scene of Hauz Khas or the opulence of Connaught Place, these top flats guarantee a memorable experience. Choose your ideal venue, gather your friends, and prepare for an epic celebration in India’s capital!",
-    img: blogImg1,
+    img: blogImg6,
     subPoint: [
       {
         header: "The Penthouse Loft at Hauz Khas Village",
@@ -391,7 +393,7 @@ export const BlogData = [
     Conclusion: "Conclusion",
     ConclusionSummery:
       "Delhi offers a range of budget-friendly flats that promise a fun and memorable experience without compromising on quality. From the vibrant energy of Paharganj to the relaxed atmosphere of South Delhi, these top picks ensure that your stay is both affordable and enjoyable. Choose your ideal budget stay, and get ready to explore Delhi’s dynamic cityscape without breaking the bank!",
-    img: blogImg2,
+    img: blogImg3,
     subPoint: [
       {
         header: "Cozy Corner in Paharganj",
@@ -453,7 +455,7 @@ export const BlogData = [
     Conclusion: "Conclusion",
     ConclusionSummery:
       "Finding the right family-friendly accommodation in Delhi ensures a memorable and hassle-free getaway. From the spacious Socio Stays in Gurugram to the cozy retreats in South Delhi, these safe and comfortable flats offer everything you need for a perfect family vacation. Choose your ideal stay and enjoy a fantastic family adventure in the heart of Delhi!",
-    img: blogImg3,
+    img: blogImg7,
     subPoint: [
       {
         header: "Cozy Family Retreat in South Delhi",
