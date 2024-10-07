@@ -184,7 +184,7 @@ export const properitData = [
     id: "6URFY0L4",
     title: "Ultra Luxurious 4BHK F-Property",
     summery:
-      "Best for business or leisure stay. All Suite Rooms have attached bath, grand balcony & lobby. Optional Full Floor- 4 Suite Rooms with sit out & well equipped kitchen available for big group bookings. Open-Sky Terrace Garden, In-Room dining & Car Parking available. SocioStays is within 15 mins drive from all tourist attractions, dining & shopping mall experiences.",
+      "Experience luxury in our spacious 4BHK property in Gurgaon, perfect for families and parties. Located near Medanta Hospital (1 km), Huda City Centre Metro (2 km), and key corporate hubs like Sector 32 and Unitech Cuber Park, this retreat offers modern amenities, a grand hall, and easy access to Gurgaon's vibrant dining and shopping. Ideal for both leisure and business stays, our property ensures comfort, convenience, and an unforgettable experience. Book now to enjoy the best of Gurgaon forever.",
     images: [
       PropertyImg1,
       PropertyImg12,
@@ -254,7 +254,7 @@ export const properitData = [
     id: "7I24RE77",
     title: "Ultra Luxurious 4BHK F-Property",
     summery:
-      "Best for business or leisure stay. All Suite Rooms have attached bath, grand balcony & lobby. Optional Full Floor- 4 Suite Rooms with sit out & well equipped kitchen available for big group bookings. Open-Sky Terrace Garden, In-Room dining & Car Parking available. SocioStays is within 15 mins drive from all tourist attractions, dining & shopping mall experiences.",
+      "Experience luxury in our spacious 4BHK property in Gurgaon, perfect for families and parties. Located near Medanta Hospital (1 km), Huda City Centre Metro (2 km), and key corporate hubs like Sector 32 and Unitech Cuber Park, this retreat offers modern amenities, a grand hall, and easy access to Gurgaon's vibrant dining and shopping. Ideal for both leisure and business stays, our property ensures comfort, convenience, and an unforgettable experience. Book now to enjoy the best of Gurgaon forever.",
     images: [
       PropertyImg1,
       PropertyImg2,

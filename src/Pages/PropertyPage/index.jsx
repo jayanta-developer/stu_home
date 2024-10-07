@@ -284,9 +284,9 @@ export default function PropertyPage() {
 
           <Box className="propertyInfoBox propertyInfoBoxv2">
             <Box className="propertyInfoInBox aboutLocBox">
-              <Typography className='overViewTitle'>SocioStays welcomes you to Elite Guest House in Gurgaon! </Typography>
+              <Typography className='overViewTitle'>About location's neighborhood</Typography>
               <Typography my={3}>{correntPropertyData?.summery}</Typography>
-              <Typography mb={5}>We ensure the best comfort & convenience for a memorable stay @ SocioStays!</Typography>
+              <Typography mb={5}>This apartment is equipped with a Washing Machine, Electric Stove, Microwave, Refrigerator, and Cutlery.</Typography>
               <Box className="costBtn">
                 <Typography>Average living cost</Typography>
                 <span>₹ {correntPropertyData?.price} /PER DAY</span>
