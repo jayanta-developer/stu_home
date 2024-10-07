@@ -3,12 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 //images
-import star from "../../Assets/Images/star.png";
 import light from "../../Assets/Images/light.svg";
-import badIcon from "../../Assets/Images/badIcon.png";
 import bankSvg from "../../Assets/Images/bankSvg.svg";
-import bathIcon from "../../Assets/Images/bathIcon.png";
-import LoveIcon from "../../Assets/Images/loveIcon.png";
 import HomeIcon from "../../Assets/Images/homeIcon.svg";
 import paperCut from "../../Assets/Images/paperCut.png";
 import awordSvg from "../../Assets/Images/awardSvg.svg";
@@ -21,15 +17,10 @@ import DropIcon from "../../Assets/Images/grayDropIcon.png";
 import HomeBG from "../../Assets/Images/homeBackgRound.png";
 import HomeBGTabe from "../../Assets/Images/homeBackgRoundTabe.png";
 import HomeBGMobile from "../../Assets/Images/homeBackgRoundMobile.png";
-import propertyImg2 from "../../Assets/Images/propertiImg2.png";
-import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
 import locationIcon from "../../Assets/Images/locationIcon.png";
 import calenderIcon from "../../Assets/Images/calenderIcon.svg";
 import hasselIcon from "../../Assets/Images/hesselRoundIcon.png";
-import propertyImg3 from "../../Assets/Images/PropertieImg3.png";
-import propertyImg1 from "../../Assets/Images/propertieImg1.png";
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
-import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import filterIcon from "../../Assets/Images/filter-circle.svg"
 import searchIcon from "../../Assets/Images/SearchIconV2.png"
 import whiteLine from "../../Assets/Images/whiteLine.png"
@@ -41,6 +32,7 @@ import { AppBtn } from "../../Components/ButtonBox";
 import FindApartment from "../../Components/FindApartment"
 import Footer from "../../Components/Footer"
 import PropertieCard from "../../Components/PropertieCard"
+import EmailBox from "../../Components/EmailBox";
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -278,25 +270,7 @@ export default function Home() {
         </Box>
         <FindApartment />
 
-        <Box className="aparEmailBox">
-          <img src={paperCut} className='paperTop' />
-          <Box className="aparMailBox">
-            <img className='InboxIcon' src={inboxIcon} />
-            <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and Gain Industrial Experience</Typography>
-              <Typography className='aptSubHeader_Text'>Sign up to our newsletter for deals,
-                inspo and other travel treats!</Typography>
-            </Box>
-
-            <Box className="mailSendBox">
-              <img src={mailIcon} className='mailIcon' />
-              <Box className="sendMailBtn">
-                <img src={arrowIcon} className='arrowIcon' />
-              </Box>
-              <input type="text" placeholder='Your Email address' />
-            </Box>
-          </Box>
-        </Box>
+        <EmailBox />
         <Footer />
       </Box>
     </>

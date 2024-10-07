@@ -15,13 +15,8 @@ import galleryIcon from "../../Assets/Images/gallery-24.png";
 import badIcon from "../../Assets/Images/badIcon.png";
 import bathIcon from "../../Assets/Images/bathIcon.png";
 import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
-import avatart from "../../Assets/Images/avatar.png";
 import messageIcon from "../../Assets/Images/messageIcon.svg";
 import callIconSvg from "../../Assets/Images/callIconsvg.svg";
-import paperCut from "../../Assets/Images/paperCut.png";
-import mailIcon from "../../Assets/Images/sMailIcon.png";
-import arrowIcon from "../../Assets/Images/blackArrow.png";
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import avatar1 from "../../Assets/Images/avatar1.png";
 import avatar2 from "../../Assets/Images/avatat2.png";
 import whatsappIcon from "../../Assets/Images/whatsappIcon.png"
@@ -30,7 +25,6 @@ import blogImg1 from "../../Assets/Images/blogImg1.jpeg";
 import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
 import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
 import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
-import blogImg5 from "../../Assets/Images/blogImg5.jpg";
 import SocioStay from "../../Assets/Images/SocioStaysIcon.png"
 // import socioIcon from "../../Assets/Images/"
 
@@ -44,7 +38,7 @@ import { ImageSlider } from "../../Components/Carousel"
 import FindApartment from "../../Components/FindApartment"
 import SharePopup from "../../Components/SharePop"
 import SimpleImageSlider from "react-simple-image-slider";
-
+import EmailBox from "../../Components/EmailBox"
 
 //data
 import { properitData } from "../../Assets/Data"
@@ -61,12 +55,7 @@ export default function PropertyPage() {
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  console.log(correntPropertyData);
-
-
   const caroselData = [blogImg1, blogImg2, blogImg3, blogImg4]
-
-
   const formatted_Images = caroselData.map((el, index) => ({
     url: el
   }));
@@ -365,26 +354,7 @@ export default function PropertyPage() {
           <FindApartment />
 
         </Box>
-        <Box className="aparEmailBox">
-          <img src={paperCut} className='paperTop' />
-          <Box className="aparMailBox">
-            <img src={inboxIcon} />
-            <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and
-                Gain Industrial Experience</Typography>
-              <Typography sx={{ textAlign: "center" }}>Sign up to our newsletter for deals,
-                inspo and other travel treats!</Typography>
-            </Box>
-
-            <Box className="mailSendBox">
-              <img src={mailIcon} className='mailIcon' />
-              <Box className="sendMailBtn">
-                <img src={arrowIcon} className='arrowIcon' />
-              </Box>
-              <input type="text" placeholder='Your Email address' />
-            </Box>
-          </Box>
-        </Box>
+        <EmailBox />
         <Footer />
       </Box >
     </>

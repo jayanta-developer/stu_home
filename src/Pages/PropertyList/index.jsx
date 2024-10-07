@@ -21,7 +21,7 @@ import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
 import FindApartment from "../../Components/FindApartment"
 import PropertieCard from "../../Components/PropertieCard"
-
+import EmailBox from "../../Components/EmailBox"
 
 //Data
 import { properitData } from "../../Assets/Data"
@@ -57,26 +57,7 @@ export default function PropertyList() {
           <img src={pageBackground} className='propertyBg' />
           <FindApartment />
         </Box>
-        <Box className="aparEmailBox">
-          <img src={paperCut} className='paperTop' />
-          <Box className="aparMailBox">
-            <img src={inboxIcon} />
-            <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and
-                Gain Industrial Experience</Typography>
-              <Typography>Sign up to our newsletter for deals,
-                inspo and other travel treats!</Typography>
-            </Box>
-
-            <Box className="mailSendBox">
-              <img src={mailIcon} className='mailIcon' />
-              <Box className="sendMailBtn">
-                <img src={arrowIcon2} className='arrowIcon' />
-              </Box>
-              <input type="text" placeholder='Your Email address' />
-            </Box>
-          </Box>
-        </Box>
+        <EmailBox />
         <Footer />
       </Box>
 

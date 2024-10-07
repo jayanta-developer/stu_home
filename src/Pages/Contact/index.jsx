@@ -3,14 +3,10 @@ import "./style.css";
 
 //images
 import blackBg from "../../Assets/Images/blackBg.jpg";
-import paperCut from "../../Assets/Images/paperCut.png";
 import HomeBG from "../../Assets/Images/propertyBg.png";
 import mailIcon from "../../Assets/Images/mailIcon.png"
 import callIcon from "../../Assets/Images/callIconS.png"
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
-import arrowIcon2 from "../../Assets/Images/blackArrow.png";
 import locationIcon from "../../Assets/Images/locationS.png"
-import mailIcon2 from "../../Assets/Images/sMailIcon.png";
 import facebookIcon from "../../Assets/Images/FacebookIcon.png";
 import TwitterIcon from "../../Assets/Images/twitterSIcon.png";
 import InstaIcon from "../../Assets/Images/instaIcon.png";
@@ -25,7 +21,7 @@ import SimpleMap from "../../Components/Map"
 import NavBar from "../../Components/NavBar";
 import Footer from "../../Components/Footer";
 import { AppBtn } from "../../Components/ButtonBox"
-
+import EmailBox from "../../Components/EmailBox";
 
 export default function Contact() {
   const [genderDrop, setGenderDrop] = useState(false)
@@ -187,26 +183,7 @@ export default function Contact() {
 
         </Box>
 
-        <Box className="aparEmailBox">
-          <img src={paperCut} className='paperTop' />
-          <Box className="aparMailBox">
-            <img src={inboxIcon} />
-            <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and
-                Gain Industrial Experience</Typography>
-              <Typography>Sign up to our newsletter for deals,
-                inspo and other travel treats!</Typography>
-            </Box>
-
-            <Box className="mailSendBox">
-              <img src={mailIcon2} className='mailIcon' />
-              <Box className="sendMailBtn">
-                <img src={arrowIcon2} className='arrowIcon' />
-              </Box>
-              <input type="text" placeholder='Your Email address' />
-            </Box>
-          </Box>
-        </Box>
+        <EmailBox />
         <Footer />
       </Box>
 

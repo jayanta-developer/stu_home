@@ -3,20 +3,15 @@ import "./style.css";
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
-import paperCut from "../../Assets/Images/paperCut.png";
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
-import mailIcon from "../../Assets/Images/sMailIcon.png";
-import arrowIcon2 from "../../Assets/Images/blackArrow.png";
 import bulletIcon from "../../Assets/Images/bulletIcon.png"
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
-import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
 import FindApartment from "../../Components/FindApartment"
+import EmailBox from "../../Components/EmailBox"
 
 
 export default function PolicyPage() {
@@ -254,36 +249,13 @@ export default function PolicyPage() {
               <Box className="dotBox"><img src={bulletIcon} /></Box>
               <Typography className='termNText'>When transferring data to our service providers, they are only allowed to use the data to perform their tasks. These providers are carefully selected and instructed by us, contractually bound to our instructions, have appropriate technical and organizational measures, and are regularly monitored by us.</Typography>
             </Box>
-
-
-
           </Box>
-
         </Box>
         <Box className="propertyDetailSection">
           <img src={pageBackground} className='propertyBg' />
           <FindApartment />
         </Box>
-        <Box className="aparEmailBox">
-          <img src={paperCut} className='paperTop' />
-          <Box className="aparMailBox">
-            <img src={inboxIcon} />
-            <Box >
-              <Typography className='aptHeaderText'>Join Our Journey and
-                Gain Industrial Experience</Typography>
-              <Typography>Sign up to our newsletter for deals,
-                inspo and other travel treats!</Typography>
-            </Box>
-
-            <Box className="mailSendBox">
-              <img src={mailIcon} className='mailIcon' />
-              <Box className="sendMailBtn">
-                <img src={arrowIcon2} className='arrowIcon' />
-              </Box>
-              <input type="text" placeholder='Your Email address' />
-            </Box>
-          </Box>
-        </Box>
+        <EmailBox />
         <Footer />
       </Box>
 
