@@ -72,7 +72,7 @@ export default function Home() {
 
   const WorkCard = ({ img, title, subTitle, BtnText }) => {
     return (
-      <Box className="propertiesCard">
+      <Box className="propertiesCard" onClick={() => handleWorkBtnClick(BtnText)}>
         <img src={img} />
         <Typography className='workCardTitle'>{title}</Typography>
         <Typography className='workCardSubTitle'>{subTitle}</Typography>
