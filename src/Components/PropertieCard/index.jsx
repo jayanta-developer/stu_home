@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
-
+import PropertyImg1 from "../../Assets/Images/Property/176d46b1-844e-4807-8099-be1fbf204aae.jpeg";
 
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import bathIcon from "../../Assets/Images/bathIcon.png";
@@ -26,7 +26,7 @@ export default function PropertieCard({ key, value, btnText }) {
         localStorage.setItem("propertyIndex", value?.id)
       }}>
         <Box className="coverImg">
-          <img src={value?.images[2]} />
+          <img src={PropertyImg1} />
           <Box className='loveIcon'>
             <img src={
               isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack
@@ -46,7 +46,7 @@ export default function PropertieCard({ key, value, btnText }) {
           <Typography className='proCardTitle'>{value?.title}</Typography>
           <Box className="CardlocationBox">
             <img src={locationOutIcon} />
-            <Typography>{value?.city}, {value?.Sector}</Typography>
+            <Typography>{value?.city}, {value?.sector}</Typography>
           </Box>
           <Box className="proDetails">
             <img src={badIcon} />

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 import "./style.css";
 
 //images
@@ -31,24 +32,23 @@ import NavBar from "../../Components/NavBar";
 import { AppBtn } from "../../Components/ButtonBox";
 import FindApartment from "../../Components/FindApartment"
 import Footer from "../../Components/Footer"
-import PropertieCard from "../../Components/PropertieCard"
+import PropertieCard from "../../Components/PropertieCard";
 import EmailBox from "../../Components/EmailBox";
 
 //data
-import { properitData } from "../../Assets/Data"
+import { properitData } from "../../Assets/Data";
 
 export default function Home() {
   const navigate = useNavigate()
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("");
-
   const [sectorDrop, setSectorDrop] = useState(false);
   const [sectorDropVal, setSectorDropVal] = useState();
-
-
-
   const [searchSelector, setSearchSelecotr] = useState(0);
-  const [selectedPropertyId, setSelectedPropertyId] = useState()
+  const [selectedPropertyId, setSelectedPropertyId] = useState();
+  const [IncPropertyData, setIncPropertData] = useState([]);
+
+
 
   const cityData = properitData.filter(
     (item, index, self) =>
@@ -84,8 +84,18 @@ export default function Home() {
   const GoProperty = () => {
     navigate("/property/200L4")
     window.scrollTo({ top: 0, behavior: "smooth" })
-    localStorage.setItem("propertyIndex", selectedPropertyId)
+    localStorage.setItem("propertyIndex", selectedPropertyId);
   }
+
+  useEffect(() => {
+    Axios.get("http://localhost:4000/socio/api/flats")
+      .then((val) => {
+        setIncPropertData(val.data)
+        return val.data;
+      })
+      .catch((err) => console.log(err));
+  }, [])
+
 
   return (
     <>
@@ -174,8 +184,6 @@ export default function Home() {
 
 
 
-
-
                 <Box className="sechInputBox">
                   <input type="text" placeholder='Search for locality, landmark' />
                   <Box className="searchBtn" onClick={GoProperty}>
@@ -225,13 +233,11 @@ export default function Home() {
         <Box className="PropertiesSection">
           <Typography className='hasselHeader'>Our Properties</Typography>
           <Box className="proertiseBox">
-
             {
-              properitData?.map((el, i) => (
+              IncPropertyData?.map((el, i) => (
                 <PropertieCard value={el} btnText={"Featured"} key={i} />
               ))
             }
-
           </Box>
           <Box className="btnBox" onClick={() => {
             navigate("/explore")

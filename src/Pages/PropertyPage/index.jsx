@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css"
+import Axios from "axios";
+
 
 
 //images
@@ -41,9 +43,11 @@ import SimpleImageSlider from "react-simple-image-slider";
 import EmailBox from "../../Components/EmailBox"
 
 //data
+import { gatPropertyData } from "../../Assets/Util"
 import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
+  const PropertyData = gatPropertyData()
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const propertyIndex = localStorage.getItem("propertyIndex")
   const correntPropertyData = properitData.find((el) => el.id === propertyIndex);
@@ -54,6 +58,11 @@ export default function PropertyPage() {
   const [fev, setFev] = useState(isPropertyFevData?.includes(correntPropertyData?.id) ? true : false);
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [IncPropertyData, setIncPropertData] = useState()
+
+  console.log(PropertyData);
+
+
 
   const caroselData = [blogImg1, blogImg2, blogImg3, blogImg4]
   const formatted_Images = caroselData.map((el, index) => ({

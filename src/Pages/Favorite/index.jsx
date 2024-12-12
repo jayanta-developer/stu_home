@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from "axios";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
@@ -18,6 +20,7 @@ import EmailBox from "../../Components/EmailBox"
 import { properitData } from "../../Assets/Data"
 
 export default function FavoriteList() {
+  const [IncPropertyData, setIncPropertData] = useState([])
 
   const navigate = useNavigate()
   const headerText = (
@@ -38,6 +41,15 @@ export default function FavoriteList() {
   });
 
 
+  useEffect(() => {
+    Axios.get("http://localhost:4000/socio/api/flats")
+      .then((val) => {
+        setIncPropertData(val.data)
+        return val.data;
+      })
+      .catch((err) => console.log(err));
+  }, [])
+
   return (
     <>
       <Box className="property aboutPage TermsPage policyPage blogPage propertyListPage favoritePage">
@@ -49,9 +61,9 @@ export default function FavoriteList() {
         <Box className="BlogSection">
           <img src={pageBackground} className='propertyBg' />
 
-          {newData.length ?
+          {IncPropertyData.length ?
             <Box className="blogInSection">
-              {newData?.map((el, i) => (
+              {IncPropertyData?.map((el, i) => (
                 <PropertieCard btnText={"Featured"} key={i} value={el} />
               ))}
             </Box> :
