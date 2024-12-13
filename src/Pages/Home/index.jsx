@@ -88,7 +88,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    Axios.get("http://localhost:4000/socio/api/flats")
+    Axios.get("https://socioserver.onrender.com/socio/api/flats")
       .then((val) => {
         setIncPropertData(val.data)
         return val.data;

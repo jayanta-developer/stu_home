@@ -2,7 +2,7 @@ import Axios from "axios";
 
 export const gatPropertyData = async () => {
   try {
-    await Axios.get("http://localhost:4000/socio/api/flats")
+    await Axios.get("https://socioserver.onrender.com/socio/api/flats")
       .then((val) => {
         const data = val.data;
         return data;

@@ -131,7 +131,7 @@ export default function PropertyPage() {
 
 
   useEffect(() => {
-    Axios.get(`http://localhost:4000/socio/api/flats/${propertyIndex}`)
+    Axios.get(`https://socioserver.onrender.com/socio/api/flats/${propertyIndex}`)
       .then((val) => {
         setIncPropertData(val.data)
         return val.data;
