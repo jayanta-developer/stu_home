@@ -19,8 +19,8 @@ const Marker = ({ text }) => (
 export default function SimpleMap({ latVal, lngVal, zoomVal }) {
   const defaultProps = {
     center: {
-      lat: latVal,
-      lng: lngVal,
+      lat: latVal * 1,
+      lng: lngVal * 1,
     },
     zoom: zoomVal,
   };

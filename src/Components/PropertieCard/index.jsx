@@ -23,7 +23,7 @@ export default function PropertieCard({ key, value, btnText }) {
       <Box key={key} className="propertiesCard" onClick={() => {
         navigate("/property/200L4")
         window.scrollTo({ top: 0, behavior: "smooth" })
-        localStorage.setItem("propertyIndex", value?.id)
+        localStorage.setItem("propertyIndex", value?._id)
       }}>
         <Box className="coverImg">
           <img src={PropertyImg1} />
