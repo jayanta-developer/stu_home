@@ -282,10 +282,10 @@ export default function PropertyPage() {
                   </Box>
 
                   <Box className="mesCallBox">
-                    <Box>
+                    <Box onClick={openWhatsapp} >
                       <img src={messageIcon} />
                     </Box>
-                    <Box>
+                    <Box onClick={handleCall}>
                       <img src={callIconSvg} />
                     </Box>
                   </Box>
