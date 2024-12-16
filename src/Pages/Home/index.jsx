@@ -9,11 +9,8 @@ import bankSvg from "../../Assets/Images/bankSvg.svg";
 import HomeIcon from "../../Assets/Images/homeIcon.svg";
 import paperCut from "../../Assets/Images/paperCut.png";
 import awordSvg from "../../Assets/Images/awardSvg.svg";
-import mailIcon from "../../Assets/Images/sMailIcon.png";
 import HomeYIcon from "../../Assets/Images/HomeYIcom.png";
 import personSvg from "../../Assets/Images/personSvg.svg";
-import arrowIcon from "../../Assets/Images/blackArrow.png";
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
 import DropIcon from "../../Assets/Images/grayDropIcon.png";
 import HomeBG from "../../Assets/Images/homeBackgRound.png";
 import HomeBGTabe from "../../Assets/Images/homeBackgRoundTabe.png";
@@ -50,11 +47,11 @@ export default function Home() {
 
 
 
-  const cityData = properitData.filter(
+  const cityData = IncPropertyData?.filter(
     (item, index, self) =>
-      index === self.findIndex((t) => t.city === item.city)
+      index === self.findIndex((t) => t.city === item?.city)
   );
-  const sectorData = properitData.filter((el) => el.city === locationDropVal)
+  const sectorData = IncPropertyData?.filter((el) => el?.city === locationDropVal)
 
   const handleWorkBtnClick = (BtnText) => {
     if (BtnText === "SEARCH NOW") {
@@ -123,11 +120,11 @@ export default function Home() {
               <img src={filterIcon} className="filterIcon" onClick={() => setLocationDrop(!locationDrop)} />
               <img src={whiteLine} className="whiteLine" />
               <Box className="MDropBox" sx={{ height: locationDrop ? "145px" : "0px" }}>
-                {properitData?.map((el, i) => (
+                {IncPropertyData?.map((el, i) => (
                   <Box key={i} className="dropItem" onClick={() => {
-                    setLocationDropVal(el?.location)
+                    setLocationDropVal(el?.city)
                     setLocationDrop(false)
-                    setSelectedPropertyId(el.id)
+                    setSelectedPropertyId(el._id)
                   }}>
                     <span>{el?.location}</span>
                   </Box>

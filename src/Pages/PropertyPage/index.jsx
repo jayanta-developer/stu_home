@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "./style.css"
 import Axios from "axios";
 
-
-
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
@@ -23,10 +21,6 @@ import avatar1 from "../../Assets/Images/avatar1.png";
 import avatar2 from "../../Assets/Images/avatat2.png";
 import whatsappIcon from "../../Assets/Images/whatsappIcon.png"
 import crossIcon from "../../Assets/Images/crossIcon.png"
-import blogImg1 from "../../Assets/Images/blogImg1.jpeg";
-import blogImg2 from "../../Assets/Images/blogImg2.jpeg";
-import blogImg3 from "../../Assets/Images/blogImg3.jpeg";
-import blogImg4 from "../../Assets/Images/blogImg4.jpeg";
 import SocioStay from "../../Assets/Images/SocioStaysIcon.png"
 
 //facilities icons
@@ -42,11 +36,6 @@ import SpaceWork from "../../Assets/Images/SpaceWork.png";
 import Laundry from "../../Assets/Images/Laundry.png";
 import CustomerSupport from "../../Assets/Images/CustomerSupport.png";
 
-import propertyVideo1 from "../../Assets/Images/videos/PropertyVideo1.mp4"
-import propertyVideo2 from "../../Assets/Images/videos/PropertyVideo2.mp4"
-
-
-// import socioIcon from "../../Assets/Images/"
 
 //components
 import { Avatar, Box, Typography } from '@mui/material';
@@ -60,30 +49,26 @@ import SharePopup from "../../Components/SharePop"
 import SimpleImageSlider from "react-simple-image-slider";
 import EmailBox from "../../Components/EmailBox"
 
-//data
-import { gatPropertyData } from "../../Assets/Util"
-import { properitData } from "../../Assets/Data"
 
 export default function PropertyPage() {
-  const PropertyData = gatPropertyData()
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const propertyIndex = localStorage.getItem("propertyIndex")
-  const correntPropertyData = properitData.find((el) => el.id === "6URFY0L4");
   const headerText = "Our Properties Details";
   const [gellaryPop, setGellaryPop] = useState(false);
   const [testimonlText1, setTestimonlText1] = useState(false);
   const [testimonlText2, setTestimonlText2] = useState(false);
-  const [fev, setFev] = useState(isPropertyFevData?.includes(correntPropertyData?.id) ? true : false);
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [IncPropertyData, setIncPropertData] = useState()
+  const [IncPropertyData, setIncPropertData] = useState();
+
+
+  const [fev, setFev] = useState();
+
+  console.log(fev);
 
 
 
-
-
-  const caroselData = [blogImg1, blogImg2, blogImg3, blogImg4]
-  const formatted_Images = caroselData.map((el, index) => ({
+  const formatted_Images = IncPropertyData?.images?.map((el, index) => ({
     url: el
   }));
 
@@ -108,12 +93,12 @@ export default function PropertyPage() {
 
   const handleFavoriteClick = () => {
     const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || [];
-    if (isPropertyFev.includes(correntPropertyData?.id)) {
-      const removeArray = isPropertyFev.filter(item => item !== correntPropertyData?.id);
+    if (isPropertyFev.includes(IncPropertyData?._id)) {
+      const removeArray = isPropertyFev.filter(item => item !== IncPropertyData?._id);
       localStorage.setItem("propertyFev", JSON.stringify(removeArray));
       setFev(false);
     } else {
-      const updatedFavorites = [...isPropertyFev, correntPropertyData?.id];
+      const updatedFavorites = [...isPropertyFev, IncPropertyData?._id];
       localStorage.setItem("propertyFev", JSON.stringify(updatedFavorites));
       setFev(true);
     }
@@ -137,6 +122,13 @@ export default function PropertyPage() {
         return val.data;
       })
       .catch((err) => console.log(err));
+
+
+    if (isPropertyFevData?.includes(IncPropertyData?._id)) {
+      setFev(true)
+    } else {
+      setFev(false)
+    }
   }, [])
 
 
@@ -145,7 +137,11 @@ export default function PropertyPage() {
     <>
       <Box className="property">
         <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>
-          <ImageSlider data={correntPropertyData} />
+
+          {
+            IncPropertyData &&
+            <ImageSlider data={IncPropertyData} />
+          }
         </Box>
 
         <Box className="propertyHomeSection">
@@ -220,15 +216,15 @@ export default function PropertyPage() {
 
               <Box className="imgBox2">
                 <Box className="img2Inn">
-                  <img src={correntPropertyData?.images[1]} />
+                  <img src={IncPropertyData?.images[1]} />
                 </Box>
                 <Box className="img2Inn">
-                  <img src={correntPropertyData?.images[2]} />
+                  <img src={IncPropertyData?.images[2]} />
                 </Box>
               </Box>
 
               <Box className="imgBox1">
-                <video autoPlay muted loop src={propertyVideo1}></video>
+                <video autoPlay muted loop src={IncPropertyData?.video}></video>
               </Box>
 
               <Box className="showAllBtn" onClick={() => {

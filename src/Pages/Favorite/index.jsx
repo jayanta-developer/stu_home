@@ -16,8 +16,6 @@ import FindApartment from "../../Components/FindApartment"
 import PropertieCard from "../../Components/PropertieCard"
 import EmailBox from "../../Components/EmailBox"
 
-//Data
-import { properitData } from "../../Assets/Data"
 
 export default function FavoriteList() {
   const [IncPropertyData, setIncPropertData] = useState([])
@@ -34,7 +32,7 @@ export default function FavoriteList() {
   let newData = []
 
   propertyFev.forEach((el) => {
-    const favoriteProperty = properitData.find((elId) => elId.id === el);
+    const favoriteProperty = IncPropertyData.find((elId) => elId?._id === el);
     if (favoriteProperty) {
       newData.push(favoriteProperty);
     }

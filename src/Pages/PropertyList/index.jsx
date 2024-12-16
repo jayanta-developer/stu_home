@@ -5,20 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
-import apartMentImg from "../../Assets/Images/apartment-house-real.png";
 import pageBackground from "../../Assets/Images/Pro_blackBg.jpg";
-import paperCut from "../../Assets/Images/paperCut.png";
-import inboxIcon from "../../Assets/Images/InboxIcon.png";
-import mailIcon from "../../Assets/Images/sMailIcon.png";
-import arrowIcon2 from "../../Assets/Images/blackArrow.png";
-import bulletIcon from "../../Assets/Images/bulletIcon.png";
-
-
 
 //components
 import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
-import { AppBtn } from "../../Components/ButtonBox";
 import Footer from "../../Components/Footer";
 import FindApartment from "../../Components/FindApartment"
 import PropertieCard from "../../Components/PropertieCard"

@@ -2,8 +2,6 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
-import PropertyImg1 from "../../Assets/Images/Property/176d46b1-844e-4807-8099-be1fbf204aae.jpeg";
-
 import locationOutIcon from "../../Assets/Images/locationOutLineIcon.png";
 import bathIcon from "../../Assets/Images/bathIcon.png";
 import roomAreaIcon from "../../Assets/Images/roomAreiIcon.png";
@@ -18,6 +16,7 @@ export default function PropertieCard({ key, value, btnText }) {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const navigate = useNavigate()
 
+
   return (
     <>
       <Box key={key} className="propertiesCard" onClick={() => {
@@ -26,7 +25,7 @@ export default function PropertieCard({ key, value, btnText }) {
         localStorage.setItem("propertyIndex", value?._id)
       }}>
         <Box className="coverImg">
-          <img src={PropertyImg1} />
+          <img src={value?.images[0]} />
           <Box className='loveIcon'>
             <img src={
               isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack
