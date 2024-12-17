@@ -362,6 +362,7 @@
   background: var(--primaryColor);
   gap: 16px;
   cursor: pointer;
+  padding: 0 16px;
 }
 .costBtn span {
   font-family: "Satoshi" !important;
@@ -608,7 +609,7 @@
     width: 40%;
   }
   .costBtn {
-    width: 60%;
+    width: fit-content;
   }
   .propertyInfoBoxv2 {
     flex-direction: unset;
