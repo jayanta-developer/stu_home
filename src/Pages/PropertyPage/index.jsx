@@ -64,9 +64,6 @@ export default function PropertyPage() {
 
   const [fev, setFev] = useState();
 
-  console.log(fev);
-
-
 
   const formatted_Images = IncPropertyData?.images?.map((el, index) => ({
     url: el
