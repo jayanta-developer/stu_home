@@ -16,7 +16,6 @@ export default function PropertieCard({ key, value, btnText }) {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const navigate = useNavigate()
 
-
   return (
     <>
       <Box key={key} className="propertiesCard" onClick={() => {
@@ -35,8 +34,8 @@ export default function PropertieCard({ key, value, btnText }) {
         <Box className="propCardTextBox">
           <Box className="startBox">
             <Box className="starInBox">
+              <Typography>{value?.rating}</Typography>
               <img src={star} />
-              <Typography>4.8 <span>(73)</span></Typography>
             </Box>
             <Box className="cardBtn">
               <Typography>{btnText}</Typography>

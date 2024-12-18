@@ -38,7 +38,7 @@ import CustomerSupport from "../../Assets/Images/CustomerSupport.png";
 
 
 //components
-import { Avatar, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import NavBar from "../../Components/NavBar";
 import Footer from '../../Components/Footer';
 import SimpleMap from "../../Components/Map"
@@ -48,11 +48,12 @@ import FindApartment from "../../Components/FindApartment"
 import SharePopup from "../../Components/SharePop"
 import SimpleImageSlider from "react-simple-image-slider";
 import EmailBox from "../../Components/EmailBox"
+import { GoTop } from '../../Components/Tools';
 
 
 export default function PropertyPage() {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
-  const propertyIndex = localStorage.getItem("propertyIndex")
+  const propertyIndex = localStorage.getItem("propertyIndex");
   const headerText = "Our Properties Details";
   const [gellaryPop, setGellaryPop] = useState(false);
   const [testimonlText1, setTestimonlText1] = useState(false);
@@ -60,9 +61,8 @@ export default function PropertyPage() {
   const [estimatPop, setEstimatPop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [IncPropertyData, setIncPropertData] = useState();
-
-
   const [fev, setFev] = useState();
+  const [rentPop, setRectPop] = useState(false)
 
 
   const formatted_Images = IncPropertyData?.images?.map((el, index) => ({
@@ -70,7 +70,7 @@ export default function PropertyPage() {
   }));
 
   useEffect(() => {
-    if (gellaryPop) {
+    if (gellaryPop || rentPop) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
@@ -78,15 +78,13 @@ export default function PropertyPage() {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [gellaryPop]);
+  }, [gellaryPop, rentPop]);
 
   const handleClose = (e) => {
     if (e.target.id === "gellaryBackdrop") {
       setGellaryPop(false)
     }
   }
-
-
 
   const handleFavoriteClick = () => {
     const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || [];
@@ -101,25 +99,21 @@ export default function PropertyPage() {
     }
   };
 
-
   const handleCall = () => {
-    window.location.href = `tel:${7738082241}`;
+    window.location.href = `tel:${process.env.REACT_APP_PHONE_NUMBER}`;
   }
   const openWhatsapp = () => {
-    const url = `https://wa.me/${7738082241}`;
+    const url = `https://wa.me/${process.env.REACT_APP_PHONE_NUMBER}`;
     window.open(url, '_blank');
   }
 
-
-
   useEffect(() => {
-    Axios.get(`https://socioserver.onrender.com/socio/api/flats/${propertyIndex}`)
+    Axios.get(process.env.REACT_APP_BASE_URL + `/flats/${propertyIndex}`)
       .then((val) => {
         setIncPropertData(val.data)
         return val.data;
       })
       .catch((err) => console.log(err));
-
 
     if (isPropertyFevData?.includes(IncPropertyData?._id)) {
       setFev(true)
@@ -128,18 +122,46 @@ export default function PropertyPage() {
     }
   }, [])
 
-
-
   return (
     <>
       <Box className="property">
-        <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>
 
+        {/* Photo gellary */}
+        <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>
           {
             IncPropertyData &&
             <ImageSlider data={IncPropertyData} />
           }
         </Box>
+
+        {/* Send property Info pop */}
+        <div onClick={() => setRectPop(false)} className="backDrop" style={{ display: rentPop ? "flex" : "none" }}>
+          <Box className="messageInputBox">
+            <Box className="inputTowBox">
+              <Box className="inputBox">
+                <Typography>First Name *</Typography>
+                <input placeholder='JHON' />
+              </Box>
+              <Box className="inputBox">
+                <Typography>Last Name *</Typography>
+                <input placeholder='STIVEN' />
+              </Box>
+            </Box>
+
+            <Box className="inputTowBox">
+              <Box className="inputBox">
+                <Typography>Email ID *</Typography>
+                <input placeholder='info@student.com' />
+              </Box>
+              <Box className="inputBox">
+                <Typography>Phone Number *</Typography>
+                <input placeholder='123-456-7890' />
+              </Box>
+            </Box>
+          </Box>
+
+
+        </div>
 
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
@@ -185,8 +207,6 @@ export default function PropertyPage() {
                     </Box>
                   </div>
                 </Box>
-
-
                 <Box className="contactBtnBox">
                   <img src={whatsappIcon} className='whatsappIcon' onClick={openWhatsapp} />
                   <Box className="propContactBtn" onClick={handleCall}>
@@ -194,12 +214,8 @@ export default function PropertyPage() {
                     <Typography>Contact Sellers</Typography>
                   </Box>
                 </Box>
-
               </Box>
             </Box>
-
-
-
 
             <div className="Img_Slider" id="gellaryBackdrop">
               <SimpleImageSlider
@@ -226,12 +242,11 @@ export default function PropertyPage() {
 
               <Box className="showAllBtn" onClick={() => {
                 setGellaryPop(true)
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                GoTop()
               }}>
                 <img src={galleryIcon} />
                 <Typography>View All Photos</Typography>
               </Box>
-
             </Box>
 
             <Box className="propertyInfoBox">
@@ -284,7 +299,6 @@ export default function PropertyPage() {
                   </Box>
                 </Box>
               </Box>
-
 
               <Box className="propertyInfoInBox facilitiesBox">
                 <Typography className='overViewTitle'>Home Facilities</Typography>
@@ -383,7 +397,10 @@ export default function PropertyPage() {
                 <Typography className='propertyPriceText'>₹ {IncPropertyData?.price}<span> / PER DAY</span></Typography>
                 <samp onClick={() => setEstimatPop(!estimatPop)}>Payment estimation</samp>
               </Box>
-              <AppBtn btnText="Rent" />
+              <AppBtn btnText="Rent" onClick={() => {
+                setRectPop(true)
+                GoTop()
+              }} />
 
               <div className={estimatPop ? "estimatPop estimatPopActive" : "estimatPop"}>
                 <img src={crossIcon} onClick={() => setEstimatPop(false)} />
@@ -392,12 +409,9 @@ export default function PropertyPage() {
                 <p>Plus Services and Taxes</p>
               </div>
             </Box>
-
             <FindApartment />
-
           </Box>
         }
-
         <EmailBox />
         <Footer />
       </Box >

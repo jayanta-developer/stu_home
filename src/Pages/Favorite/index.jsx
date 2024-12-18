@@ -40,7 +40,7 @@ export default function FavoriteList() {
 
 
   useEffect(() => {
-    Axios.get("https://socioserver.onrender.com/socio/api/flats")
+    Axios.get(process.env.REACT_APP_BASE_URL + "/flats")
       .then((val) => {
         setIncPropertData(val.data)
         return val.data;

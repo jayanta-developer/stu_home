@@ -32,9 +32,6 @@ import Footer from "../../Components/Footer"
 import PropertieCard from "../../Components/PropertieCard";
 import EmailBox from "../../Components/EmailBox";
 
-//data
-import { properitData } from "../../Assets/Data";
-
 export default function Home() {
   const navigate = useNavigate()
   const [locationDrop, setLocationDrop] = useState(false);
@@ -85,7 +82,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    Axios.get("https://socioserver.onrender.com/socio/api/flats")
+    Axios.get(process.env.REACT_APP_BASE_URL + "/flats")
       .then((val) => {
         setIncPropertData(val.data)
         return val.data;

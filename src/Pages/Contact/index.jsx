@@ -45,7 +45,7 @@ export default function Contact() {
 
   const handelInfoClick = (e) => {
     if (e.target.id === "phone") {
-      window.location.href = `tel:${7738082241}`;
+      window.location.href = `tel:${process.env.REACT_APP_PHONE_NUMBER}`;
     } else if (e.target.id === "email") {
       window.location.href = `mailto:${"Platforms@sociostays.com"}`;
     } else if (e.target.id === "location") {
