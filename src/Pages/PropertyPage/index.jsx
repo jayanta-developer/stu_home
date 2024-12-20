@@ -192,7 +192,7 @@ export default function PropertyPage() {
             <img src={pageBackground} className='propertyBg' />
             <Box className="propertyTitleBox">
               <Box className="proTilInnerBox">
-                <Typography className='propertyTitle'>{IncPropertyData?.title}</Typography>
+                <h3 className='propertyTitle'>{IncPropertyData?.title}</h3>
                 <Typography className='propertyPriceText'>₹ {IncPropertyData?.price} <span>/ PER DAY</span></Typography>
               </Box>
 

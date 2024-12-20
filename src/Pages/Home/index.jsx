@@ -189,6 +189,24 @@ export default function Home() {
           </Box>
         </Box>
 
+
+        <Box className="PropertiesSection">
+          <Typography className='hasselHeader'>Our Properties</Typography>
+          <Box className="proertiseBox">
+            {
+              IncPropertyData?.map((el, i) => (
+                <PropertieCard value={el} btnText={"Featured"} key={i} />
+              ))
+            }
+          </Box>
+          <Box className="btnBox" onClick={() => {
+            navigate("/explore")
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }}>
+            <AppBtn btnText="VIEW ALL" />
+          </Box>
+        </Box>
+
         <Box className='hasselBox'>
           <Typography className='hasselHeader'>Skip The Hassle!</Typography>
 
@@ -221,23 +239,6 @@ export default function Home() {
               <Typography className='label'>Local and Authentic</Typography>
               <Typography className='subSabel'>Live like a local in vibrant neighborhoods. Connect with welcoming hosts and experience the true essence of your destination.</Typography>
             </Box>
-          </Box>
-        </Box>
-
-        <Box className="PropertiesSection">
-          <Typography className='hasselHeader'>Our Properties</Typography>
-          <Box className="proertiseBox">
-            {
-              IncPropertyData?.map((el, i) => (
-                <PropertieCard value={el} btnText={"Featured"} key={i} />
-              ))
-            }
-          </Box>
-          <Box className="btnBox" onClick={() => {
-            navigate("/explore")
-            window.scrollTo({ top: 0, behavior: "smooth" })
-          }}>
-            <AppBtn btnText="VIEW ALL" />
           </Box>
         </Box>
 
