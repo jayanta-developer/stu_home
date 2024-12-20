@@ -1,0 +1,9 @@
+.map-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  cursor: grab;
+}
+.maplibregl-marker {
+  top: -17px !important;
+}

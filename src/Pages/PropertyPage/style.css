@@ -497,7 +497,33 @@
   padding: 100px 0;
   font-family: "PoppinsBold";
 }
-
+.backDrop .rentDelInputBox {
+  width: 50%;
+  height: auto;
+  background: #181717;
+  border-radius: 10px;
+  padding: 30px 20px;
+}
+.bd2 > div > div {
+  width: 100% !important;
+  height: auto !important;
+}
+.rentPopHeader {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Poppins";
+  margin-bottom: 30px;
+}
+.rentDelInputBox .inputTowBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rentDelInputBox .inputTowBox .inputBox {
+  width: 100%;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertyDetailSection {

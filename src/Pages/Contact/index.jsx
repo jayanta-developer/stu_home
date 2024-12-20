@@ -17,11 +17,12 @@ import { countries } from "../../Assets/Data"
 
 //components
 import { Box, Typography } from '@mui/material';
-import SimpleMap from "../../Components/Map"
 import NavBar from "../../Components/NavBar";
 import Footer from "../../Components/Footer";
 import { AppBtn } from "../../Components/ButtonBox"
 import EmailBox from "../../Components/EmailBox";
+import MapComponent from "../../Components/Map"
+
 
 export default function Contact() {
   const [genderDrop, setGenderDrop] = useState(false)
@@ -84,7 +85,11 @@ export default function Contact() {
               </Box>
             </Box>
             <Box className="getTMapBox">
-              <SimpleMap latVal={28.42751626252157} lngVal={77.04680663898678} zoomVal={10} />
+              <MapComponent
+                latitude={28.42751626252157} // Latitude
+                longitude={77.04680663898678} // Longitude
+                description={'Harayana'} // Description for the popup
+              />
             </Box>
           </Box>
         </Box>

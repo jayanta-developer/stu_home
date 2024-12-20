@@ -49,6 +49,7 @@ import SharePopup from "../../Components/SharePop"
 import SimpleImageSlider from "react-simple-image-slider";
 import EmailBox from "../../Components/EmailBox"
 import { GoTop } from '../../Components/Tools';
+import MapComponent from "../../Components/Map"
 
 
 export default function PropertyPage() {
@@ -63,11 +64,35 @@ export default function PropertyPage() {
   const [IncPropertyData, setIncPropertData] = useState();
   const [fev, setFev] = useState();
   const [rentPop, setRectPop] = useState(false)
+  const [userInfo, setUserInfo] = useState({})
 
 
   const formatted_Images = IncPropertyData?.images?.map((el, index) => ({
     url: el
   }));
+
+  const handleCloseRentPop = (e) => {
+    console.log(e.target.id);
+    if (e.target.id === "rentPop") {
+      setRectPop(false)
+    }
+  }
+  //User whatsapp info
+  const handleUserInfo = (e) => {
+    const { name, value } = e.target;
+    setUserInfo(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+  ///not working ... Have to use whatsApp busines api
+  const handleSendPropertyInfo = () => {
+    setRectPop(false)
+    if (userInfo.number) {
+      const whatsappURL = `https://wa.me/${userInfo?.number}?text=${encodeURIComponent("Property Details")}`;
+      window.open(whatsappURL, "_blank")
+    }
+  }
 
   useEffect(() => {
     if (gellaryPop || rentPop) {
@@ -135,29 +160,22 @@ export default function PropertyPage() {
         </Box>
 
         {/* Send property Info pop */}
-        <div onClick={() => setRectPop(false)} className="backDrop" style={{ display: rentPop ? "flex" : "none" }}>
-          <Box className="messageInputBox">
+        <div id="rentPop" onClick={handleCloseRentPop} className="backDrop bd2" style={{ display: rentPop ? "flex" : "none" }}>
+          <Box className="rentDelInputBox">
+            <p className='rentPopHeader'>Please fill your contact info to get property details to your WhatsApp</p>
             <Box className="inputTowBox">
               <Box className="inputBox">
-                <Typography>First Name *</Typography>
-                <input placeholder='JHON' />
+                <Typography>WhatsApp Number *</Typography>
+                <input name='number' placeholder='Number' type='number' onChange={handleUserInfo} value={userInfo?.number} />
               </Box>
               <Box className="inputBox">
-                <Typography>Last Name *</Typography>
-                <input placeholder='STIVEN' />
+                <Typography>Email Id</Typography>
+                <input name='email' placeholder='Enter email' type='email' onChange={handleUserInfo} value={userInfo?.email} />
               </Box>
             </Box>
-
-            <Box className="inputTowBox">
-              <Box className="inputBox">
-                <Typography>Email ID *</Typography>
-                <input placeholder='info@student.com' />
-              </Box>
-              <Box className="inputBox">
-                <Typography>Phone Number *</Typography>
-                <input placeholder='123-456-7890' />
-              </Box>
-            </Box>
+            <div className="fromBtnBox">
+              <AppBtn btnText="SEND" onClick={handleSendPropertyInfo} />
+            </div>
           </Box>
 
 
@@ -389,7 +407,11 @@ export default function PropertyPage() {
             </Box>
 
             <Box className="MapBox">
-              <SimpleMap latVal={IncPropertyData?.mapLat} lngVal={IncPropertyData?.mapLong} zoomVal={15} />
+              <MapComponent
+                latitude={IncPropertyData?.mapLat} // Latitude
+                longitude={IncPropertyData?.mapLong} // Longitude
+                description={IncPropertyData?.city} // Description for the popup
+              />
             </Box>
 
             <Box className="rentSection">
