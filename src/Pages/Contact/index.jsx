@@ -61,7 +61,6 @@ export default function Contact() {
     "Others"
   ]
 
-
   return (
     <>
       <Box className="property aboutPage">
