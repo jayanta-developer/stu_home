@@ -24,7 +24,7 @@ export default function PropertieCard({ key, value, btnText }) {
         localStorage.setItem("propertyIndex", value?._id)
       }}>
         <Box className="coverImg">
-          <img src={value?.images[0]} />
+          <img src={value?.images[0]?.image} />
           <Box className='loveIcon'>
             <img src={
               isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack

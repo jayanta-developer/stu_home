@@ -69,7 +69,7 @@ export default function PropertyPage() {
 
 
   const formatted_Images = IncPropertyData?.images?.map((el, index) => ({
-    url: el
+    url: el.image
   }));
 
   const handleCloseRentPop = (e) => {
@@ -263,10 +263,10 @@ export default function PropertyPage() {
 
               <Box className="imgBox2">
                 <Box className="img2Inn">
-                  <img src={IncPropertyData?.images[1]} />
+                  <img src={IncPropertyData?.images[0]?.image} alt={IncPropertyData?.images[0]?.altText} />
                 </Box>
                 <Box className="img2Inn">
-                  <img src={IncPropertyData?.images[2]} />
+                  <img src={IncPropertyData?.images[1]?.image} alt={IncPropertyData?.images[1]?.altText} />
                 </Box>
               </Box>
 
