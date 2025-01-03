@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import Axios from 'axios';
+import { Helmet } from "react-helmet-async";
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
@@ -39,6 +40,9 @@ export default function BlogDetails() {
 
   return (
     <>
+      <Helmet>
+        <title>{blogData?.SummeryArray[0]?.title}</title>
+      </Helmet>
       <Box className="property aboutPage TermsPage policyPage blogPage blogDetailsPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
@@ -78,10 +82,6 @@ export default function BlogDetails() {
                   <Typography>{blogData?.conclusion}</Typography>
                 </>
             }
-
-
-
-
 
           </Box>
         </Box>

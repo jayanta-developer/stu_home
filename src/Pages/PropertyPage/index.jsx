@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css"
 import Axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
@@ -111,6 +112,13 @@ export default function PropertyPage() {
     }
   }
 
+
+  useEffect(() => {
+    const dynamicUrl = IncPropertyData?.title || "id?=k4jj43lk3434444";
+    window.history.replaceState(null, "", dynamicUrl);
+  }, [IncPropertyData]);
+
+
   const handleFavoriteClick = () => {
     const isPropertyFev = JSON.parse(localStorage.getItem("propertyFev")) || [];
     if (isPropertyFev.includes(IncPropertyData?._id)) {
@@ -150,6 +158,14 @@ export default function PropertyPage() {
   return (
     <>
       <Box className="property">
+        {/* meta */}
+        <Helmet>
+          <title>{IncPropertyData?.title}</title>
+          <meta
+            name="description"
+            content={IncPropertyData?.meta_description}
+          />
+        </Helmet>
 
         {/* Photo gellary */}
         <Box onClick={handleClose} id="gellaryBackdrop" className="backDrop" sx={{ display: gellaryPop ? "flex" : "none" }}>

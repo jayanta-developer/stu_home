@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
+import { Helmet } from "react-helmet-async";
+
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
@@ -45,6 +47,9 @@ export default function Blogs() {
 
   return (
     <>
+      <Helmet>
+        <title>Blog</title>
+      </Helmet>
       <Box className="property aboutPage TermsPage policyPage blogPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />

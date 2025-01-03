@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./style.css";
+import { Helmet } from "react-helmet-async";
 
 //images
 import blackBg from "../../Assets/Images/blackBg.jpg";
@@ -63,6 +64,9 @@ export default function Contact() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <Box className="property aboutPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />

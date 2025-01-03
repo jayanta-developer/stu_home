@@ -1,5 +1,7 @@
 import React from 'react';
 import "./style.css";
+import { Helmet } from "react-helmet-async";
+
 
 //images
 import HomeBG from "../../Assets/Images/propertyBg.png";
@@ -23,6 +25,9 @@ export default function PolicyPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Privacy Policy</title>
+      </Helmet>
       <Box className="property aboutPage TermsPage policyPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />

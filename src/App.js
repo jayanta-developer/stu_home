@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { HelmetProvider } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,18 +20,20 @@ export default function App() {
   AOS.init();
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<PropertyList />} />
-        <Route path="/property/200L4" element={<PropertyPage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/Blog-details" element={<BlogDetails />} />
-        <Route path="/Terms-and-Conditions" element={<TermsPage />} />
-        <Route path="/Pricacy-Policy" element={<PolicyPage />} />
-        <Route path="/favorite-list" element={<FavoriteList />} />
-      </Routes>
+      <HelmetProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<PropertyList />} />
+          <Route path="/property/200L4" element={<PropertyPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/Blog-details" element={<BlogDetails />} />
+          <Route path="/Terms-and-Conditions" element={<TermsPage />} />
+          <Route path="/Pricacy-Policy" element={<PolicyPage />} />
+          <Route path="/favorite-list" element={<FavoriteList />} />
+        </Routes>
+      </HelmetProvider>
     </>
   );
 }

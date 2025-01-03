@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
+import { Helmet } from "react-helmet-async";
 import "./style.css";
 
 //images
@@ -93,6 +94,9 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Socio Stays</title>
+      </Helmet>
       <Box className="homeContainer">
         <Box className="homeSection">
           <img src={HomeBG} className='HomeBG HomeBGDesktop' />

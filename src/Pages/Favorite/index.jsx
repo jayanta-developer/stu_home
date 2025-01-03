@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 //images
@@ -50,6 +51,9 @@ export default function FavoriteList() {
 
   return (
     <>
+      <Helmet>
+        <title>Favorite</title>
+      </Helmet>
       <Box className="property aboutPage TermsPage policyPage blogPage propertyListPage favoritePage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
