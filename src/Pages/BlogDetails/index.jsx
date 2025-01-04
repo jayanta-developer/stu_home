@@ -22,6 +22,7 @@ export default function BlogDetails() {
   const navigate = useNavigate()
   const [blogData, setBlogData] = useState({})
 
+
   const headerText = (
     <>
       Our Blogs
@@ -37,11 +38,16 @@ export default function BlogDetails() {
       .catch((err) => console.log(err));
   }, [])
   const isEmpty = (obj) => !Object.keys(obj).length;
+  console.log(blogData);
 
   return (
     <>
       <Helmet>
-        <title>{blogData?.SummeryArray[0]?.title}</title>
+        {
+          isEmpty(blogData) ?
+            null :
+            <title>{blogData?.SummeryArray[0]?.title}</title>
+        }
       </Helmet>
       <Box className="property aboutPage TermsPage policyPage blogPage blogDetailsPage">
         <Box className="propertyHomeSection">
