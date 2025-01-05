@@ -17,12 +17,11 @@ import Footer from "../../Components/Footer";
 import FindApartment from "../../Components/FindApartment";
 import EmailBox from "../../Components/EmailBox";
 
-//Data
-import { BlogData } from "../../Assets/Data"
 
 export default function Blogs() {
   const navigate = useNavigate()
-  const [DBBlogData, setDBBlogData] = useState([])
+  const [DBBlogData, setDBBlogData] = useState([]);
+
   const headerText = (
     <>
       Our Blogs
@@ -48,7 +47,7 @@ export default function Blogs() {
   return (
     <>
       <Helmet>
-        <title>Blog</title>
+        <title>Blogs</title>
       </Helmet>
       <Box className="property aboutPage TermsPage policyPage blogPage">
         <Box className="propertyHomeSection">
@@ -65,7 +64,7 @@ export default function Blogs() {
               {
                 DBBlogData?.map((el, i) => (
                   <Box key={i} className="blogCard">
-                    <img src={el?.images[0]} />
+                    <img src={el?.images[0]?.image} alt={el?.images[0]?.altText} />
                     <Typography className='blogHeader'>{el?.SummeryArray[0]?.title.slice(0, 66)}...</Typography>
                     <Typography className='blogSubHeader'>{el?.SummeryArray[0]?.text?.slice(0, 140)}... </Typography>
                     <Box className="BlogCbtnBox">

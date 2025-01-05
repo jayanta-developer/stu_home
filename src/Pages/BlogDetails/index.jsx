@@ -38,17 +38,35 @@ export default function BlogDetails() {
       .catch((err) => console.log(err));
   }, [])
   const isEmpty = (obj) => !Object.keys(obj).length;
-  console.log(blogData);
+
+
+  useEffect(() => {
+    if (!isEmpty(blogData)) {
+      const dynamicUrl = blogData?.SummeryArray[0]?.title
+        ? blogData.SummeryArray[0].title
+          .trim() // Remove leading/trailing spaces
+          .replace(/[^a-zA-Z0-9\s-]/g, "") // Remove special characters except spaces and hyphens
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+        : "id=k4jj43lk3434444";
+
+      window.history.replaceState(null, "", dynamicUrl);
+    }
+  }, [blogData?.SummeryArray]);
+
 
   return (
     <>
-      <Helmet>
-        {
-          isEmpty(blogData) ?
-            null :
+      {
+        isEmpty(blogData) ?
+          null :
+          <Helmet>
             <title>{blogData?.SummeryArray[0]?.title}</title>
-        }
-      </Helmet>
+            <meta
+              name="description"
+              content={blogData?.meta_description}
+            />
+          </Helmet>
+      }
       <Box className="property aboutPage TermsPage policyPage blogPage blogDetailsPage">
         <Box className="propertyHomeSection">
           <img src={HomeBG} className='HomeBG' />
@@ -73,7 +91,7 @@ export default function BlogDetails() {
                       <Typography>{blogData?.SummeryArray[0]?.text}</Typography>
                     </Box>
                     <Box className="blog1B">
-                      <img src={blogData?.images[0]} />
+                      <img src={blogData?.images[0].image} alt={blogData?.images[0]?.altText} />
                     </Box>
                   </Box>
                   {

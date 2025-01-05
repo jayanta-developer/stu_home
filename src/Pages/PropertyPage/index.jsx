@@ -112,9 +112,13 @@ export default function PropertyPage() {
     }
   }
 
-
   useEffect(() => {
-    const dynamicUrl = IncPropertyData?.title || "id?=k4jj43lk3434444";
+    const dynamicUrl = IncPropertyData?.title
+      ? IncPropertyData?.title
+        .trim() // Remove leading/trailing spaces
+        .replace(/[^a-zA-Z0-9\s-]/g, "") // Remove special characters except spaces and hyphens
+        .replace(/\s+/g, "-") // Replace spaces with hyphens
+      : "id=k4jj43lk3434444";
     window.history.replaceState(null, "", dynamicUrl);
   }, [IncPropertyData]);
 
