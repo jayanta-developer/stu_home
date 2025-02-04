@@ -44,11 +44,11 @@ export default function Home() {
   const [IncPropertyData, setIncPropertData] = useState([]);
 
 
-
   const cityData = IncPropertyData?.filter(
     (item, index, self) =>
       index === self.findIndex((t) => t.city === item?.city)
   );
+
   const sectorData = IncPropertyData?.filter((el) => el?.city === locationDropVal)
 
   const handleWorkBtnClick = (BtnText) => {
@@ -77,7 +77,7 @@ export default function Home() {
   }
 
   const GoProperty = () => {
-    navigate("/property/200L4")
+    navigate("/property-details")
     window.scrollTo({ top: 0, behavior: "smooth" })
     localStorage.setItem("propertyIndex", selectedPropertyId);
   }
@@ -114,7 +114,9 @@ export default function Home() {
               of home—at a price that’s better than any hotel
             </Typography>
 
-            <Box className="mobileSearchBar">
+
+            {/* ------------Mobile--------------- */}
+            {/* <Box className="mobileSearchBar">
               <input type="text" placeholder='Search...' />
               <Typography>{locationDropVal || "Location"}</Typography>
               <img src={searchIcon} className="searchIocn" onClick={GoProperty} />
@@ -131,25 +133,25 @@ export default function Home() {
                   </Box>
                 ))}
               </Box>
-            </Box>
+            </Box> */}
 
-
+            {/* -----------Desktop------------ */}
             <Box className="mainSearchBox">
-              <Box className="selectorBox">
+              {/* <Box className="selectorBox">
                 <Box className={searchSelector === 0 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(0)}>
                   <Typography>FLATS</Typography>
                 </Box>
                 <Box className={searchSelector === 1 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(1)}>
                   <Typography>ROOMS </Typography>
                 </Box>
-              </Box>
+              </Box> */}
               {/* -------------------------------------------------------------------------- */}
               <Box className="innerSearchBox">
 
                 {/* city */}
                 <Box className="locationSechBox" onClick={() => setLocationDrop(!locationDrop)}>
-                  <img src={locationIcon} />
-                  <Typography className='locDropText'>{locationDropVal || "Select your city"}</Typography>
+                  <img src={locationIcon} className='locationIcon' />
+                  <Typography className='locDropText'>{locationDropVal || "Select City"}</Typography>
                   <img className='dropIcon' src={DropIcon} style={{ rotate: locationDrop ? "180deg" : "0deg" }} />
 
                   <Box className="dropBox" sx={{ height: locationDrop ? "auto" : '0px' }}>
@@ -167,27 +169,28 @@ export default function Home() {
                 <Box className="locationSechBox" onClick={() => setSectorDrop(!sectorDrop)}>
                   <Typography className='locDropText'>{sectorDropVal || "Area"}</Typography>
                   <img className='dropIcon' src={DropIcon} style={{ rotate: sectorDrop ? "180deg" : "0deg" }} />
-
-                  <Box className="dropBox" sx={{ height: sectorDrop ? "auto" : '0px' }}>
-                    {sectorData?.map((el, i) => (
-                      <Box key={i} className="dropItem" onClick={() => {
-                        setSectorDropVal(el?.Sector)
-                        setSelectedPropertyId(el.id)
-                      }}>
-                        <Typography>{el?.Sector}</Typography>
-                      </Box>
-                    ))}
-                  </Box>
                 </Box>
 
-
-
-                <Box className="sechInputBox">
-                  <input type="text" placeholder='Search for locality, landmark' />
-                  <Box className="searchBtn" onClick={GoProperty}>
-                    <Typography>Search</Typography>
-                  </Box>
+                <Box className={selectedPropertyId ? "searchBtn" : "searchBtn searchBtnDecibel"} onClick={GoProperty}>
+                  <Typography>Go</Typography>
                 </Box>
+              </Box>
+
+              {/* Properti search list */}
+              <Box className="dropBox PropertyList" sx={{ height: sectorDrop ? "auto" : '0px' }}>
+                {sectorData?.map((el, i) => (
+                  <Box key={i} className="dropItem" onClick={() => {
+                    setSectorDropVal(el?.area)
+                    setSelectedPropertyId(el._id)
+                    setSectorDrop(false)
+                  }}>
+                    <div className="PDImgBox"><img src={el?.images[0].image} /></div>
+                    <div className="PDTitleBox">
+                      <p>{el?.title}</p>
+                      <span>{el?.owner} | {el?.sector}</span>
+                    </div>
+                  </Box>
+                ))}
               </Box>
             </Box>
           </Box>

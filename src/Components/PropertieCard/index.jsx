@@ -12,13 +12,13 @@ import loveBlack from "../../Assets/Images/loveB.png"
 
 
 
-export default function PropertieCard({ key, value, btnText }) {
+export default function PropertieCard({ value, btnText }) {
   const isPropertyFevData = JSON.parse(localStorage.getItem("propertyFev"));
   const navigate = useNavigate()
 
   return (
     <>
-      <Box key={key} className="propertiesCard" onClick={() => {
+      <Box className="propertiesCard" onClick={() => {
         navigate("/property-details")
         window.scrollTo({ top: 0, behavior: "smooth" })
         localStorage.setItem("propertyIndex", value?._id)

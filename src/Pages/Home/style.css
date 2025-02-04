@@ -59,16 +59,18 @@
   color: var(--primaryColor);
 }
 .mainSearchBox {
-  width: 90%;
+  width: 99%;
   height: 100px;
   background: #221e1d;
-  border-radius: 0px 20px 20px 20px;
+  border-radius: 20px;
   margin-top: 70px;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  border: 1px solid gray;
 }
+
 .innerSearchBox {
   width: 95%;
   height: 62%;
@@ -77,21 +79,23 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   cursor: pointer;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 .locationSechBox {
-  width: 25%;
+  width: 31%;
   border-right: 1px solid rgba(128, 128, 128, 0.158);
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
-  padding-left: 14px;
   gap: 10px;
 }
 .sechInputBox {
-  width: 70%;
+  /* width: 70%; */
   height: 100%;
   position: relative;
 }
@@ -120,18 +124,23 @@
   transition: all 0.5s;
 }
 .searchBtn {
-  width: 154px;
-  height: 47px;
+  width: 94px;
+  height: 38px;
   background: var(--primaryColor);
   border-radius: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 9px;
   transition: all 0.5s;
+}
+
+.searchBtnDecibel {
+  background: gray;
+  pointer-events: none;
+}
+.mainSearchBox .locationIcon {
+  display: none;
 }
 .searchBtn:hover {
   background: #fdb017ce;
@@ -150,6 +159,36 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
+}
+.PropertyList {
+  top: 101px !important;
+}
+.PropertyList .dropItem {
+  flex-direction: row;
+  gap: 16px;
+  height: auto;
+  padding: 10px;
+}
+.PDImgBox {
+  width: 38%;
+}
+.PDImgBox img {
+  width: 100%;
+}
+.PDTitleBox {
+  display: flex;
+  flex-direction: column;
+}
+.PDTitleBox p,
+.PDTitleBox span {
+  font-size: 17px;
+  font-family: "Poppins";
+  color: #fff;
+}
+.PDTitleBox span {
+  font-size: 13px;
+  color: #ffffffb9;
+  margin-top: 5px;
 }
 .sltIBox {
   width: 100%;
@@ -718,9 +757,7 @@
   .homeBoldText {
     font-size: 50px !important;
   }
-  .mainSearchBox {
-    display: flex;
-  }
+
   .mobileSearchBar {
     display: none;
   }
@@ -837,6 +874,26 @@
   .proertiseBox {
     justify-content: center;
   }
+  .searchBtn {
+    width: 154px;
+    height: 47px;
+  }
+  .mainSearchBox .locationIcon {
+    display: block;
+  }
+  .locationSechBox {
+    width: 25%;
+  }
+  .PDImgBox {
+    width: 16%;
+  }
+  .PDTitleBox p,
+  .PDTitleBox span {
+    font-size: 22px;
+  }
+  .PDTitleBox span {
+    font-size: 16px;
+  }
 }
 
 /* Desktop view */
@@ -848,7 +905,7 @@
     width: 55%;
   }
   .mainSearchBox {
-    width: 70%;
+    width: 55%;
   }
   .hessleInputBox {
     width: 65%;
