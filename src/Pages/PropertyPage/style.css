@@ -498,7 +498,7 @@
   font-family: "PoppinsBold";
 }
 .backDrop .rentDelInputBox {
-  width: 50%;
+  width: 99%;
   height: auto;
   background: #181717;
   border-radius: 10px;
@@ -652,5 +652,8 @@
     width: unset;
     flex-direction: row;
     justify-content: end;
+  }
+  .backDrop .rentDelInputBox {
+    width: 50%;
   }
 }

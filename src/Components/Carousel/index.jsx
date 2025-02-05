@@ -2,7 +2,7 @@ import SimpleImageSlider from "react-simple-image-slider";
 
 export const ImageSlider = ({ data }) => {
   const formattedImages = data?.images?.map((el, index) => ({
-    url: el
+    url: el?.image
   }));
 
   return (
