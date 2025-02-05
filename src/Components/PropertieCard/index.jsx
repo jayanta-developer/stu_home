@@ -27,7 +27,7 @@ export default function PropertieCard({ value, btnText }) {
           <img src={value?.images[0]?.image} />
           <Box className='loveIcon'>
             <img src={
-              isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack
+              isPropertyFevData?.includes(value?._id) ? LoveIcon : loveBlack
             } />
           </Box>
         </Box>

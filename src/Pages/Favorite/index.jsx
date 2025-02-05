@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 
@@ -19,9 +18,8 @@ import EmailBox from "../../Components/EmailBox"
 
 
 export default function FavoriteList() {
-  const [IncPropertyData, setIncPropertData] = useState([])
+  const [IncPropertyData, setIncPropertData] = useState([]);
 
-  const navigate = useNavigate()
   const headerText = (
     <>
       Favorite
@@ -63,9 +61,9 @@ export default function FavoriteList() {
         <Box className="BlogSection">
           <img src={pageBackground} className='propertyBg' />
 
-          {IncPropertyData.length ?
+          {newData.length ?
             <Box className="blogInSection">
-              {IncPropertyData?.map((el, i) => (
+              {newData?.map((el, i) => (
                 <PropertieCard btnText={"Featured"} key={i} value={el} />
               ))}
             </Box> :

@@ -1,7 +1,9 @@
 :root {
   --primaryColor: #fdaf17;
 }
-
+.propertyPage {
+  position: relative;
+}
 .propertyHomeSection {
   width: 100%;
   height: 250px;
@@ -524,6 +526,12 @@
 .rentDelInputBox .inputTowBox .inputBox {
   width: 100%;
 }
+.fixedBannerBox {
+  position: sticky;
+  bottom: 0px;
+  background: #1e1e1e;
+  padding: 15px;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertyDetailSection {
@@ -592,6 +600,9 @@
   }
   .testimonialsBox {
     width: 100%;
+  }
+  .fixedBannerBox {
+    display: none;
   }
 }
 
