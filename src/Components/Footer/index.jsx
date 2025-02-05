@@ -31,9 +31,9 @@ export default function Footer() {
   const DetactPageClick = (e) => {
     window.scrollTo({ top: 0, behavior: "smooth" })
     if (e.target.textContent === "Terms and Conditions") {
-      navigate("/Terms-and-Conditions")
+      navigate("/terms-and-Conditions")
     } else if (e.target.textContent === "Privacy Policy") {
-      navigate("/Pricacy-Policy")
+      navigate("/pricacy-Policy")
     } else if (e.target.textContent === "Blogs") {
       navigate("/blogs")
     }
@@ -78,7 +78,7 @@ export default function Footer() {
               <Box className="footerRowItem">
                 <Typography className='footerRowHText'>Quick Links</Typography>
                 <Typography className='footerNText' onClick={() => {
-                  navigate("/Terms-and-Conditions")
+                  navigate("/terms-and-Conditions")
                   GoTop()
                 }}>Terms and Conditions </Typography>
                 <Typography className='footerNText' onClick={() => {

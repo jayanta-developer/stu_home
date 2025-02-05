@@ -19,7 +19,7 @@ export default function PropertieCard({ value, btnText }) {
   return (
     <>
       <Box className="propertiesCard" onClick={() => {
-        navigate("/property-details")
+        navigate("/property-details/:property-title")
         window.scrollTo({ top: 0, behavior: "smooth" })
         localStorage.setItem("propertyIndex", value?._id)
       }}>
