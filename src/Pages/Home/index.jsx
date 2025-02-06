@@ -20,9 +20,7 @@ import locationIcon from "../../Assets/Images/locationIcon.png";
 import calenderIcon from "../../Assets/Images/calenderIcon.svg";
 import hasselIcon from "../../Assets/Images/hesselRoundIcon.png";
 import searchHomeIcon from "../../Assets/Images/searchHomeIcon.svg";
-import filterIcon from "../../Assets/Images/filter-circle.svg"
-import searchIcon from "../../Assets/Images/SearchIconV2.png"
-import whiteLine from "../../Assets/Images/whiteLine.png"
+import discountCoverImg from "../../Assets/Images/discountCover.jpg"
 
 //components
 import { Box, Typography } from '@mui/material';
@@ -42,6 +40,8 @@ export default function Home() {
   const [searchSelector, setSearchSelecotr] = useState(0);
   const [selectedPropertyId, setSelectedPropertyId] = useState();
   const [IncPropertyData, setIncPropertData] = useState([]);
+  const [discountPop, setDiscountPop] = useState(true)
+  const [userInfoVal, setUserInfoVal] = useState({})
 
 
   const cityData = IncPropertyData?.filter(
@@ -82,6 +82,23 @@ export default function Home() {
     localStorage.setItem("propertyIndex", selectedPropertyId);
   }
 
+  const handleCloseRentPop = (e) => {
+    if (e.target.id === "rentPop") {
+      setDiscountPop(false)
+    }
+  }
+
+  useEffect(() => {
+    if (discountPop) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [discountPop]);
+
   useEffect(() => {
     Axios.get(process.env.REACT_APP_BASE_URL + "/flats")
       .then((val) => {
@@ -98,6 +115,8 @@ export default function Home() {
         <title>Socio Stays</title>
       </Helmet>
       <Box className="homeContainer">
+
+
         <Box className="homeSection">
           <img src={HomeBG} className='HomeBG HomeBGDesktop' />
           <img src={HomeBGTabe} className='HomeBG HomeBGTabe' />
@@ -105,6 +124,44 @@ export default function Home() {
           {/* Nav bar */}
           <NavBar />
           <Box className="homeCenterBox">
+            {/* user info input box */}
+            <div id="rentPop" onClick={handleCloseRentPop} className="backDrop" style={{ display: discountPop ? "flex" : "none" }}>
+              <div className="userInfoInputBox">
+                <div className="disImgBox">
+                  <div className="disTextImBox">
+                    <p className='disText1'>Give your contact info to get</p>
+                    <p className='disText2'>50%</p>
+                    <p className='disText1'>OFF</p>
+                  </div>
+
+                  <img src={discountCoverImg} />
+                </div>
+                <div className="disInputBox">
+
+                  <Box className="inputBox">
+                    <Typography>Name*</Typography>
+                    <input name='email' placeholder='Enter Name' type='email' />
+                  </Box>
+                  <Box className="inputBox">
+                    <Typography>Phone Number*</Typography>
+                    <input name='email' placeholder='Enter phone number' type='email' />
+                  </Box>
+                  <Box className="inputBox">
+                    <Typography>Email Id*</Typography>
+                    <input name='email' placeholder='Enter email' type='email' />
+                  </Box>
+                  <div className="fromBtnBox">
+                    <AppBtn btnText="SEND" width="100%" />
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+
+
+
             <Box className="homeLabel">
               <Typography className='homeBoldText'>MAKE EVERY TRIP WORTH THE STAY</Typography>
               <img src={HomeYIcon} />
@@ -114,26 +171,6 @@ export default function Home() {
               of home—at a price that’s better than any hotel
             </Typography>
 
-
-            {/* ------------Mobile--------------- */}
-            {/* <Box className="mobileSearchBar">
-              <input type="text" placeholder='Search...' />
-              <Typography>{locationDropVal || "Location"}</Typography>
-              <img src={searchIcon} className="searchIocn" onClick={GoProperty} />
-              <img src={filterIcon} className="filterIcon" onClick={() => setLocationDrop(!locationDrop)} />
-              <img src={whiteLine} className="whiteLine" />
-              <Box className="MDropBox" sx={{ height: locationDrop ? "145px" : "0px" }}>
-                {IncPropertyData?.map((el, i) => (
-                  <Box key={i} className="dropItem" onClick={() => {
-                    setLocationDropVal(el?.city)
-                    setLocationDrop(false)
-                    setSelectedPropertyId(el._id)
-                  }}>
-                    <span>{el?.location}</span>
-                  </Box>
-                ))}
-              </Box>
-            </Box> */}
 
             {/* -----------Desktop------------ */}
             <Box className="mainSearchBox">

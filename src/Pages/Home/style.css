@@ -719,6 +719,73 @@
   width: 16px;
   height: 16px;
 }
+.userInfoInputBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 99% !important;
+  height: 60vh !important;
+  height: 400px;
+  border-radius: 10px;
+  border: gray 1px solid;
+  padding: 20px;
+  background: #181717;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.disImgBox {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.disImgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.disTextImBox {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.disText1 {
+  font-size: 30px;
+  color: #fff;
+  font-family: "PoppinsBold";
+  text-align: center;
+}
+.disText2 {
+  font-size: 80px;
+  color: #fff;
+  font-family: "Satoshi";
+  text-align: center;
+}
+.disInputBox {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6%;
+  padding-top: 20px;
+}
+.disInputBox .inputBox {
+  height: 58px;
+}
+.disInputBox .fromBtnBox {
+  margin-top: 3%;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .HCNText {
@@ -894,6 +961,25 @@
   .PDTitleBox span {
     font-size: 16px;
   }
+  .userInfoInputBox {
+    flex-direction: row;
+    width: 99% !important;
+    height: 50vh !important;
+  }
+  .disInputBox {
+    width: 60% !important;
+    padding: 20px;
+    gap: 13%;
+  }
+  .disImgBox {
+    width: 40% !important;
+  }
+  .disTextImBox {
+    height: 100%;
+  }
+  .disInputBox .fromBtnBox {
+    margin-top: 10%;
+  }
 }
 
 /* Desktop view */
@@ -991,5 +1077,10 @@
   }
   .aparEmailBox .aptHeaderText {
     text-align: start;
+  }
+  .userInfoInputBox {
+    min-width: 750px;
+    width: 55% !important;
+    height: 60vh !important;
   }
 }
