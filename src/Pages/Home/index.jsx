@@ -37,12 +37,16 @@ export default function Home() {
   const [locationDropVal, setLocationDropVal] = useState("");
   const [sectorDrop, setSectorDrop] = useState(false);
   const [sectorDropVal, setSectorDropVal] = useState();
-  const [searchSelector, setSearchSelecotr] = useState(0);
   const [selectedPropertyId, setSelectedPropertyId] = useState();
   const [IncPropertyData, setIncPropertData] = useState([]);
   const [discountPop, setDiscountPop] = useState(true)
-  const [userInfoVal, setUserInfoVal] = useState({})
+  const [userInfoVal, setUserInfoVal] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  })
 
+  console.log(userInfoVal);
 
   const cityData = IncPropertyData?.filter(
     (item, index, self) =>
@@ -87,6 +91,13 @@ export default function Home() {
       setDiscountPop(false)
     }
   }
+
+  const handleChangeDisVal = (e) => {
+    const { name, value } = e.target;
+    if (name === "phone" && !/^\d*$/.test(value)) return; // Only numbers
+    if (name === "email" && value && !/^\S+@\S+\.\S+$/.test(value)) return; // Basic email validation
+    setUserInfoVal((prev) => ({ ...prev, [name]: value }));
+  };
 
   useEffect(() => {
     if (discountPop) {
@@ -133,22 +144,21 @@ export default function Home() {
                     <p className='disText2'>50%</p>
                     <p className='disText1'>OFF</p>
                   </div>
-
                   <img src={discountCoverImg} />
                 </div>
                 <div className="disInputBox">
 
                   <Box className="inputBox">
                     <Typography>Name*</Typography>
-                    <input name='email' placeholder='Enter Name' type='email' />
+                    <input name='name' placeholder='Enter Name' type='text' value={userInfoVal?.name} onChange={handleChangeDisVal} />
                   </Box>
                   <Box className="inputBox">
                     <Typography>Phone Number*</Typography>
-                    <input name='email' placeholder='Enter phone number' type='email' />
+                    <input name='phone' placeholder='Enter phone number' type='text' value={userInfoVal?.phone} onChange={handleChangeDisVal} />
                   </Box>
                   <Box className="inputBox">
                     <Typography>Email Id*</Typography>
-                    <input name='email' placeholder='Enter email' type='email' />
+                    <input name='email' placeholder='Enter email' value={userInfoVal?.email} onChange={handleChangeDisVal} />
                   </Box>
                   <div className="fromBtnBox">
                     <AppBtn btnText="SEND" width="100%" />
