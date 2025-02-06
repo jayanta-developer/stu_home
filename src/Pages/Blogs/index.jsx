@@ -30,7 +30,7 @@ export default function Blogs() {
 
   const storeBlogIndex = (i) => {
     localStorage.setItem("blogIndex", i)
-    navigate("/Blog-details")
+    navigate("/blog-details/:blog-title")
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
@@ -74,12 +74,8 @@ export default function Blogs() {
                 ))
               }
             </Box>
-
           }
-
-
         </Box>
-
         <Box className="propertyDetailSection">
           <img src={pageBackground} className='propertyBg' />
           <FindApartment />
@@ -87,7 +83,6 @@ export default function Blogs() {
         <EmailBox />
         <Footer />
       </Box>
-
     </>
   )
 }

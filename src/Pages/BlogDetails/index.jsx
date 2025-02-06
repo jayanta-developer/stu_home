@@ -41,13 +41,11 @@ export default function BlogDetails() {
 
 
   useEffect(() => {
-    if (!isEmpty(blogData)) {
-      const dynamicUrl = blogData?.SummeryArray[0]?.title
-        ? blogData.SummeryArray[0].title
-          .trim() // Remove leading/trailing spaces
-          .replace(/[^a-zA-Z0-9\s-]/g, "") // Remove special characters except spaces and hyphens
-          .replace(/\s+/g, "-") // Replace spaces with hyphens
-        : "id=k4jj43lk3434444";
+    if (blogData?.SummeryArray?.length) {
+      const dynamicUrl = `/blog-details/${blogData.SummeryArray[0].title
+        .trim()
+        .replace(/[^a-zA-Z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")}`;
 
       window.history.replaceState(null, "", dynamicUrl);
     }

@@ -24,13 +24,16 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/explore" element={<PropertyList />} />
-          <Route path="/:property-details" element={<PropertyPage />} />
+          <Route
+            path="/property-details/:property-title"
+            element={<PropertyPage />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/:Blog-details" element={<BlogDetails />} />
-          <Route path="/Terms-and-Conditions" element={<TermsPage />} />
-          <Route path="/Pricacy-Policy" element={<PolicyPage />} />
+          <Route path="/blog-details/:blog-title" element={<BlogDetails />} />
+          <Route path="/terms-and-Conditions" element={<TermsPage />} />
+          <Route path="/pricacy-Policy" element={<PolicyPage />} />
           <Route path="/favorite-list" element={<FavoriteList />} />
         </Routes>
       </HelmetProvider>

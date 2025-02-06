@@ -19,7 +19,7 @@ export default function PropertieCard({ value, btnText }) {
   return (
     <>
       <Box className="propertiesCard" onClick={() => {
-        navigate("/property-details")
+        navigate("/property-details/:property-title")
         window.scrollTo({ top: 0, behavior: "smooth" })
         localStorage.setItem("propertyIndex", value?._id)
       }}>
@@ -27,7 +27,7 @@ export default function PropertieCard({ value, btnText }) {
           <img src={value?.images[0]?.image} />
           <Box className='loveIcon'>
             <img src={
-              isPropertyFevData?.includes(value?.id) ? LoveIcon : loveBlack
+              isPropertyFevData?.includes(value?._id) ? LoveIcon : loveBlack
             } />
           </Box>
         </Box>

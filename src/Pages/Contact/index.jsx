@@ -30,6 +30,18 @@ export default function Contact() {
   const [genderDropVal, setGenderDropVal] = useState("")
   const [countryDrop, setCountryDrop] = useState(false)
   const [countryDropVal, setCountryDropVal] = useState("")
+  const [age, setAge] = useState("");
+  const [contactVal, setContactVal] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    age: "",
+    subject: "",
+    message: "",
+  });
+
+
 
   const GRowItem = ({ icon, title, subTitle, id }) => {
     return (
@@ -61,6 +73,17 @@ export default function Contact() {
     "Female",
     "Others"
   ]
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Validation rules
+    if (name === "phone" && !/^\d*$/.test(value)) return; // Only numbers
+    if (name === "age" && (!/^\d*$/.test(value) || value.length > 3)) return; // Only numbers, max 3 digits
+    if (name === "email" && value && !/^\S+@\S+\.\S+$/.test(value)) return; // Basic email validation
+
+    setContactVal((prev) => ({ ...prev, [name]: value }));
+  };
 
   return (
     <>
@@ -126,22 +149,22 @@ export default function Contact() {
             <Box className="inputTowBox">
               <Box className="inputBox">
                 <Typography>First Name *</Typography>
-                <input placeholder='JHON' />
+                <input placeholder='JHON' name='firstName' value={contactVal.firstName} onChange={handleChange} />
               </Box>
               <Box className="inputBox">
                 <Typography>Last Name *</Typography>
-                <input placeholder='STIVEN' />
+                <input placeholder='STIVEN' name='lastName' value={contactVal.lastName} onChange={handleChange} />
               </Box>
             </Box>
 
             <Box className="inputTowBox">
               <Box className="inputBox">
                 <Typography>Email ID *</Typography>
-                <input placeholder='info@student.com' />
+                <input placeholder='info@student.com' name='email' value={contactVal.email} onChange={handleChange} />
               </Box>
               <Box className="inputBox">
                 <Typography>Phone Number *</Typography>
-                <input placeholder='123-456-7890' />
+                <input placeholder='123-456-7890' type='text' name='phone' value={contactVal.phone} onChange={handleChange} />
               </Box>
             </Box>
 
@@ -160,29 +183,21 @@ export default function Contact() {
                 </Box>
               </Box>
               <Box className="inputBox" onClick={() => setCountryDrop(!countryDrop)}>
-                <Typography>Nationality *</Typography>
+                <Typography>Age</Typography>
                 <img style={{ display: countryDropVal?.flag ? "block" : "none" }} className='countryDropImg' src={countryDropVal?.flag} />
-                <input style={{ paddingLeft: "40px" }} type="text" value={countryDropVal?.name} placeholder='Select Your Gender' />
-                <Box className="dropBox" sx={{ height: countryDrop ? "130px" : "0px" }}>
-                  {
-                    countries?.map((el, i) => (
-                      <Box key={i} className="dropItem" onClick={() => setCountryDropVal(el)}>
-                        <span>{el.name}</span>
-                      </Box>
-                    ))
-                  }
-                </Box>
+                <input placeholder='How old are you ?' name='age' value={contactVal.age} onChange={handleChange} />
+
               </Box>
             </Box>
 
             <Box className="inputBox subjectInput">
               <Typography>Subject</Typography>
-              <input placeholder='Your Subject' />
+              <input placeholder='Your Subject' name='subject' value={contactVal.subject} onChange={handleChange} />
             </Box>
 
             <Box className="inputBox messageInput">
               <Typography>Message</Typography>
-              <textarea placeholder='Write something here...' />
+              <textarea placeholder='Write something here...' name='message' value={contactVal.message} onChange={handleChange} />
             </Box>
             <Box className="fromBtnBox">
               <AppBtn btnText="SEND MESSAGE" />

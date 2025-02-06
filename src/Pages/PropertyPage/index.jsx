@@ -73,7 +73,6 @@ export default function PropertyPage() {
   }));
 
   const handleCloseRentPop = (e) => {
-    console.log(e.target.id);
     if (e.target.id === "rentPop") {
       setRectPop(false)
     }
@@ -113,13 +112,14 @@ export default function PropertyPage() {
   }
 
   useEffect(() => {
-    const dynamicUrl = IncPropertyData?.title
-      ? IncPropertyData?.title
-        .trim() // Remove leading/trailing spaces
-        .replace(/[^a-zA-Z0-9\s-]/g, "") // Remove special characters except spaces and hyphens
-        .replace(/\s+/g, "-") // Replace spaces with hyphens
-      : "id=k4jj43lk3434444";
-    window.history.replaceState(null, "", dynamicUrl);
+    if (IncPropertyData?.title) {
+      const dynamicUrl = `/property-details/${IncPropertyData.title
+        .trim()
+        .replace(/[^a-zA-Z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")}`;
+
+      window.history.replaceState(null, "", dynamicUrl);
+    }
   }, [IncPropertyData]);
 
 
@@ -152,16 +152,20 @@ export default function PropertyPage() {
       })
       .catch((err) => console.log(err));
 
+
+  }, [])
+
+  useEffect(() => {
     if (isPropertyFevData?.includes(IncPropertyData?._id)) {
       setFev(true)
     } else {
       setFev(false)
     }
-  }, [])
+  }, [IncPropertyData])
 
   return (
     <>
-      <Box className="property">
+      <Box className="property propertyPage">
         {/* meta */}
         <Helmet>
           <title>{IncPropertyData?.title}</title>
@@ -455,8 +459,30 @@ export default function PropertyPage() {
           </Box>
         }
         <EmailBox />
-        <Footer />
+
+        {/* --Fixed-- banner box */}
+        <Box className="overAvatarInfoBox fixedBannerBox">
+          <Box className="avatarBox">
+            <Box className="avatarImg">
+              <img className='socioStayIcon' src={SocioStay} />
+            </Box>
+            <Box className="avatarNamBox">
+              <Typography>{IncPropertyData?.owner}</Typography>
+              <span>Property owner</span>
+            </Box>
+          </Box>
+
+          <Box className="mesCallBox">
+            <Box onClick={openWhatsapp} >
+              <img src={messageIcon} />
+            </Box>
+            <Box onClick={handleCall}>
+              <img src={callIconSvg} />
+            </Box>
+          </Box>
+        </Box>
       </Box >
+      <Footer />
     </>
   )
 }
