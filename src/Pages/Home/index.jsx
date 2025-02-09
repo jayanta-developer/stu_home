@@ -30,23 +30,25 @@ import FindApartment from "../../Components/FindApartment"
 import Footer from "../../Components/Footer"
 import PropertieCard from "../../Components/PropertieCard";
 import EmailBox from "../../Components/EmailBox";
+import axios from 'axios';
+import { GoTop } from "../../Components/Tools"
 
 export default function Home() {
   const navigate = useNavigate()
+  GoTop()
   const [locationDrop, setLocationDrop] = useState(false);
   const [locationDropVal, setLocationDropVal] = useState("");
   const [sectorDrop, setSectorDrop] = useState(false);
   const [sectorDropVal, setSectorDropVal] = useState();
   const [selectedPropertyId, setSelectedPropertyId] = useState();
   const [IncPropertyData, setIncPropertData] = useState([]);
-  const [discountPop, setDiscountPop] = useState(true)
+  const [discountPop, setDiscountPop] = useState()
   const [userInfoVal, setUserInfoVal] = useState({
     name: "",
     phone: "",
     email: "",
   })
 
-  console.log(userInfoVal);
 
   const cityData = IncPropertyData?.filter(
     (item, index, self) =>
@@ -81,7 +83,7 @@ export default function Home() {
   }
 
   const GoProperty = () => {
-    navigate("/property-details")
+    navigate("/property-details/:property-title")
     window.scrollTo({ top: 0, behavior: "smooth" })
     localStorage.setItem("propertyIndex", selectedPropertyId);
   }
@@ -94,10 +96,43 @@ export default function Home() {
 
   const handleChangeDisVal = (e) => {
     const { name, value } = e.target;
-    if (name === "phone" && !/^\d*$/.test(value)) return; // Only numbers
-    if (name === "email" && value && !/^\S+@\S+\.\S+$/.test(value)) return; // Basic email validation
+    if (name === "phone" && !/^\d*$/.test(value)) return;
+    if (name === "email" && value && !/^[a-zA-Z0-9._%+-@]*$/.test(value)) {
+      return;
+    }
     setUserInfoVal((prev) => ({ ...prev, [name]: value }));
   };
+
+  //send useer val
+  const sendUserVal = () => {
+    if (userInfoVal.name.length && userInfoVal.phone.length && userInfoVal.email.length) {
+      axios.post(process.env.REACT_APP_BASE_URL + "/user/create", {
+        name: userInfoVal?.name,
+        phone: userInfoVal?.phone,
+        email: userInfoVal?.email,
+      }).then((res) => {
+        setDiscountPop(false)
+        setUserInfoVal({
+          name: "",
+          email: "",
+          phome: ""
+        })
+        localStorage.setItem("socio_userVal", 1)
+      })
+    } else {
+      alert("please fill all fields !");
+    }
+  }
+
+  //check discount value
+  useEffect(() => {
+    const discountVal = localStorage.getItem("socio_userVal")
+    if (discountVal === 1) {
+      setDiscountPop(false)
+    } else if (discountVal === 0 || !discountVal) {
+      setDiscountPop(true)
+    }
+  })
 
   useEffect(() => {
     if (discountPop) {
@@ -161,7 +196,7 @@ export default function Home() {
                     <input name='email' placeholder='Enter email' value={userInfoVal?.email} onChange={handleChangeDisVal} />
                   </Box>
                   <div className="fromBtnBox">
-                    <AppBtn btnText="SEND" width="100%" />
+                    <AppBtn btnText="SEND" width="100%" onClick={sendUserVal} />
                   </div>
 
 
@@ -182,17 +217,8 @@ export default function Home() {
             </Typography>
 
 
-            {/* -----------Desktop------------ */}
+            {/* ----------------------------------Search section---------------------------------------- */}
             <Box className="mainSearchBox">
-              {/* <Box className="selectorBox">
-                <Box className={searchSelector === 0 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(0)}>
-                  <Typography>FLATS</Typography>
-                </Box>
-                <Box className={searchSelector === 1 ? "sltIBox sltBoxActive" : "sltIBox"} onClick={() => setSearchSelecotr(1)}>
-                  <Typography>ROOMS </Typography>
-                </Box>
-              </Box> */}
-              {/* -------------------------------------------------------------------------- */}
               <Box className="innerSearchBox">
 
                 {/* city */}

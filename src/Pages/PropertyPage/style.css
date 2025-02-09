@@ -235,7 +235,7 @@
   margin-bottom: 30px;
 }
 .propertyInfoInBox {
-  padding: 30px;
+  padding: 15px;
   border-radius: 15px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
@@ -387,7 +387,7 @@
 .MapBox {
   width: 95%;
   height: 285px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 15px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
   margin-top: 10px;
@@ -425,6 +425,7 @@
   gap: 10px;
   transition: all 0.5s;
   overflow: hidden;
+  z-index: 9;
 }
 .estimatPopActive {
   height: 120px;
@@ -603,6 +604,12 @@
   }
   .fixedBannerBox {
     display: none;
+  }
+  .propertyInfoInBox {
+    padding: 30px;
+  }
+  .MapBox {
+    padding: 20px;
   }
 }
 

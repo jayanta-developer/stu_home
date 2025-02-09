@@ -19,6 +19,12 @@ export default function NavBar() {
   const [menuVisibility, setMenuVisibility] = useState(true)
 
 
+  const handleMobileNavClick = (url) => {
+    navigate(url)
+    setSideMenu(false)
+  }
+
+
   useEffect(() => {
     if (sideMenu) {
       document.body.style.overflow = 'hidden';
@@ -44,27 +50,24 @@ export default function NavBar() {
         {/* side menu icon */}
         <Box className={menuVisibility ? "sideMenu" : "sideMenu subItemDeactivate"} sx={{ width: sideMenu ? "100%" : "0px" }}>
           <img src={backIcon} className='backIcon' onClick={() => setSideMenu(false)} />
-
-
-          <Box className="navItem" onClick={() => navigate("/")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/")}>
             <Typography>HOME</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/explore")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/explore")}>
             <Typography>EXPLORE</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/favorite-list")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/favorite-list")}>
             <Typography>FAVORITES</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/contact")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/contact")}>
             <Typography>CONTACT</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/blogs")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/blogs")}>
             <Typography>BLOGS</Typography>
           </Box>
-          <Box className="navItem" onClick={() => navigate("/about")}>
+          <Box className="navItem" onClick={() => handleMobileNavClick("/about")}>
             <Typography>ABOUT US</Typography>
           </Box>
-
         </Box>
 
 
