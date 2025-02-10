@@ -48,6 +48,7 @@ export default function Home() {
     phone: "",
     email: "",
   })
+  const [bannerDBImg, setBannerDBImg] = useState()
 
 
   const cityData = IncPropertyData?.filter(
@@ -154,6 +155,12 @@ export default function Home() {
       .catch((err) => console.log(err));
   }, [])
 
+  useEffect(() => {
+    Axios.get("https://socioserver-jg6j.onrender.com/socio/api/banner").then((res) => {
+      setBannerDBImg(res.data[0])
+    })
+  }, [])
+
 
   return (
     <>
@@ -174,12 +181,12 @@ export default function Home() {
             <div id="rentPop" onClick={handleCloseRentPop} className="backDrop" style={{ display: discountPop ? "flex" : "none" }}>
               <div className="userInfoInputBox">
                 <div className="disImgBox">
-                  <div className="disTextImBox">
+                  {/* <div className="disTextImBox">
                     <p className='disText1'>Give your contact info to get</p>
                     <p className='disText2'>50%</p>
                     <p className='disText1'>OFF</p>
-                  </div>
-                  <img src={discountCoverImg} />
+                  </div> */}
+                  <img src={bannerDBImg?.url} />
                 </div>
                 <div className="disInputBox">
 
