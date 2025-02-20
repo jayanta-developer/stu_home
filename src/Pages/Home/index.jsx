@@ -135,16 +135,16 @@ export default function Home() {
     }
   })
 
-  useEffect(() => {
-    if (discountPop) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [discountPop]);
+  // useEffect(() => {
+  //   if (discountPop) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = 'auto';
+  //   };
+  // }, [discountPop]);
 
   useEffect(() => {
     Axios.get(process.env.REACT_APP_BASE_URL + "/flats")
@@ -178,7 +178,7 @@ export default function Home() {
           <NavBar />
           <Box className="homeCenterBox">
             {/* user info input box */}
-            <div id="rentPop" onClick={handleCloseRentPop} className="backDrop" style={{ display: discountPop ? "flex" : "none" }}>
+            <div id="rentPop" onClick={handleCloseRentPop} className="backDrop" style={{ display: discountPop ? "none" : "none" }}>
               <div className="userInfoInputBox">
                 <div className="disImgBox">
                   {/* <div className="disTextImBox">

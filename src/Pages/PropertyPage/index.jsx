@@ -23,6 +23,7 @@ import avatar2 from "../../Assets/Images/avatat2.png";
 import whatsappIcon from "../../Assets/Images/whatsappIcon.png"
 import crossIcon from "../../Assets/Images/crossIcon.png"
 import SocioStay from "../../Assets/Images/SocioStaysIcon.png"
+import loadingIcon from "../../Assets/Images/Loading.gif"
 
 //facilities icons
 import airConditionar from "../../Assets/Images/airConditionar.png";
@@ -211,7 +212,10 @@ export default function PropertyPage() {
           <Typography className='propertyheaderText'>{headerText.toUpperCase()}</Typography>
         </Box>
         {!IncPropertyData ?
-          <p className='loadingText'>Loding...</p> :
+          <div className="loadingBox">
+            <img src={loadingIcon} alt="" />
+          </div>
+          :
           <Box className="propertyDetailSection">
             <img src={pageBackground} className='propertyBg' />
             <Box className="propertyTitleBox">
