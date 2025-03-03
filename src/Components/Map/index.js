@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./style.css";
-import markIcon1 from "../../Assets/Images/locationIcon2.png"; // Your custom icon
+import markIcon1 from "../../Assets/Images/locationIcon2.png";
 
 const MapComponent = ({ latitude, longitude, description }) => {
   const mapContainer = useRef(null);

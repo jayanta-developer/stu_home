@@ -202,8 +202,6 @@ export default function PropertyPage() {
               <AppBtn btnText="SEND" onClick={handleSendPropertyInfo} />
             </div>
           </Box>
-
-
         </div>
 
         <Box className="propertyHomeSection">
