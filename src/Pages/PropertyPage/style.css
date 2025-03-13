@@ -544,6 +544,14 @@
 .loadingBox img {
   width: 90px;
 }
+.neareBox {
+  display: flex;
+  flex-direction: row;
+}
+.neareBox .facilitesItem {
+  gap: 7px;
+  margin-right: 16px;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertyDetailSection {
@@ -684,5 +692,8 @@
   }
   .backDrop .rentDelInputBox {
     width: 50%;
+  }
+  .neareBox {
+    /* margin-left: 20px; */
   }
 }

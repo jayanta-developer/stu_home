@@ -37,6 +37,9 @@ import SecuredEntry from "../../Assets/Images/securtyEntry.png";
 import SpaceWork from "../../Assets/Images/SpaceWork.png";
 import Laundry from "../../Assets/Images/Laundry.png";
 import CustomerSupport from "../../Assets/Images/CustomerSupport.png";
+import plane from "../../Assets/Images/planeIcon.png"
+import Metro from "../../Assets/Images/metroIcon.png"
+import Bus from "../../Assets/Images/BusIcon.png"
 
 
 //components
@@ -310,8 +313,25 @@ export default function PropertyPage() {
 
                 <Box className="locationBox">
                   <Box className="CardlocationBox">
-                    <img src={locationOutIcon} />
-                    <Typography>{IncPropertyData?.city}, {IncPropertyData?.sector}</Typography>
+                    <Box className="facilitesItem" >
+                      <img src={locationOutIcon} />
+                      <Typography>{IncPropertyData?.city}, {IncPropertyData?.sector}</Typography>
+
+                    </Box>
+                    <div className="neareBox">
+                      <Box className="facilitesItem" >
+                        <img src={plane} alt="" />
+                        <Typography>Airport</Typography>
+                      </Box>
+                      <Box className="facilitesItem" >
+                        <img src={Metro} alt="" />
+                        <Typography>Metro</Typography>
+                      </Box>
+                      <Box className="facilitesItem" >
+                        <img src={Bus} alt="" />
+                        <Typography>Bus stop</Typography>
+                      </Box>
+                    </div>
                   </Box>
                   <Box className="proDetails">
                     <img src={badIcon} />
